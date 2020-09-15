@@ -1,0 +1,29 @@
+
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,700,900');
+
+// Variables
+@import "variables";
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+//owl carousel
+@import "carousel/owl.carousel";
+@import "carousel/owl.theme.default";
+
+
+//custom css
+@import "custom";
+
+//Font Awesome 5
+@import "FontAwesome/fontawesome";
+@import "FontAwesome/fa-solid";
+@import "FontAwesome/fa-regular";
+@import "FontAwesome/fa-brands";
+
+
+.navbar-laravel {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}

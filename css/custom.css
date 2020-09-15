@@ -1,0 +1,20 @@
+/* Write your custom CSS here */
+
+.table-row {
+    border-bottom: 1px solid #f5f5f5;
+    padding: 10px;
+    /*background-color: #fafafa;*/
+}
+
+.btn-add {
+    margin-bottom: 10px;
+}
+
+.datepicker table {
+    width: 300px !important;
+    height: 300px !important;
+}
+
+.btn-slot {
+    margin-bottom: 10px;
+}

@@ -1,0 +1,131 @@
+<?php 
+
+    const const_servicio="http://192.168.0.11/wsServiciosSocios/wsSocios.asmx?wsdl"; 
+	const const_delimitador = ";";
+	const const_Error_Conexion_WS = -1;
+	
+	// -1: Error de conexion
+
+function wsConsultaSaldo($group_id, &$saldo)
+{
+	try {
+        $client = new SoapClient(const_servicio);
+        
+        $parametros=array(); //parametros de la llamada
+
+        //string GetSaldo($group_id)  
+        $parametros['group_id']=$group_id;
+        
+		//$client = new SoapClient(const_servicio, $parametros);
+        $result = $client->GetSaldo($parametros);  //llamamos al método que nos interesa con los parámetros
+
+		$resultados = explode(const_delimitador, $result->GetSaldoResult);
+		
+        //   status:-2: (no existe), 1: saldo>0 con deuda, -1: error (no hubo conexión a SQL), 0: saldo<=0
+		$status = $resultados[0];
+		$saldo = $resultados[1];
+
+		return $status; // $result->GetSaldoResult
+	}
+	catch (Exception $e) { 
+	
+		$status = const_Error_Conexion_WS;
+		
+		$comments = "<h2>Exception Error catched by the Reservaciones application!</h2>" . "<br>" . $e->getMessage(); 
+
+        return $status;
+	}
+}
+
+function wsConsultaSocio($doc_id, $comments)
+{
+	try {
+        $client = new SoapClient(const_servicio);
+        
+        $parametros=array(); 
+
+        // string GetSocio($doc_id) 
+        $parametros['doc_id']=$doc_id;
+        
+        $result = $client->GetSocio($parametros); 
+
+		$resultados = explode(const_delimitador, $result->GetSocioResult);
+		
+        // status: 0: invalido (no existe), 1: ok, -1: error, -2: blacklist
+		$status = $resultados[0];
+		$comments = $resultados[1];
+
+		return $status; // $result->GetSocioResult
+		
+		}
+	catch (Exception $e) { 
+		$status = const_Error_Conexion_WS;
+		
+		$comments = "<h2>Exception Error catched by the Reservaciones application!</h2>" . "<br>" . $e->getMessage(); 
+
+        return $status;
+	}
+}
+
+function wsConsultaInvitado($doc_id, $comments)
+{
+	try {
+        $client = new SoapClient(const_servicio);
+        
+        $parametros=array(); 
+
+        // string GetInvitado($doc_id) 
+        $parametros['doc_id']=$doc_id;
+        
+        $result = $client->GetInvitado($parametros);
+	
+		$resultados = explode(const_delimitador, $result->GetInvitadoResult);
+		
+        // status: 0: invalido (no existe), 1: ok, -1: error, -2: blacklist, -3 : socio
+		$status = $resultados[0];
+		$comments = $resultados[1];
+
+		return $status; // $result->GetInvitadoResult
+		
+		}
+	catch (Exception $e) { 
+		$status = const_Error_Conexion_WS;
+		
+		$comments = "<h2>Exception Error catched by the Reservaciones application!</h2>" . "<br>" . $e->getMessage(); 
+
+        return $status;
+	}
+}
+
+function wsConsultarBlackList($doc_id, $comments)
+{
+	try {
+        $client = new SoapClient(const_servicio);
+        
+        $parametros=array(); 
+
+        // string GetBlacklist($doc_id)  
+        $parametros['doc_id']=$doc_id;
+        
+        $result = $client->GetBlacklist($parametros);  
+	
+		$resultados = explode(const_delimitador, $result->GetBlacklistResult);
+		
+        // status: 0: ok (no existe), 1: en lista negra, -1: error
+		$status = $resultados[0];
+		$comments = $resultados[1];
+
+		return $status;  // $result->GetBlacklistResult
+		
+		}
+	catch (Exception $e) { 
+		$status = const_Error_Conexion_WS;
+		
+		$comments = "<h2>Exception Error catched by the Reservaciones application!</h2>" . "<br>" . $e->getMessage(); 
+
+        return $status;
+	}
+}
+
+
+?>

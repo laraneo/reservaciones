@@ -1,0 +1,640 @@
+
+02/06/2020 08:24:23 pm - Deleted
+02/06/2020 08:24:48 pm - include;N/A;1;0;<br>Invitado No activo;
+02/06/2020 08:24:56 pm - include;N/A;1;0;<br>Invitado No activo;
+02/06/2020 08:25:01 pm - include;LUCA ARANEO;1;1;;
+02/06/2020 08:25:03 pm - Deleted
+02/06/2020 08:25:07 pm - include;N/A;1;0;<br>Invitado No activo;
+02/06/2020 08:25:42 pm - include;N/A;1;0;<br>Invitado No activo;
+02/06/2020 08:34:01 pm - group;;;
+02/06/2020 08:34:11 pm - include;N/A;1;0;<br>Invitado No activo;
+02/06/2020 08:34:50 pm - group;;;
+02/06/2020 08:38:00 pm - include;LUCA ARANEO;1;1;;
+02/06/2020 08:38:09 pm - include;N/A;1;0;<br>Invitado No activo;
+02/06/2020 08:49:24 pm - include;GRENDYS GARCIA;1;1;;
+02/06/2020 08:49:32 pm - Deleted
+02/06/2020 08:51:33 pm - Deleted
+02/06/2020 09:16:49 pm - group;;;
+02/06/2020 09:17:11 pm - include;GRENDYS GARCIA;1;1;;
+04/06/2020 02:42:14 am - include;GRENDYS GARCIA;1;1;;
+04/06/2020 02:42:17 am - Deleted
+04/06/2020 10:51:32 pm - group;;;
+04/06/2020 10:55:30 pm - include;N/A;1;0;<br>Invitado No activo;
+04/06/2020 10:55:32 pm - include;N/A;1;0;<br>Invitado No activo;
+08/06/2020 12:09:17 am - include;GRENDYS GARCIA;1;1;;
+08/06/2020 12:09:46 am - include;GRENDYS GARCIA;1;1;;
+08/06/2020 12:10:07 am - Deleted
+08/06/2020 12:10:13 am - include;GRENDYS GARCIA;1;1;;
+08/06/2020 12:10:29 am - Deleted
+08/06/2020 12:17:04 am - include;GRENDYS GARCIA;1;1;;
+08/06/2020 12:20:09 am - include;GRENDYS GARCIA;1;1;;
+08/06/2020 12:20:34 am - include;GRENDYS GARCIA;1;1;;
+08/06/2020 12:24:14 am - include;GRENDYS GARCIA;1;1;;
+08/06/2020 12:24:21 am - include;GRENDYS GARCIA;1;1;;
+08/06/2020 01:30:32 am - Deleted
+08/06/2020 01:30:33 am - Deleted
+08/06/2020 01:30:36 am - include;Luca Araneo;0;1;;
+08/06/2020 01:30:47 am - include;JULIO CESAR VILLARREAL ABREU;0;0;<br>Acción 0693-0693 presenta deuda  - Dirijase al Club para mayor informacion;
+08/06/2020 01:30:54 am - group;;<br>Acción 0693-0693 presenta deuda  - Dirijase al Club para mayor informacion;
+08/06/2020 01:31:04 am - group;;<br>Acción 0610-0610 presenta deuda  - Dirijase al Club para mayor informacion;
+08/06/2020 01:31:13 am - include;GRENDYS GARCIA;1;1;;
+08/06/2020 01:31:28 am - Deleted
+08/06/2020 01:31:29 am - Deleted
+08/06/2020 01:38:19 am - include;Luca Araneo;0;1;;
+08/06/2020 01:38:28 am - include;GRENDYS GARCIA;1;1;;
+08/06/2020 01:39:12 am - favorites;;;
+08/06/2020 01:47:45 am - Deleted
+08/06/2020 01:47:47 am - Deleted
+08/06/2020 01:47:53 am - include;Luca Araneo;0;1;;
+08/06/2020 01:51:52 am - include;GRENDYS GARCIA;1;1;;
+08/06/2020 02:03:52 am - Deleted
+08/06/2020 02:05:03 am - include;Luca Araneo;0;1;;
+08/06/2020 02:07:19 am - Deleted
+08/06/2020 02:07:20 am - Deleted
+08/06/2020 02:07:24 am - include;Luca Araneo;0;1;;
+08/06/2020 02:14:33 am - Deleted
+08/06/2020 02:27:19 am - include;Luca Araneo;0;1;;
+08/06/2020 02:27:26 am - include;GRENDYS GARCIA;1;1;;
+08/06/2020 06:17:14 am - Deleted
+08/06/2020 06:17:20 am - include;GRENDYS GARCIA;1;1;;
+08/06/2020 12:46:52 pm - group;12422099*Luca Araneo#9963065*CARLOS  EDUARDO CATO CONTRERAS#;;
+08/06/2020 12:49:53 pm - group;;<br>Acción 0610-0610 presenta deuda  - Dirijase al Club para mayor informacion;
+08/06/2020 12:50:10 pm - include;N/A;1;0;<br>Invitado No activo;
+08/06/2020 12:50:26 pm - group;;<br>Acción 0930-0930 presenta deuda  - Dirijase al Club para mayor informacion;
+08/06/2020 12:50:38 pm - group;;<br>Acción 0176-0176 presenta deuda  - Dirijase al Club para mayor informacion;
+08/06/2020 12:51:07 pm - group;;<br>Acción 0693-0693 presenta deuda  - Dirijase al Club para mayor informacion;
+08/06/2020 12:51:20 pm - group;;<br>Acción 0553-0553 presenta deuda  - Dirijase al Club para mayor informacion;
+08/06/2020 12:51:59 pm - group;;<br>Acción 0176-0176 presenta deuda  - Dirijase al Club para mayor informacion;
+08/06/2020 12:53:36 pm - group;;<br>Acción 0176-0176 presenta deuda  - Dirijase al Club para mayor informacion;
+08/06/2020 12:53:51 pm - group;;<br>Acción 0610-0610 presenta deuda  - Dirijase al Club para mayor informacion;
+08/06/2020 12:54:03 pm - group;;;
+08/06/2020 12:54:06 pm - group;;;
+08/06/2020 12:54:18 pm - group;;<br>Acción 0084-0084 presenta deuda  - Dirijase al Club para mayor informacion;
+08/06/2020 12:54:31 pm - group;;<br>Acción 0553-0553 presenta deuda  - Dirijase al Club para mayor informacion;
+08/06/2020 12:54:41 pm - group;;;
+08/06/2020 12:54:44 pm - group;;;
+08/06/2020 12:55:03 pm - group;;<br>Acción 0724-0724 presenta deuda  - Dirijase al Club para mayor informacion;
+08/06/2020 12:55:24 pm - group;;<br>Acción 0930-0930 presenta deuda  - Dirijase al Club para mayor informacion;
+09/06/2020 10:34:05 am - Deleted
+09/06/2020 10:34:22 am - include;ANTONIO ENRIQUE CABRERA URDANETA;0;0;<br>Acción 0743-0743 presenta deuda  - Dirijase al Club para mayor informacion;
+09/06/2020 10:35:44 am - include;YORLEM MARTINEZ;1;1;;
+09/06/2020 10:35:59 am - include;N/A;1;0;<br>Invitado No activo;
+09/06/2020 10:36:11 am - include;N/A;1;0;<br>Invitado No activo;
+09/06/2020 10:36:15 am - include;N/A;1;0;<br>Invitado No activo;
+09/06/2020 10:36:16 am - include;N/A;1;0;<br>Invitado No activo;
+09/06/2020 10:36:37 am - include;N/A;1;0;<br>Invitado No activo;
+09/06/2020 10:36:40 am - include;N/A;1;0;<br>Invitado No activo;
+09/06/2020 10:48:02 am - include;N/A;1;0;<br>Invitado No activo;
+09/06/2020 10:48:27 am - include;CARLOS GUILLERMO MAYORCA LUGO;0;0;<br>Acción 0416-0416 presenta deuda  - Dirijase al Club para mayor informacion;
+09/06/2020 10:48:42 am - group;;<br>Acción 0416-0416 presenta deuda  - Dirijase al Club para mayor informacion;
+09/06/2020 10:48:44 am - group;;<br>Acción 0416-0416 presenta deuda  - Dirijase al Club para mayor informacion;
+09/06/2020 10:49:02 am - include;CARLOS  EDUARDO CATO CONTRERAS;0;1;;
+09/06/2020 10:49:19 am - include;YORLEM MARTINEZ;1;1;;
+09/06/2020 11:00:40 am - include;DOWNING ANGULO;1;1;;
+09/06/2020 11:00:49 am - include;SANDRA GOMEZ;1;1;;
+09/06/2020 11:14:19 am - include;N/A;1;0;<br>Invitado No activo;
+09/06/2020 11:14:27 am - include;N/A;1;0;<br>Invitado No activo;
+09/06/2020 11:14:28 am - include;N/A;1;0;<br>Invitado No activo;
+09/06/2020 11:14:30 am - include;N/A;1;0;<br>Invitado No activo;
+09/06/2020 11:14:31 am - include;N/A;1;0;<br>Invitado No activo;
+09/06/2020 11:14:39 am - include;N/A;1;0;<br>Invitado No activo;
+09/06/2020 11:14:40 am - include;N/A;1;0;<br>Invitado No activo;
+09/06/2020 11:14:41 am - include;N/A;1;0;<br>Invitado No activo;
+09/06/2020 11:14:42 am - include;N/A;1;0;<br>Invitado No activo;
+09/06/2020 11:14:42 am - include;N/A;1;0;<br>Invitado No activo;
+09/06/2020 11:15:18 am - include;TAEOH KIM;0;0;<br>Acción 1535-1535 presenta deuda  - Dirijase al Club para mayor informacion;
+09/06/2020 11:15:39 am - include;ANTONIO ENRIQUE CABRERA URDANETA;0;1;;
+09/06/2020 11:16:12 am - include;NELSON DE ABREU;1;1;;
+11/06/2020 02:24:15 pm - include;N/A;1;0;<br>Invitado No activo;
+11/06/2020 02:24:20 pm - group;12422099*Luca Araneo#9963065*CARLOS  EDUARDO CATO CONTRERAS#;;
+11/06/2020 02:26:34 pm - favorites;;;
+11/06/2020 02:26:39 pm - include;N/A;1;0;<br>Invitado No activo;
+11/06/2020 02:26:47 pm - include;TAEOH KIM;0;0;<br>Acción 1535-1535 presenta deuda  - Dirijase al Club para mayor informacion;
+12/06/2020 05:24:02 pm - include;N/A;1;0;<br>Invitado No activo;
+12/06/2020 05:24:06 pm - group;;<br>Acción 0616-0616 presenta deuda  - Dirijase al Club para mayor informacion;
+12/06/2020 05:24:26 pm - group;;<br>Acción 0610-0610 presenta deuda  - Dirijase al Club para mayor informacion;
+12/06/2020 05:24:27 pm - group;;<br>Acción 0610-0610 presenta deuda  - Dirijase al Club para mayor informacion;
+12/06/2020 05:24:50 pm - group;;<br>Acción 0084-0084 presenta deuda  - Dirijase al Club para mayor informacion;
+13/06/2020 05:44:49 pm - include;N/A;1;0;<br>Invitado No activo;
+13/06/2020 05:45:01 pm - group;12422099*Luca Araneo#9963065*CARLOS  EDUARDO CATO CONTRERAS#;;
+13/06/2020 05:45:08 pm - include;CARLOS  EDUARDO CATO CONTRERAS;0;1;;
+15/06/2020 09:20:20 am - include;ANA ARANEO;1;1;;
+15/06/2020 09:53:29 am - include;GRENDYS GARCIA;1;1;;
+15/06/2020 09:55:41 am - include;ANA ARANEO;1;1;;
+15/06/2020 10:17:12 am - include;GRENDYS GARCIA;1;1;;
+15/06/2020 10:17:17 am - include;ANA ARANEO;1;1;;
+15/06/2020 10:27:25 am - include;GRENDYS GARCIA;1;1;;
+15/06/2020 10:27:30 am - include;ANA ARANEO;1;1;;
+19/06/2020 01:11:16 pm - include;N/A;1;0;<br>Invitado No activo;
+19/06/2020 01:11:27 pm - include;GRENDYS GARCIA;1;1;;
+19/06/2020 01:11:50 pm - include;GRENDYS GARCIA;1;0;<br>Ya es participante en la reservación;
+19/06/2020 01:11:51 pm - include;GRENDYS GARCIA;1;0;<br>Ya es participante en la reservación;
+19/06/2020 01:11:51 pm - include;GRENDYS GARCIA;1;0;<br>Ya es participante en la reservación;
+19/06/2020 01:11:51 pm - include;GRENDYS GARCIA;1;0;<br>Ya es participante en la reservación;
+19/06/2020 01:12:17 pm - include;GRENDYS GARCIA;1;0;<br>Ya es participante en la reservación;
+19/06/2020 01:12:17 pm - include;GRENDYS GARCIA;1;0;<br>Ya es participante en la reservación;
+19/06/2020 01:12:17 pm - include;GRENDYS GARCIA;1;0;<br>Ya es participante en la reservación;
+19/06/2020 01:12:22 pm - include;ANA 1 ARANEO;1;0;<br>Ya es participante en la reservación;
+19/06/2020 01:12:47 pm - include;ANA 1 ARANEO;1;0;<br>Ya es participante en la reservación;
+19/06/2020 01:12:47 pm - include;ANA 1 ARANEO;1;0;<br>Ya es participante en la reservación;
+19/06/2020 01:12:47 pm - include;ANA 1 ARANEO;1;0;<br>Ya es participante en la reservación;
+19/06/2020 01:12:47 pm - include;ANA 1 ARANEO;1;0;<br>Ya es participante en la reservación;
+19/06/2020 01:12:47 pm - include;ANA 1 ARANEO;1;0;<br>Ya es participante en la reservación;
+19/06/2020 01:13:23 pm - include;ANA 1 ARANEO;1;0;<br>Ya es participante en la reservación;
+19/06/2020 01:21:26 pm - include;N/A;1;0;<br>Invitado No activo;
+19/06/2020 01:21:35 pm - include;GRENDYS GARCIA;1;0;<br>Ya es participante en la reservación;
+19/06/2020 01:26:43 pm - include;N/A;1;0;<br>Invitado No activo;
+19/06/2020 03:41:29 pm - include;GRENDYS GARCIA;1;0;<br>Ya es participante en la reservación;
+19/06/2020 03:41:41 pm - include;GRENDYS GARCIA;1;0;<br>Ya es participante en la reservación;
+22/06/2020 02:15:37 pm - include;GRENDYS GARCIA;1;0;<br>Ya es participante en la reservación;
+22/06/2020 02:16:33 pm - include;GRENDYS GARCIA;1;0;<br>Ya es participante en la reservación;
+22/06/2020 02:16:55 pm - include;GRENDYS GARCIA;1;0;<br>Ya es participante en la reservación;
+22/06/2020 02:17:02 pm - include;N/A;1;0;<br>Invitado No activo;
+22/06/2020 02:17:22 pm - include;N/A;1;0;<br>Invitado No activo;
+22/06/2020 02:17:22 pm - include;N/A;1;0;<br>Invitado No activo;
+22/06/2020 02:17:22 pm - include;N/A;1;0;<br>Invitado No activo;
+22/06/2020 02:17:22 pm - include;N/A;1;0;<br>Invitado No activo;
+22/06/2020 02:17:22 pm - include;N/A;1;0;<br>Invitado No activo;
+22/06/2020 02:18:02 pm - include;N/A;1;0;<br>Invitado No activo;
+22/06/2020 02:19:06 pm - include;N/A;1;0;<br>Invitado No activo;
+22/06/2020 02:19:26 pm - include;N/A;1;0;<br>Invitado No activo;
+22/06/2020 02:19:26 pm - include;N/A;1;0;<br>Invitado No activo;
+22/06/2020 02:19:27 pm - include;N/A;1;0;<br>Invitado No activo;
+22/06/2020 02:19:27 pm - include;N/A;1;0;<br>Invitado No activo;
+22/06/2020 02:19:27 pm - include;N/A;1;0;<br>Invitado No activo;
+22/06/2020 02:20:06 pm - include;N/A;1;0;<br>Invitado No activo;
+22/06/2020 02:22:41 pm - include;N/A;1;0;<br>Invitado No activo;
+22/06/2020 02:23:03 pm - include;N/A;1;0;<br>Invitado No activo;
+22/06/2020 02:23:04 pm - include;N/A;1;0;<br>Invitado No activo;
+22/06/2020 02:23:04 pm - include;N/A;1;0;<br>Invitado No activo;
+22/06/2020 02:23:04 pm - include;N/A;1;0;<br>Invitado No activo;
+22/06/2020 02:23:04 pm - include;N/A;1;0;<br>Invitado No activo;
+22/06/2020 02:23:41 pm - include;N/A;1;0;<br>Invitado No activo;
+22/06/2020 02:24:04 pm - include;N/A;1;0;<br>Invitado No activo;
+22/06/2020 02:24:04 pm - include;N/A;1;0;<br>Invitado No activo;
+22/06/2020 02:24:04 pm - include;N/A;1;0;<br>Invitado No activo;
+22/06/2020 02:28:05 pm - include;N/A;1;0;<br>Invitado No activo;
+22/06/2020 02:30:17 pm - include;GRENDYS GARCIA;1;0;<br>Ya es participante en la reservación;
+22/06/2020 02:33:30 pm - Deleted
+22/06/2020 02:42:07 pm - include;GRENDYS GARCIA;1;1;;
+22/06/2020 04:41:59 pm - include;ANA 1 ARANEO;1;1;;
+22/06/2020 04:43:41 pm - include;GRENDYS GARCIA;1;1;;
+22/06/2020 05:10:37 pm - include;ANA 1 ARANEO;1;1;;
+22/06/2020 05:11:40 pm - include;GRENDYS GARCIA;1;1;;
+22/06/2020 05:18:24 pm - include;ANA 1 ARANEO;1;1;;
+22/06/2020 05:19:57 pm - include;GRENDYS GARCIA;1;1;;
+22/06/2020 05:33:11 pm - include;ANA 1 ARANEO;1;1;;
+22/06/2020 05:34:30 pm - include;GRENDYS GARCIA;1;1;;
+22/06/2020 05:50:15 pm - include;ANA 1 ARANEO;1;1;;
+22/06/2020 05:51:29 pm - include;GRENDYS GARCIA;1;1;;
+22/06/2020 05:52:30 pm - include;GRENDYS GARCIA;1;0;<br>Ya es participante en la reservación;
+22/06/2020 06:03:46 pm - include;ANA 1 ARANEO;1;1;;
+22/06/2020 06:05:02 pm - include;GRENDYS GARCIA;1;1;;
+22/06/2020 06:24:39 pm - include;ANA 1 ARANEO;1;1;;
+22/06/2020 06:27:21 pm - include;GRENDYS GARCIA;1;1;;
+22/06/2020 07:40:00 pm - include;ANA 1 ARANEO;1;1;;
+22/06/2020 07:41:11 pm - include;GRENDYS GARCIA;1;1;;
+22/06/2020 08:13:17 pm - include;ANA 1 ARANEO;1;1;;
+22/06/2020 08:16:02 pm - include;GRENDYS GARCIA;1;1;;
+22/06/2020 08:25:20 pm - include;ANA 1 ARANEO;1;1;;
+22/06/2020 08:26:57 pm - include;GRENDYS GARCIA;1;1;;
+22/06/2020 08:41:23 pm - include;ANA 1 ARANEO;1;1;;
+22/06/2020 08:43:15 pm - include;GRENDYS GARCIA;1;1;;
+22/06/2020 08:54:32 pm - include;ANA 1 ARANEO;1;1;;
+22/06/2020 08:55:44 pm - include;GRENDYS GARCIA;1;1;;
+22/06/2020 09:05:39 pm - include;ANA 1 ARANEO;1;1;;
+22/06/2020 09:06:42 pm - include;GRENDYS GARCIA;1;1;;
+22/06/2020 09:27:59 pm - include;ANA 1 ARANEO;1;1;;
+22/06/2020 09:29:04 pm - include;GRENDYS GARCIA;1;1;;
+22/06/2020 09:34:17 pm - include;ANA 1 ARANEO;1;1;;
+22/06/2020 09:35:20 pm - include;ANA 1 ARANEO;1;0;<br>Ya es participante en la reservación;
+22/06/2020 09:35:26 pm - include;GRENDYS GARCIA;1;1;;
+22/06/2020 09:35:47 pm - include;GRENDYS GARCIA;1;0;<br>Máximo número de participantes permitidos: 4<br>Ya es participante en la reservación;
+22/06/2020 09:36:26 pm - include;GRENDYS GARCIA;1;0;<br>Máximo número de participantes permitidos: 4<br>Ya es participante en la reservación;
+22/06/2020 09:36:32 pm - include;GRENDYS GARCIA;1;0;<br>Máximo número de participantes permitidos: 4<br>Ya es participante en la reservación;
+22/06/2020 09:42:18 pm - include;ANA 1 ARANEO;1;1;;
+22/06/2020 09:43:43 pm - include;GRENDYS GARCIA;1;1;;
+22/06/2020 09:52:10 pm - include;ANA 1 ARANEO;1;1;;
+22/06/2020 09:53:21 pm - include;GRENDYS GARCIA;1;1;;
+22/06/2020 10:04:25 pm - include;ANA 1 ARANEO;1;1;;
+22/06/2020 10:05:32 pm - include;GRENDYS GARCIA;1;1;;
+23/06/2020 03:45:50 pm - include;ANA 1 ARANEO;1;1;;
+23/06/2020 03:46:54 pm - include;GRENDYS GARCIA;1;1;;
+24/06/2020 08:54:14 pm - include;ANA 1 ARANEO;1;1;;
+24/06/2020 08:55:22 pm - include;GRENDYS GARCIA;1;1;;
+25/06/2020 09:10:21 am - include;ANA 1 ARANEO;1;1;;
+25/06/2020 09:11:24 am - include;GRENDYS GARCIA;1;1;;
+25/06/2020 06:17:46 pm - include;GRENDYS GARCIA;1;0;<br>Máximo número de participantes permitidos: 4<br>Ya es participante en la reservación;
+25/06/2020 07:45:26 pm - Deleted
+25/06/2020 07:47:04 pm - include;GRENDYS GARCIA;1;1;;
+30/06/2020 05:33:13 pm - Deleted
+30/06/2020 05:34:17 pm - include;GRENDYS GARCIA;1;1;;
+30/06/2020 05:34:28 pm - include;GRENDYS GARCIA;1;0;<br>Ya es participante en la reservación;
+30/06/2020 05:35:15 pm - include;GRENDYS GARCIA;1;0;<br>Ya es participante en la reservación;
+30/06/2020 05:36:08 pm - include;GRENDYS GARCIA;1;0;<br>Ya es participante en la reservación;
+30/06/2020 05:42:55 pm - include;GRENDYS GARCIA;1;0;<br>Ya es participante en la reservación;
+30/06/2020 05:51:33 pm - include;N/A;1;0;<br>Invitado No activo;
+30/06/2020 05:53:48 pm - include;N/A;1;0;<br>Invitado No activo;
+30/06/2020 06:05:15 pm - Deleted
+30/06/2020 06:06:30 pm - include;GRENDYS GARCIA;1;1;;
+30/06/2020 06:23:34 pm - Deleted
+30/06/2020 06:24:38 pm - include;GRENDYS GARCIA;1;1;;
+30/06/2020 06:29:36 pm - Deleted
+30/06/2020 06:30:38 pm - include;GRENDYS GARCIA;1;1;;
+30/06/2020 06:31:23 pm - Deleted
+30/06/2020 06:32:26 pm - include;GRENDYS GARCIA;1;1;;
+30/06/2020 06:33:46 pm - include;GRENDYS GARCIA;1;0;<br>Máximo número de participantes permitidos: 2<br>Ya es participante en la reservación;
+30/06/2020 06:38:09 pm - Deleted
+30/06/2020 06:39:14 pm - include;GRENDYS GARCIA;1;1;;
+30/06/2020 06:39:24 pm - Deleted
+30/06/2020 06:42:00 pm - include;GRENDYS GARCIA;1;1;;
+08/07/2020 11:11:47 pm - include;N/A;1;0;<br>Invitado No activo;
+08/07/2020 11:16:06 pm - include;N/A;1;0;<br>Invitado No activo;
+08/07/2020 11:17:36 pm - include;N/A;1;0;<br>Invitado No activo;
+08/07/2020 11:18:56 pm - include;N/A;1;0;<br>Invitado No activo;
+08/07/2020 11:20:18 pm - include;N/A;1;0;<br>Invitado No activo;
+08/07/2020 11:24:15 pm - include;EDGAR EDMUNDO HERNANDEZ BOSSIO;0;0;<br>Accion 0930-0930 Inactiva ;
+08/07/2020 11:28:38 pm - include;ELIZABETH VALENCIA DE IRANZO;0;0;<br>Acción 0176-0176 presenta deuda  - Dirijase al Club para mayor informacion;
+08/07/2020 11:30:42 pm - include;GRENDYS GARCIA;1;1;;
+08/07/2020 11:33:13 pm - include;ANA ARANEO;1;1;;
+08/07/2020 11:35:56 pm - include;N/A;1;0;<br>Invitado No activo;
+08/07/2020 11:42:59 pm - include;Luca Araneo;0;1;;
+08/07/2020 11:52:21 pm - include;N/A;1;0;<br>Máximo número de participantes permitidos: 4<br>Invitado No activo;
+08/07/2020 11:52:38 pm - include;N/A;1;0;<br>Máximo número de participantes permitidos: 4<br>Invitado No activo;
+08/07/2020 11:54:42 pm - include;N/A;1;0;<br>Máximo número de participantes permitidos: 4<br>Invitado No activo;
+08/07/2020 11:57:18 pm - include;N/A;1;0;<br>Máximo número de participantes permitidos: 4<br>Invitado No activo;
+08/07/2020 11:58:53 pm - include;N/A;1;0;<br>Máximo número de participantes permitidos: 4<br>Invitado No activo;
+09/07/2020 12:00:42 am - include;N/A;1;0;<br>Máximo número de participantes permitidos: 4<br>Invitado No activo;
+09/07/2020 12:02:21 am - include;N/A;1;0;<br>Máximo número de participantes permitidos: 4<br>Invitado No activo;
+09/07/2020 09:58:16 am - Deleted
+09/07/2020 09:58:19 am - Deleted
+09/07/2020 09:59:48 am - include;ANA ARANEO;1;0;<br>Máximo número de participantes permitidos: 2<br>Máximo número de Invitados permitidos: 1;
+09/07/2020 10:31:34 am - Deleted
+09/07/2020 10:33:43 am - include;EDGAR EDMUNDO HERNANDEZ BOSSIO;0;0;<br>Accion 0930-0930 Inactiva ;
+09/07/2020 10:36:18 am - include;ELIZABETH VALENCIA DE IRANZO;0;0;<br>Acción 0176-0176 presenta deuda  - Dirijase al Club para mayor informacion;
+09/07/2020 10:39:41 am - include;FEDERICO ALBERTO MAYORCA LUGO;0;0;<br>Acción 0610-0610 presenta deuda  - Dirijase al Club para mayor informacion;
+09/07/2020 10:41:34 am - include;CARLOS CARLO ALVAREZ FERNANDEZ;0;0;<br>Acción 0724-0724 presenta deuda  - Dirijase al Club para mayor informacion;
+09/07/2020 10:44:24 am - include;FEDERICO ALBERTO MAYORCA LUGO;0;0;<br>Acción 0610-0610 presenta deuda  - Dirijase al Club para mayor informacion;
+09/07/2020 10:49:03 am - include;Guillermo MARIN ISTURIZ;0;1;;
+09/07/2020 12:05:26 pm - Deleted
+09/07/2020 12:07:32 pm - include;IBRAHIM ANTONIO GARCIA CARMONA;0;0;<br>Acción 0084-0084 presenta deuda  - Dirijase al Club para mayor informacion;
+09/07/2020 12:10:20 pm - include;JULIO CESAR VILLARREAL ABREU;0;0;<br>Acción 0693-0693 presenta deuda  - Dirijase al Club para mayor informacion;
+09/07/2020 12:17:49 pm - include;MARIANELA ACEDO DE BOULTON;0;0;<br>Acción 0553-0553 presenta deuda  - Dirijase al Club para mayor informacion;
+09/07/2020 12:20:48 pm - include;CARLOS ENRIQUE ANZOLA DIAZ;0;0;<br>Acción 0008-0008 presenta deuda  - Dirijase al Club para mayor informacion;
+09/07/2020 12:23:17 pm - include;HERNAN COROMOTO ANZOLA GIMENEZ;0;0;<br>Accion 0813-0813 Inactiva ;
+09/07/2020 12:25:38 pm - include;FEDERICO ALBERTO MAYORCA LUGO;0;0;<br>Acción 0610-0610 presenta deuda  - Dirijase al Club para mayor informacion;
+09/07/2020 12:28:43 pm - include;GRENDYS GARCIA;1;1;;
+09/07/2020 12:47:33 pm - Deleted
+09/07/2020 12:48:42 pm - include;GRENDYS GARCIA;1;1;;
+09/07/2020 12:53:13 pm - include;EDUARDO ARIAS;1;1;;
+09/07/2020 12:55:52 pm - include;LEONARDO GOMEZ;1;1;;
+09/07/2020 12:56:37 pm - Deleted
+09/07/2020 12:58:43 pm - include;Guillermo MARIN ISTURIZ;0;1;;
+09/07/2020 06:19:42 pm - Deleted
+09/07/2020 06:19:43 pm - Deleted
+09/07/2020 06:19:57 pm - Deleted
+09/07/2020 06:22:06 pm - include;Guillermo MARIN ISTURIZ;0;1;;
+09/07/2020 06:58:17 pm - include;Guillermo MARIN ISTURIZ;0;1;;
+09/07/2020 07:48:03 pm - include;GRENDYS GARCIA;1;1;;
+09/07/2020 07:49:15 pm - include;ANA ARANEO;1;1;;
+09/07/2020 07:50:41 pm - include;LEONARDO GOMEZ;1;1;;
+09/07/2020 07:51:25 pm - Deleted
+09/07/2020 07:53:49 pm - include;Guillermo MARIN ISTURIZ;0;1;;
+09/07/2020 09:16:41 pm - include;LEONARDO GOMEZ;1;1;;
+09/07/2020 09:32:39 pm - include;GRENDYS GARCIA;1;1;;
+09/07/2020 10:12:38 pm - include;GRENDYS GARCIA;1;1;;
+09/07/2020 11:57:48 pm - include;GRENDYS GARCIA;1;1;;
+10/07/2020 03:17:14 pm - Deleted
+10/07/2020 03:18:17 pm - include;N/A;1;0;<br>Invitado No activo;
+10/07/2020 06:40:08 pm - include;Guillermo MARIN ISTURIZ;0;1;;
+11/07/2020 03:27:07 pm - Deleted
+11/07/2020 03:29:13 pm - include;EDGAR EDMUNDO HERNANDEZ BOSSIO;0;0;<br>Accion 0930-0930 Inactiva ;
+11/07/2020 03:32:32 pm - include;ELIZABETH VALENCIA DE IRANZO;0;0;<br>Acción 0176-0176 presenta deuda  - Dirijase al Club para mayor informacion;
+11/07/2020 07:57:02 pm - include;Guillermo MARIN ISTURIZ;0;1;;
+11/07/2020 08:04:03 pm - include;Guillermo MARIN ISTURIZ;0;0;<br>Este participante ya está registrado;
+11/07/2020 08:07:21 pm - include;CARLOS  EDUARDO CATO CONTRERAS;0;0;<br>Este participante ya está registrado;
+11/07/2020 08:36:24 pm - include;CARLOS  EDUARDO CATO CONTRERAS;0;0;<br>Este participante ya está registrado;
+11/07/2020 08:40:27 pm - include;CARLOS  EDUARDO CATO CONTRERAS;0;0;<br>Este participante ya está registrado;
+11/07/2020 08:46:08 pm - include;CARLOS  EDUARDO CATO CONTRERAS;0;0;<br>Este participante ya está registrado;
+11/07/2020 08:47:43 pm - include;CARLOS  EDUARDO CATO CONTRERAS;0;0;<br>Este participante ya está registrado;
+11/07/2020 08:49:26 pm - include;CARLOS  EDUARDO CATO CONTRERAS;0;0;<br>Este participante ya está registrado;
+11/07/2020 08:56:04 pm - include;CARLOS  EDUARDO CATO CONTRERAS;0;0;<br>Este participante ya está registrado;
+11/07/2020 08:56:28 pm - include;CARLOS  EDUARDO CATO CONTRERAS;0;0;<br>Este participante ya está registrado;
+11/07/2020 09:03:07 pm - include;CARLOS  EDUARDO CATO CONTRERAS;0;0;<br>Este participante ya está registrado;
+11/07/2020 09:08:46 pm - include;ELIZABETH VALENCIA DE IRANZO;0;0;<br>Acción 0176-0176 presenta deuda  - Dirijase al Club para mayor informacion;
+11/07/2020 09:08:50 pm - include;ELIZABETH VALENCIA DE IRANZO;0;1;;
+11/07/2020 09:09:49 pm - include;ELIZABETH VALENCIA DE IRANZO;0;0;<br>Este participante ya está registrado;
+11/07/2020 09:17:36 pm - include;ELIZABETH VALENCIA DE IRANZO;0;0;<br>Este participante ya está registrado;
+11/07/2020 09:21:06 pm - include;ELIZABETH VALENCIA DE IRANZO;0;0;<br>Este participante ya está registrado;
+11/07/2020 09:24:56 pm - include;ELIZABETH VALENCIA DE IRANZO;0;0;<br>Este participante ya está registrado;
+11/07/2020 09:26:12 pm - include;ELIZABETH VALENCIA DE IRANZO;0;0;<br>Este participante ya está registrado;
+11/07/2020 09:28:06 pm - include;ELIZABETH VALENCIA DE IRANZO;0;0;<br>Este participante ya está registrado;
+11/07/2020 09:34:09 pm - include;JULIO CESAR VILLARREAL ABREU;0;1;;
+11/07/2020 09:38:13 pm - include;JULIO CESAR VILLARREAL ABREU;0;0;<br>Máximo número de participantes permitidos: 4<br>Este participante ya está registrado;
+11/07/2020 09:40:50 pm - include;JULIO CESAR VILLARREAL ABREU;0;0;<br>Máximo número de participantes permitidos: 4<br>Este participante ya está registrado;
+11/07/2020 09:42:47 pm - include;JULIO CESAR VILLARREAL ABREU;0;0;<br>Máximo número de participantes permitidos: 4<br>Este participante ya está registrado;
+11/07/2020 09:44:47 pm - include;JULIO CESAR VILLARREAL ABREU;0;0;<br>Máximo número de participantes permitidos: 4<br>Este participante ya está registrado;
+11/07/2020 09:47:45 pm - include;JULIO CESAR VILLARREAL ABREU;0;0;<br>Máximo número de participantes permitidos: 4<br>Este participante ya está registrado;
+11/07/2020 09:51:14 pm - include;JULIO CESAR VILLARREAL ABREU;0;0;<br>Máximo número de participantes permitidos: 4<br>Este participante ya está registrado;
+11/07/2020 09:54:23 pm - Deleted
+11/07/2020 09:56:53 pm - include;CARLOS ENRIQUE ANZOLA DIAZ;0;0;<br>Acción 0008-0008 presenta deuda  - Dirijase al Club para mayor informacion<br>Máximo número de participantes permitidos: 2<br>Máximo número de Socios permitidos: 2;
+11/07/2020 09:59:20 pm - include;JULIO CESAR VILLARREAL ABREU;0;0;<br>Máximo número de participantes permitidos: 2<br>Máximo número de Socios permitidos: 2;
+11/07/2020 10:01:12 pm - Deleted
+11/07/2020 10:01:29 pm - Deleted
+11/07/2020 10:03:19 pm - include;JULIO CESAR VILLARREAL ABREU;0;1;;
+11/07/2020 10:04:09 pm - include;CARLOS ENRIQUE ANZOLA DIAZ;0;0;<br>Acción 0008-0008 presenta deuda  - Dirijase al Club para mayor informacion<br>Máximo número de participantes permitidos: 2;
+11/07/2020 10:04:57 pm - Deleted
+11/07/2020 10:06:29 pm - include;CARLOS ENRIQUE ANZOLA DIAZ;0;0;<br>Acción 0008-0008 presenta deuda  - Dirijase al Club para mayor informacion;
+11/07/2020 10:07:15 pm - include;CARLOS ENRIQUE ANZOLA DIAZ;0;0;<br>Acción 0008-0008 presenta deuda  - Dirijase al Club para mayor informacion;
+11/07/2020 10:08:42 pm - include;CARLOS ENRIQUE ANZOLA DIAZ;0;1;;
+02/08/2020 08:33:38 pm - Deleted - SPValidacion: 
+02/08/2020 08:33:44 pm - include;ANA ARANEO;1;1;; - SPValidacion: {call CalcularParticipaciones(1,1,6973393)}--> Dia=0, Semana=0, Mes=0
+02/08/2020 08:33:49 pm - Deleted - SPValidacion: 
+02/08/2020 08:33:53 pm - include;GRENDYS GARCIA;1;1;; - SPValidacion: {call CalcularParticipaciones(1,1,13168383)}--> Dia=0, Semana=0, Mes=0
+02/08/2020 08:33:58 pm - include;ANA ARANEO;1;0;<br>Máximo número de participantes permitidos: 2<br>Máximo número de Invitados permitidos: 1; - SPValidacion: {call CalcularParticipaciones(1,1,6973393)}--> Dia=0, Semana=0, Mes=0
+02/08/2020 08:52:03 pm - Deleted - SPValidacion: 
+02/08/2020 08:52:07 pm - include;ANA ARANEO;1;1;; - SPValidacion: {call CalcularParticipaciones(1,1,6973393)}--> Dia=0, Semana=0, Mes=0
+02/08/2020 08:52:24 pm - Deleted - SPValidacion: 
+02/08/2020 08:52:36 pm - include;GRENDYS GARCIA;1;1;; - SPValidacion: {call CalcularParticipaciones(1,1,13168383)}--> Dia=0, Semana=0, Mes=0
+02/08/2020 08:53:34 pm - Deleted - SPValidacion: 
+02/08/2020 08:53:50 pm - include;GRENDYS GARCIA;1;1;; - SPValidacion: {call CalcularParticipaciones(1,1,13168383)}--> Dia=0, Semana=0, Mes=0
+02/08/2020 09:17:50 pm - Deleted - SPValidacion: 
+02/08/2020 09:17:54 pm - include;GRENDYS GARCIA;1;1;; - SPValidacion: {call CalcularParticipaciones(1,1,13168383)}--> Dia=0, Semana=0, Mes=0
+02/08/2020 09:22:35 pm - include;GRENDYS GARCIA;1;1;; - SPValidacion: {call CalcularParticipaciones(1,1,13168383)}--> Dia=0, Semana=60, Mes=60
+30/08/2020 06:54:00 pm - include;Luca Araneo;0;1;; - SPValidacion: {call CalcularParticipaciones(0,0,12422099)}--> Dia=0, Semana=0, Mes=0
+30/08/2020 06:54:04 pm - Deleted - SPValidacion: 
+07/09/2020 07:08:41 pm - include;TAEOH KIM;0;1;; - SPValidacion: {call CalcularParticipaciones(0,0,)}--> Dia=0, Semana=0, Mes=0
+07/09/2020 07:08:51 pm - Deleted - SPValidacion: 
+07/09/2020 07:08:53 pm - Deleted - SPValidacion: 
+07/09/2020 07:08:54 pm - Deleted - SPValidacion: 
+07/09/2020 07:08:55 pm - Deleted - SPValidacion: 
+07/09/2020 07:08:55 pm - Deleted - SPValidacion: 
+07/09/2020 07:08:57 pm - Deleted - SPValidacion: 
+07/09/2020 07:08:58 pm - Deleted - SPValidacion: 
+07/09/2020 07:08:58 pm - Deleted - SPValidacion: 
+07/09/2020 07:08:58 pm - Deleted - SPValidacion: 
+07/09/2020 07:09:03 pm - Deleted - SPValidacion: 
+07/09/2020 07:09:03 pm - Deleted - SPValidacion: 
+07/09/2020 07:09:03 pm - Deleted - SPValidacion: 
+07/09/2020 07:09:05 pm - Deleted - SPValidacion: 
+07/09/2020 07:09:05 pm - Deleted - SPValidacion: 
+07/09/2020 07:09:05 pm - Deleted - SPValidacion: 
+07/09/2020 07:09:08 pm - include;TAEOH KIM;0;0;<br>Este participante ya está registrado; - SPValidacion: {call CalcularParticipaciones(0,0,)}--> Dia=0, Semana=0, Mes=0
+07/09/2020 07:09:10 pm - include;TAEOH KIM;0;0;<br>Este participante ya está registrado; - SPValidacion: {call CalcularParticipaciones(0,0,)}--> Dia=0, Semana=0, Mes=0
+07/09/2020 07:09:12 pm - include;TAEOH KIM;0;0;<br>Este participante ya está registrado; - SPValidacion: {call CalcularParticipaciones(0,0,)}--> Dia=0, Semana=0, Mes=0
+07/09/2020 07:09:12 pm - Deleted - SPValidacion: 
+07/09/2020 07:09:13 pm - Deleted - SPValidacion: 
+07/09/2020 07:09:13 pm - Deleted - SPValidacion: 
+07/09/2020 07:09:26 pm - Deleted - SPValidacion: 
+07/09/2020 07:09:26 pm - Deleted - SPValidacion: 
+07/09/2020 07:09:56 pm - Deleted - SPValidacion: 
+07/09/2020 07:09:57 pm - Deleted - SPValidacion: 
+07/09/2020 07:09:57 pm - Deleted - SPValidacion: 
+07/09/2020 07:09:57 pm - Deleted - SPValidacion: 
+07/09/2020 07:09:57 pm - Deleted - SPValidacion: 
+07/09/2020 07:09:58 pm - Deleted - SPValidacion: 
+07/09/2020 07:20:09 pm - Deleted - SPValidacion: 
+07/09/2020 07:20:10 pm - Deleted - SPValidacion: 
+07/09/2020 07:20:14 pm - Deleted - SPValidacion: 
+07/09/2020 07:20:14 pm - Deleted - SPValidacion: 
+07/09/2020 07:20:17 pm - Deleted - SPValidacion: 
+07/09/2020 07:20:18 pm - Deleted - SPValidacion: 
+07/09/2020 07:20:19 pm - Deleted - SPValidacion: 
+07/09/2020 07:31:13 pm - include;CARLOS ENRIQUE ANZOLA DIAZ;0;1;; - SPValidacion: {call CalcularParticipaciones(0,0,11310275)}--> Dia=0, Semana=0, Mes=0
+07/09/2020 07:31:43 pm - include;FEDERICO ALBERTO MAYORCA LUGO;0;1;; - SPValidacion: {call CalcularParticipaciones(0,0,5536839)}--> Dia=0, Semana=0, Mes=0
+07/09/2020 07:32:05 pm - include;HERNAN COROMOTO ANZOLA GIMENEZ;0;0;<br>Máximo número de participantes permitidos: 4<br>Máximo número de Socios permitidos: 4; - SPValidacion: {call CalcularParticipaciones(0,0,2544992)}--> Dia=0, Semana=0, Mes=0
+07/09/2020 07:32:19 pm - include;HERNAN COROMOTO ANZOLA GIMENEZ;0;0;<br>Máximo número de participantes permitidos: 4<br>Máximo número de Socios permitidos: 4; - SPValidacion: {call CalcularParticipaciones(0,0,2544992)}--> Dia=0, Semana=0, Mes=0
+07/09/2020 07:32:24 pm - include;HERNAN COROMOTO ANZOLA GIMENEZ;0;0;<br>Máximo número de participantes permitidos: 4<br>Máximo número de Socios permitidos: 4; - SPValidacion: {call CalcularParticipaciones(0,0,2544992)}--> Dia=0, Semana=0, Mes=0
+07/09/2020 07:32:57 pm - include;HERNAN COROMOTO ANZOLA GIMENEZ;0;0;<br>Máximo número de participantes permitidos: 4<br>Máximo número de Socios permitidos: 4; - SPValidacion: {call CalcularParticipaciones(0,0,2544992)}--> Dia=0, Semana=0, Mes=0
+07/09/2020 07:33:39 pm - include;HERNAN COROMOTO ANZOLA GIMENEZ;0;0;<br>Máximo número de participantes permitidos: 4<br>Máximo número de Socios permitidos: 4; - SPValidacion: {call CalcularParticipaciones(0,0,2544992)}--> Dia=0, Semana=0, Mes=0
+07/09/2020 07:33:41 pm - include;HERNAN COROMOTO ANZOLA GIMENEZ;0;0;<br>Máximo número de participantes permitidos: 4<br>Máximo número de Socios permitidos: 4; - SPValidacion: {call CalcularParticipaciones(0,0,2544992)}--> Dia=0, Semana=0, Mes=0
+07/09/2020 07:33:41 pm - include;HERNAN COROMOTO ANZOLA GIMENEZ;0;0;<br>Máximo número de participantes permitidos: 4<br>Máximo número de Socios permitidos: 4; - SPValidacion: {call CalcularParticipaciones(0,0,2544992)}--> Dia=0, Semana=0, Mes=0
+07/09/2020 07:35:11 pm - include;CARLOS  EDUARDO CATO CONTRERAS;0;0;<br>Máximo número de participantes permitidos: 4<br>Máximo número de Socios permitidos: 4; - SPValidacion: {call CalcularParticipaciones(0,0,9963065)}--> Dia=0, Semana=0, Mes=0
+07/09/2020 07:35:13 pm - include;CARLOS  EDUARDO CATO CONTRERAS;0;0;<br>Máximo número de participantes permitidos: 4<br>Máximo número de Socios permitidos: 4; - SPValidacion: {call CalcularParticipaciones(0,0,9963065)}--> Dia=0, Semana=0, Mes=0
+07/09/2020 07:35:13 pm - include;CARLOS  EDUARDO CATO CONTRERAS;0;0;<br>Máximo número de participantes permitidos: 4<br>Máximo número de Socios permitidos: 4; - SPValidacion: {call CalcularParticipaciones(0,0,9963065)}--> Dia=0, Semana=0, Mes=0
+07/09/2020 07:35:13 pm - include;CARLOS  EDUARDO CATO CONTRERAS;0;0;<br>Máximo número de participantes permitidos: 4<br>Máximo número de Socios permitidos: 4; - SPValidacion: {call CalcularParticipaciones(0,0,9963065)}--> Dia=0, Semana=0, Mes=0
+07/09/2020 07:43:06 pm - include;TAEOH KIM;0;0;<br>Máximo número de participantes permitidos: 4<br>Máximo número de Socios permitidos: 4<br>Este participante ya está registrado; - SPValidacion: {call CalcularParticipaciones(0,0,)}--> Dia=0, Semana=0, Mes=0
+07/09/2020 07:47:41 pm - include;ZHOU YONG;1;0;<br>Máximo número de participantes permitidos: 4<br>Máximo número de Socios permitidos: 4<br>Máximo número de Invitados permitidos: 0 <br>Este participante no puede exceder el numero de partidas por día. <br>Este participante no puede exceder el numero de partidas por Semana. <br>Este participante no puede exceder el numero de partidas por Mes.; - SPValidacion: {call CalcularParticipaciones(0,1,10177238)}--> Dia=0, Semana=0, Mes=0
+07/09/2020 07:52:11 pm - include;ZHOU YONG;1;0;<br>Máximo número de participantes permitidos: 4<br>Máximo número de Socios permitidos: 4; - SPValidacion: {call CalcularParticipaciones(0,1,10177238)}--> Dia=0, Semana=0, Mes=0
+07/09/2020 07:52:17 pm - include;ZHOU YONG;1;0;<br>Máximo número de participantes permitidos: 4<br>Máximo número de Socios permitidos: 4; - SPValidacion: {call CalcularParticipaciones(0,1,10177238)}--> Dia=0, Semana=0, Mes=0
+07/09/2020 07:52:20 pm - include;ZHOU YONG;1;0;<br>Máximo número de participantes permitidos: 4<br>Máximo número de Socios permitidos: 4; - SPValidacion: {call CalcularParticipaciones(0,1,10177238)}--> Dia=0, Semana=0, Mes=0
+07/09/2020 07:53:02 pm - include;ZHOU YONG;1;0;<br>Máximo número de participantes permitidos: 3<br>Máximo número de Socios permitidos: 3; - SPValidacion: {call CalcularParticipaciones(0,1,10177238)}--> Dia=0, Semana=0, Mes=0
+07/09/2020 07:53:05 pm - include;ZHOU YONG;1;0;<br>Máximo número de participantes permitidos: 3<br>Máximo número de Socios permitidos: 3; - SPValidacion: {call CalcularParticipaciones(0,1,10177238)}--> Dia=0, Semana=0, Mes=0
+07/09/2020 07:53:05 pm - include;ZHOU YONG;1;0;<br>Máximo número de participantes permitidos: 3<br>Máximo número de Socios permitidos: 3; - SPValidacion: {call CalcularParticipaciones(0,1,10177238)}--> Dia=0, Semana=0, Mes=0
+07/09/2020 07:53:10 pm - include;ZHOU YONG;1;0;<br>Máximo número de participantes permitidos: 3<br>Máximo número de Socios permitidos: 3; - SPValidacion: {call CalcularParticipaciones(0,1,10177238)}--> Dia=0, Semana=0, Mes=0
+07/09/2020 07:53:10 pm - include;ZHOU YONG;1;0;<br>Máximo número de participantes permitidos: 3<br>Máximo número de Socios permitidos: 3; - SPValidacion: {call CalcularParticipaciones(0,1,10177238)}--> Dia=0, Semana=0, Mes=0
+07/09/2020 07:53:28 pm - include;ZHOU YONG;1;0;<br>Máximo número de participantes permitidos: 4<br>Máximo número de Socios permitidos: 4; - SPValidacion: {call CalcularParticipaciones(0,1,10177238)}--> Dia=0, Semana=0, Mes=0
+07/09/2020 07:53:29 pm - include;ZHOU YONG;1;0;<br>Máximo número de participantes permitidos: 4<br>Máximo número de Socios permitidos: 4; - SPValidacion: {call CalcularParticipaciones(0,1,10177238)}--> Dia=0, Semana=0, Mes=0
+07/09/2020 07:54:31 pm - Deleted - SPValidacion: 
+07/09/2020 07:54:45 pm - Deleted - SPValidacion: 
+07/09/2020 07:54:46 pm - include;ZHOU YONG;1;1;; - SPValidacion: {call CalcularParticipaciones(0,1,10177238)}--> Dia=0, Semana=0, Mes=0
+07/09/2020 07:55:18 pm - include;TAEOH KIM;0;0;<br>Este participante ya está registrado; - SPValidacion: {call CalcularParticipaciones(0,0,)}--> Dia=0, Semana=0, Mes=0
+07/09/2020 07:55:22 pm - include;CARLOS  EDUARDO CATO CONTRERAS;0;1;; - SPValidacion: {call CalcularParticipaciones(0,0,9963065)}--> Dia=0, Semana=0, Mes=0
+07/09/2020 07:55:43 pm - include;HERNAN COROMOTO ANZOLA GIMENEZ;0;0;<br>Máximo número de participantes permitidos: 4; - SPValidacion: {call CalcularParticipaciones(0,0,2544992)}--> Dia=0, Semana=0, Mes=0
+07/09/2020 07:55:48 pm - include;TAEOH KIM;0;0;<br>Máximo número de participantes permitidos: 4<br>Este participante ya está registrado; - SPValidacion: {call CalcularParticipaciones(0,0,)}--> Dia=0, Semana=0, Mes=0
+07/09/2020 07:59:01 pm - include;CARLOS  EDUARDO CATO CONTRERAS;0;0;<br>Máximo número de participantes permitidos: 4<br>Este participante ya está registrado; - SPValidacion: {call CalcularParticipaciones(0,0,9963065)}--> Dia=0, Semana=0, Mes=0
+07/09/2020 07:59:06 pm - Deleted - SPValidacion: 
+07/09/2020 07:59:08 pm - include;CARLOS  EDUARDO CATO CONTRERAS;0;1;; - SPValidacion: {call CalcularParticipaciones(0,0,9963065)}--> Dia=0, Semana=0, Mes=0
+07/09/2020 09:04:18 pm - Deleted - SPValidacion: 
+07/09/2020 09:04:19 pm - Deleted - SPValidacion: 
+07/09/2020 09:04:23 pm - Deleted - SPValidacion: 
+08/09/2020 12:05:58 am - Deleted - SPValidacion: 
+08/09/2020 12:06:02 am - Deleted - SPValidacion: 
+08/09/2020 12:06:05 am - Deleted - SPValidacion: 
+08/09/2020 12:06:08 am - Deleted - SPValidacion: 
+08/09/2020 12:06:25 am - group;10449398*Pro Golf#10841544*IBRAHIM ANTONIO GARCIA CARMONA#;; - SPValidacion: 
+08/09/2020 12:06:29 am - Deleted - SPValidacion: 
+08/09/2020 12:06:31 am - Deleted - SPValidacion: 
+08/09/2020 12:06:31 am - Deleted - SPValidacion: 
+08/09/2020 12:06:31 am - Deleted - SPValidacion: 
+08/09/2020 12:06:35 am - include;IBRAHIM ANTONIO GARCIA CARMONA;0;1;; - SPValidacion: {call CalcularParticipaciones(0,0,10841544)}--> Dia=0, Semana=0, Mes=0
+08/09/2020 12:06:42 am - Deleted - SPValidacion: 
+08/09/2020 12:06:58 am - Deleted - SPValidacion: 
+08/09/2020 12:06:59 am - Deleted - SPValidacion: 
+08/09/2020 12:07:00 am - Deleted - SPValidacion: 
+08/09/2020 12:07:00 am - Deleted - SPValidacion: 
+08/09/2020 12:07:11 am - group;10181761*Guillermo MARIN ISTURIZ#;; - SPValidacion: 
+08/09/2020 12:07:14 am - include;Guillermo MARIN ISTURIZ;0;0;<br>Máximo número de participantes permitidos: 4<br>Máximo número de Socios permitidos: 4; - SPValidacion: {call CalcularParticipaciones(0,0,10181761)}--> Dia=0, Semana=0, Mes=0
+08/09/2020 12:07:22 am - Deleted - SPValidacion: 
+08/09/2020 12:07:31 am - Deleted - SPValidacion: 
+08/09/2020 12:07:38 am - include;TAEOH KIM;0;0;<br>Máximo número de participantes permitidos: 4<br>Máximo número de Socios permitidos: 4<br>Este participante ya está registrado; - SPValidacion: {call CalcularParticipaciones(0,0,)}--> Dia=0, Semana=0, Mes=0
+08/09/2020 12:07:46 am - Deleted - SPValidacion: 
+08/09/2020 12:07:50 am - Deleted - SPValidacion: 
+08/09/2020 12:07:50 am - Deleted - SPValidacion: 
+08/09/2020 12:07:51 am - Deleted - SPValidacion: 
+08/09/2020 12:07:51 am - Deleted - SPValidacion: 
+08/09/2020 12:08:00 am - Deleted - SPValidacion: 
+08/09/2020 12:08:02 am - Deleted - SPValidacion: 
+08/09/2020 12:08:03 am - Deleted - SPValidacion: 
+08/09/2020 12:08:08 am - include;TAEOH KIM;0;0;<br>Máximo número de participantes permitidos: 4<br>Máximo número de Socios permitidos: 4<br>Este participante ya está registrado; - SPValidacion: {call CalcularParticipaciones(0,0,)}--> Dia=0, Semana=0, Mes=0
+08/09/2020 12:08:10 am - include;TAEOH KIM;0;0;<br>Máximo número de participantes permitidos: 4<br>Máximo número de Socios permitidos: 4<br>Este participante ya está registrado; - SPValidacion: {call CalcularParticipaciones(0,0,)}--> Dia=0, Semana=0, Mes=0
+08/09/2020 12:08:12 am - Deleted - SPValidacion: 
+08/09/2020 12:08:13 am - Deleted - SPValidacion: 
+08/09/2020 12:08:14 am - Deleted - SPValidacion: 
+08/09/2020 12:08:25 am - Deleted - SPValidacion: 
+08/09/2020 12:08:52 am - Deleted - SPValidacion: 
+08/09/2020 12:09:00 am - Deleted - SPValidacion: 
+08/09/2020 12:09:05 am - Deleted - SPValidacion: 
+08/09/2020 12:09:08 am - Deleted - SPValidacion: 
+08/09/2020 12:09:08 am - Deleted - SPValidacion: 
+08/09/2020 12:09:10 am - Deleted - SPValidacion: 
+08/09/2020 12:09:11 am - Deleted - SPValidacion: 
+08/09/2020 12:09:12 am - Deleted - SPValidacion: 
+08/09/2020 12:09:29 am - Deleted - SPValidacion: 
+08/09/2020 12:10:13 am - Deleted - SPValidacion: 
+08/09/2020 12:10:14 am - Deleted - SPValidacion: 
+08/09/2020 12:10:15 am - Deleted - SPValidacion: 
+08/09/2020 12:10:16 am - Deleted - SPValidacion: 
+08/09/2020 12:10:17 am - Deleted - SPValidacion: 
+08/09/2020 12:10:18 am - Deleted - SPValidacion: 
+08/09/2020 12:10:36 am - Deleted - SPValidacion: 
+08/09/2020 12:10:42 am - Deleted - SPValidacion: 
+08/09/2020 12:10:43 am - Deleted - SPValidacion: 
+08/09/2020 12:10:43 am - Deleted - SPValidacion: 
+08/09/2020 12:10:44 am - Deleted - SPValidacion: 
+08/09/2020 12:10:45 am - Deleted - SPValidacion: 
+08/09/2020 12:10:45 am - Deleted - SPValidacion: 
+08/09/2020 12:10:46 am - Deleted - SPValidacion: 
+08/09/2020 12:10:46 am - Deleted - SPValidacion: 
+08/09/2020 12:10:57 am - Deleted - SPValidacion: 
+08/09/2020 12:13:48 am - include;FEDERICO ALBERTO MAYORCA LUGO;0;1;; - SPValidacion: {call CalcularParticipaciones(0,0,5536839)}--> Dia=0, Semana=0, Mes=0
+08/09/2020 12:14:00 am - include;CARLOS CARLO ALVAREZ FERNANDEZ;0;1;; - SPValidacion: {call CalcularParticipaciones(0,0,11921216)}--> Dia=0, Semana=0, Mes=0
+08/09/2020 12:14:15 am - include;Guillermo MARIN ISTURIZ;0;0;<br>Máximo número de participantes permitidos: 4<br>Máximo número de Socios permitidos: 4; - SPValidacion: {call CalcularParticipaciones(0,0,10181761)}--> Dia=0, Semana=0, Mes=0
+08/09/2020 12:37:07 am - Deleted - SPValidacion: 
+08/09/2020 12:37:09 am - Deleted - SPValidacion: 
+08/09/2020 12:37:10 am - Deleted - SPValidacion: 
+08/09/2020 12:37:10 am - Deleted - SPValidacion: 
+08/09/2020 12:37:10 am - Deleted - SPValidacion: 
+08/09/2020 12:37:11 am - Deleted - SPValidacion: 
+08/09/2020 12:37:48 am - Deleted - SPValidacion: 
+08/09/2020 12:38:15 am - Deleted - SPValidacion: 
+08/09/2020 12:45:03 am - Deleted - SPValidacion: 
+08/09/2020 12:45:03 am - Deleted - SPValidacion: 
+08/09/2020 12:51:27 am - Deleted - SPValidacion: 
+08/09/2020 12:51:28 am - Deleted - SPValidacion: 
+08/09/2020 12:51:28 am - Deleted - SPValidacion: 
+08/09/2020 12:52:50 am - Deleted - SPValidacion: 
+08/09/2020 01:03:09 am - Deleted - SPValidacion: 
+08/09/2020 01:03:16 am - Deleted - SPValidacion: 
+08/09/2020 01:03:17 am - Deleted - SPValidacion: 
+08/09/2020 01:03:19 am - Deleted - SPValidacion: 
+08/09/2020 01:03:58 am - Deleted - SPValidacion: 
+08/09/2020 01:04:02 am - Deleted - SPValidacion: 
+08/09/2020 01:05:48 am - Deleted - SPValidacion: 
+08/09/2020 01:08:33 am - include;Guillermo MARIN ISTURIZ;0;1;; - SPValidacion: {call CalcularParticipaciones(0,0,10181761)}--> Dia=0, Semana=0, Mes=0
+08/09/2020 01:08:47 am - include;IBRAHIM ANTONIO GARCIA CARMONA;0;1;; - SPValidacion: {call CalcularParticipaciones(0,0,10841544)}--> Dia=0, Semana=0, Mes=0
+08/09/2020 01:21:31 am - Deleted - SPValidacion: 
+08/09/2020 01:21:33 am - Deleted - SPValidacion: 
+08/09/2020 01:21:33 am - Deleted - SPValidacion: 
+08/09/2020 01:21:33 am - Deleted - SPValidacion: 
+08/09/2020 01:21:53 am - Deleted - SPValidacion: 
+08/09/2020 07:33:49 am - Deleted - SPValidacion: 
+08/09/2020 07:33:49 am - Deleted - SPValidacion: 
+08/09/2020 07:33:49 am - Deleted - SPValidacion: 
+08/09/2020 07:33:49 am - Deleted - SPValidacion: 
+08/09/2020 08:12:02 am - Deleted - SPValidacion: 
+08/09/2020 08:12:03 am - Deleted - SPValidacion: 
+08/09/2020 08:12:03 am - Deleted - SPValidacion: 
+08/09/2020 09:04:02 am - include;TAEOH KIM;1;0;<br>Máximo número de Invitados permitidos: 0 <br>Este participante no puede exceder el numero de partidas por día. <br>Este participante no puede exceder el numero de partidas por Semana. <br>Este participante no puede exceder el numero de partidas por Mes.; - SPValidacion: {call CalcularParticipaciones(0,1,12407697)}--> Dia=0, Semana=0, Mes=0
+08/09/2020 09:05:11 am - include;Luca Araneo;0;1;; - SPValidacion: {call CalcularParticipaciones(0,0,12422099)}--> Dia=0, Semana=0, Mes=0
+08/09/2020 09:05:54 am - include;CARLOS  EDUARDO CATO CONTRERAS;0;1;; - SPValidacion: {call CalcularParticipaciones(0,0,9963065)}--> Dia=0, Semana=0, Mes=0
+08/09/2020 09:06:10 am - include;EDGAR EDMUNDO HERNANDEZ BOSSIO;0;1;; - SPValidacion: {call CalcularParticipaciones(0,0,11227205)}--> Dia=0, Semana=0, Mes=0
+08/09/2020 09:16:01 am - Deleted - SPValidacion: 
+08/09/2020 09:16:52 am - include;SANDRA GOMEZ;1;0;<br>Máximo número de Invitados permitidos: 0 <br>Este participante no puede exceder el numero de partidas por día. <br>Este participante no puede exceder el numero de partidas por Semana. <br>Este participante no puede exceder el numero de partidas por Mes.; - SPValidacion: {call CalcularParticipaciones(0,1,10080082)}--> Dia=0, Semana=0, Mes=0
+08/09/2020 10:48:54 am - include;GRENDYS GARCIA;1;0;<br>Máximo número de Invitados permitidos: 0 <br>Este participante no puede exceder el numero de partidas por día. <br>Este participante no puede exceder el numero de partidas por Semana. <br>Este participante no puede exceder el numero de partidas por Mes.; - SPValidacion: {call CalcularParticipaciones(0,1,13168383)}--> Dia=0, Semana=0, Mes=0
+08/09/2020 11:36:01 am - include;GRENDYS GARCIA;1;0;<br>Máximo número de Invitados permitidos: 0; - SPValidacion: {call CalcularParticipaciones(0,1,13168383)}--> Dia=0, Semana=0, Mes=0
+08/09/2020 11:36:18 am - include;GRENDYS GARCIA;1;1;; - SPValidacion: {call CalcularParticipaciones(0,1,13168383)}--> Dia=0, Semana=0, Mes=0
+10/09/2020 08:16:53 pm - include;CARLOS  EDUARDO CATO CONTRERAS;0;1;; - SPValidacion: {call CalcularParticipaciones(0,0,9963065)}--> Dia=0, Semana=1, Mes=1
+10/09/2020 08:17:04 pm - include;EDGAR EDMUNDO HERNANDEZ BOSSIO;0;1;; - SPValidacion: {call CalcularParticipaciones(0,0,11227205)}--> Dia=0, Semana=1, Mes=1
+10/09/2020 08:17:13 pm - Deleted - SPValidacion: 
+10/09/2020 08:18:23 pm - include;EDGAR EDMUNDO HERNANDEZ BOSSIO;0;1;; - SPValidacion: {call CalcularParticipaciones(0,0,11227205)}--> Dia=0, Semana=1, Mes=1
+10/09/2020 08:18:34 pm - include;ELIZABETH VALENCIA DE IRANZO;0;1;; - SPValidacion: {call CalcularParticipaciones(0,0,6702774)}--> Dia=0, Semana=0, Mes=0
+10/09/2020 08:25:38 pm - Deleted - SPValidacion: 
+10/09/2020 08:25:48 pm - include;EDUARDO ARIAS;1;1;; - SPValidacion: {call CalcularParticipaciones(0,1,10143012)}--> Dia=0, Semana=0, Mes=0
+10/09/2020 09:14:36 pm - include;EDUARDO ARIAS;1;0; <br>Este participante no puede exceder el numero de partidas por Semana. <br>Este participante no puede exceder el numero de partidas por Mes.; - SPValidacion: {call CalcularParticipaciones(0,1,10143012)}--> Dia=0, Semana=1, Mes=1
+10/09/2020 09:14:49 pm - include;LADISLAO ALEXI VARGA SUAREZ;1;1;; - SPValidacion: {call CalcularParticipaciones(0,1,10178452)}--> Dia=0, Semana=0, Mes=0
+10/09/2020 09:15:02 pm - include;MARIANELA ACEDO DE BOULTON;0;1;; - SPValidacion: {call CalcularParticipaciones(0,0,11566763)}--> Dia=0, Semana=0, Mes=0
+13/09/2020 07:37:33 pm - Deleted - SPValidacion: 
+13/09/2020 07:37:34 pm - Deleted - SPValidacion: 
+13/09/2020 07:37:40 pm - include;Luca Araneo;0;1;; - SPValidacion: {call CalcularParticipaciones(0,0,12422099)}--> Dia=0, Semana=0, Mes=0
+13/09/2020 08:32:25 pm - include;Soporte Sistemas LCC`;0;1;; - SPValidacion: {call CalcularParticipaciones(0,0,1111111)}--> Dia=0, Semana=0, Mes=0
+13/09/2020 09:03:43 pm - include;Luca Araneo;0;1;; - SPValidacion: {call CalcularParticipaciones(0,0,12422099)}--> Dia=0, Semana=0, Mes=0
+13/09/2020 09:03:47 pm - include;Soporte Sistemas LCC`;0;1;; - SPValidacion: {call CalcularParticipaciones(0,0,1111111)}--> Dia=0, Semana=0, Mes=0
+13/09/2020 09:06:03 pm - include;Luca Araneo;0;1;; - SPValidacion: {call CalcularParticipaciones(0,0,12422099)}--> Dia=0, Semana=0, Mes=0
+13/09/2020 09:06:07 pm - include;Soporte Sistemas LCC`;0;1;; - SPValidacion: {call CalcularParticipaciones(0,0,1111111)}--> Dia=0, Semana=0, Mes=0
+13/09/2020 09:09:31 pm - include;Soporte Sistemas LCC`;0;1;; - SPValidacion: {call CalcularParticipaciones(0,0,1111111)}--> Dia=0, Semana=0, Mes=0
+13/09/2020 09:11:00 pm - include;Pro Golf;0;1;; - SPValidacion: {call CalcularParticipaciones(0,0,7444908)}--> Dia=0, Semana=0, Mes=0
+13/09/2020 09:21:59 pm - include;Soporte Sistemas LCC`;0;1;; - SPValidacion: {call CalcularParticipaciones(0,0,1111111)}--> Dia=0, Semana=0, Mes=0
+13/09/2020 09:22:14 pm - include;Pro Golf;0;1;; - SPValidacion: {call CalcularParticipaciones(0,0,7444908)}--> Dia=0, Semana=0, Mes=0
+13/09/2020 09:26:52 pm - include;Soporte Sistemas LCC`;0;1;; - SPValidacion: {call CalcularParticipaciones(0,0,1111111)}--> Dia=0, Semana=0, Mes=0
+13/09/2020 09:27:09 pm - include;Pro Golf;0;1;; - SPValidacion: {call CalcularParticipaciones(0,0,7444908)}--> Dia=0, Semana=0, Mes=0
+13/09/2020 09:53:09 pm - include;Soporte Sistemas LCC`;0;1;; - SPValidacion: {call CalcularParticipaciones(0,0,1111111)}--> Dia=0, Semana=0, Mes=0
+13/09/2020 09:53:23 pm - include;Pro Golf;0;1;; - SPValidacion: {call CalcularParticipaciones(0,0,7444908)}--> Dia=0, Semana=0, Mes=0
+13/09/2020 10:13:35 pm - include;Soporte Sistemas LCC`;0;1;; - SPValidacion: {call CalcularParticipaciones(0,0,1111111)}--> Dia=0, Semana=0, Mes=0
+13/09/2020 10:13:49 pm - include;Pro Golf;0;1;; - SPValidacion: {call CalcularParticipaciones(0,0,7444908)}--> Dia=0, Semana=0, Mes=0
+13/09/2020 10:15:45 pm - include;Pro Golf;0;1;; - SPValidacion: {call CalcularParticipaciones(0,0,7444908)}--> Dia=0, Semana=0, Mes=0
+13/09/2020 10:15:49 pm - include;Soporte Sistemas LCC`;0;1;; - SPValidacion: {call CalcularParticipaciones(0,0,1111111)}--> Dia=0, Semana=0, Mes=0
+13/09/2020 10:18:18 pm - include;Pro Golf;0;1;; - SPValidacion: {call CalcularParticipaciones(0,0,7444908)}--> Dia=0, Semana=0, Mes=0
+13/09/2020 10:18:22 pm - include;Soporte Sistemas LCC`;0;1;; - SPValidacion: {call CalcularParticipaciones(0,0,1111111)}--> Dia=0, Semana=0, Mes=0
+13/09/2020 10:20:40 pm - include;Soporte Sistemas LCC`;0;1;; - SPValidacion: {call CalcularParticipaciones(0,0,1111111)}--> Dia=0, Semana=0, Mes=0
+13/09/2020 10:20:52 pm - include;Pro Golf;0;1;; - SPValidacion: {call CalcularParticipaciones(0,0,7444908)}--> Dia=0, Semana=0, Mes=0
+13/09/2020 10:22:54 pm - include;Soporte Sistemas LCC`;0;1;; - SPValidacion: {call CalcularParticipaciones(0,0,1111111)}--> Dia=0, Semana=0, Mes=0
+13/09/2020 10:23:26 pm - include;Pro Golf;0;1;; - SPValidacion: {call CalcularParticipaciones(0,0,7444908)}--> Dia=0, Semana=0, Mes=0
+13/09/2020 10:25:34 pm - include;Pro Golf;0;1;; - SPValidacion: {call CalcularParticipaciones(0,0,7444908 )}--> Dia=0, Semana=0, Mes=0
+13/09/2020 10:25:39 pm - include;Soporte Sistemas LCC`;0;1;; - SPValidacion: {call CalcularParticipaciones(0,0,1111111)}--> Dia=0, Semana=0, Mes=0
+13/09/2020 10:34:59 pm - include;Pro Golf;0;1;; - SPValidacion: {call CalcularParticipaciones(0,0,7444908 )}--> Dia=0, Semana=0, Mes=0
+13/09/2020 10:35:12 pm - include;Soporte Sistemas LCC`;0;1;; - SPValidacion: {call CalcularParticipaciones(0,0,1111111)}--> Dia=0, Semana=0, Mes=0
+13/09/2020 10:40:52 pm - include;Pro Golf;0;1;; - SPValidacion: {call CalcularParticipaciones(0,0,7444908 )}--> Dia=0, Semana=0, Mes=0
+13/09/2020 10:40:57 pm - include;Soporte Sistemas LCC`;0;1;; - SPValidacion: {call CalcularParticipaciones(0,0,1111111)}--> Dia=0, Semana=0, Mes=0
+14/09/2020 09:25:57 am - include;EDGAR EDMUNDO HERNANDEZ BOSSIO;0;1;; - SPValidacion: {call CalcularParticipaciones(0,0,11227205)}--> Dia=0, Semana=0, Mes=0
+14/09/2020 09:26:04 am - group;5536839*FEDERICO ALBERTO MAYORCA LUGO#;; - SPValidacion: 
+14/09/2020 09:26:14 am - include;FEDERICO ALBERTO MAYORCA LUGO;0;1;; - SPValidacion: {call CalcularParticipaciones(0,0,5536839)}--> Dia=0, Semana=0, Mes=0
+14/09/2020 09:26:20 am - Deleted - SPValidacion: 
+14/09/2020 09:26:26 am - group;5536839*FEDERICO ALBERTO MAYORCA LUGO#;; - SPValidacion: 
+14/09/2020 09:26:28 am - include;FEDERICO ALBERTO MAYORCA LUGO;0;1;; - SPValidacion: {call CalcularParticipaciones(0,0,5536839)}--> Dia=0, Semana=0, Mes=0
+14/09/2020 09:26:41 am - Deleted - SPValidacion: 
+14/09/2020 09:26:42 am - Deleted - SPValidacion: 
+14/09/2020 09:31:11 am - group;5536839*FEDERICO ALBERTO MAYORCA LUGO#;; - SPValidacion: 
+14/09/2020 09:31:13 am - include;FEDERICO ALBERTO MAYORCA LUGO;0;1;; - SPValidacion: {call CalcularParticipaciones(0,0,5536839)}--> Dia=0, Semana=0, Mes=0
+14/09/2020 09:31:26 am - group;11566763*MARIANELA ACEDO DE BOULTON#;; - SPValidacion: 
+14/09/2020 09:31:27 am - include;MARIANELA ACEDO DE BOULTON;0;1;; - SPValidacion: {call CalcularParticipaciones(0,0,11566763)}--> Dia=0, Semana=0, Mes=0
+14/09/2020 09:31:40 am - group;6702774*ELIZABETH VALENCIA DE IRANZO#;; - SPValidacion: 
+14/09/2020 09:31:41 am - include;ELIZABETH VALENCIA DE IRANZO;0;1;; - SPValidacion: {call CalcularParticipaciones(0,0,6702774)}--> Dia=0, Semana=0, Mes=0
+14/09/2020 09:31:49 am - include;GRENDYS GARCIA;1;0;<br>Máximo número de participantes permitidos: 4<br>Máximo número de Socios permitidos: 4; - SPValidacion: {call CalcularParticipaciones(0,1,13168383)}--> Dia=0, Semana=0, Mes=0
+14/09/2020 09:31:58 am - Deleted - SPValidacion: 
+14/09/2020 09:31:59 am - include;GRENDYS GARCIA;1;1;; - SPValidacion: {call CalcularParticipaciones(0,1,13168383)}--> Dia=0, Semana=0, Mes=0
+14/09/2020 09:32:07 am - Deleted - SPValidacion: 
+14/09/2020 09:32:10 am - include;ELIZABETH VALENCIA DE IRANZO;0;1;; - SPValidacion: {call CalcularParticipaciones(0,0,6702774 )}--> Dia=0, Semana=0, Mes=0
+14/09/2020 09:33:42 am - Deleted - SPValidacion: 
+14/09/2020 09:33:46 am - Deleted - SPValidacion: 
+14/09/2020 09:33:49 am - Deleted - SPValidacion: 
+14/09/2020 09:33:57 am - include;GRENDYS GARCIA;1;0;<br>Máximo número de Invitados permitidos: 0 <br>Este participante no puede exceder el numero de partidas por día. <br>Este participante no puede exceder el numero de partidas por Semana. <br>Este participante no puede exceder el numero de partidas por Mes.; - SPValidacion: {call CalcularParticipaciones(0,1,13168383)}--> Dia=0, Semana=0, Mes=0
+14/09/2020 09:34:05 am - include;ELIZABETH VALENCIA DE IRANZO;0;1;; - SPValidacion: {call CalcularParticipaciones(0,0,6702774)}--> Dia=0, Semana=0, Mes=0
+14/09/2020 09:34:12 am - include;ANA ARANEO;1;0;<br>Máximo número de participantes permitidos: 4<br>Máximo número de Socios permitidos: 4<br>Máximo número de Invitados permitidos: 0 <br>Este participante no puede exceder el numero de partidas por día. <br>Este participante no puede exceder el numero de partidas por Semana. <br>Este participante no puede exceder el numero de partidas por Mes.; - SPValidacion: {call CalcularParticipaciones(0,1,6973393)}--> Dia=0, Semana=0, Mes=0
+14/09/2020 09:34:39 am - Deleted - SPValidacion: 
+14/09/2020 09:34:40 am - Deleted - SPValidacion: 
+14/09/2020 09:34:41 am - Deleted - SPValidacion: 
+14/09/2020 10:01:00 am - include;CARLOS GUILLERMO MAYORCA LUGO;0;1;; - SPValidacion: {call CalcularParticipaciones(0,0,6247970)}--> Dia=0, Semana=0, Mes=0
+14/09/2020 10:01:10 am - include;Guillermo MARIN ISTURIZ;0;1;; - SPValidacion: {call CalcularParticipaciones(0,0,10181761)}--> Dia=0, Semana=0, Mes=0
+14/09/2020 10:01:35 am - include;HERNANDO JOSE ALFONZO CESTARI;0;1;; - SPValidacion: {call CalcularParticipaciones(0,0,5302404)}--> Dia=0, Semana=0, Mes=0
+14/09/2020 10:02:04 am - include;N/A;1;0;<br>Máximo número de participantes permitidos: 4<br>Máximo número de Socios permitidos: 4<br>Máximo número de Invitados permitidos: 0 <br>Este participante no puede exceder el numero de partidas por día. <br>Este participante no puede exceder el numero de partidas por Semana. <br>Este participante no puede exceder el numero de partidas por Mes.<br>Invitado No activo; - SPValidacion: {call CalcularParticipaciones(0,1,fernando)}--> Dia=0, Semana=0, Mes=0
+14/09/2020 10:02:16 am - Deleted - SPValidacion: 
+14/09/2020 10:02:20 am - include;N/A;1;0;<br>Máximo número de Invitados permitidos: 0 <br>Este participante no puede exceder el numero de partidas por día. <br>Este participante no puede exceder el numero de partidas por Semana. <br>Este participante no puede exceder el numero de partidas por Mes.<br>Invitado No activo; - SPValidacion: {call CalcularParticipaciones(0,1,fernando)}--> Dia=0, Semana=0, Mes=0
+14/09/2020 10:02:31 am - include;N/A;1;0;<br>Máximo número de Invitados permitidos: 0 <br>Este participante no puede exceder el numero de partidas por día. <br>Este participante no puede exceder el numero de partidas por Semana. <br>Este participante no puede exceder el numero de partidas por Mes.<br>Invitado No activo; - SPValidacion: {call CalcularParticipaciones(0,1,fernando)}--> Dia=0, Semana=0, Mes=0
+14/09/2020 10:02:39 am - include;N/A;1;0;<br>Máximo número de Invitados permitidos: 0 <br>Este participante no puede exceder el numero de partidas por día. <br>Este participante no puede exceder el numero de partidas por Semana. <br>Este participante no puede exceder el numero de partidas por Mes.<br>Invitado No activo; - SPValidacion: {call CalcularParticipaciones(0,1,carlos)}--> Dia=0, Semana=0, Mes=0
+14/09/2020 10:02:42 am - include;N/A;1;0;<br>Máximo número de Invitados permitidos: 0 <br>Este participante no puede exceder el numero de partidas por día. <br>Este participante no puede exceder el numero de partidas por Semana. <br>Este participante no puede exceder el numero de partidas por Mes.<br>Invitado No activo; - SPValidacion: {call CalcularParticipaciones(0,1,carlos)}--> Dia=0, Semana=0, Mes=0
+14/09/2020 10:03:05 am - include;HERNANDO JOSE ALFONZO CESTARI;0;1;; - SPValidacion: {call CalcularParticipaciones(0,0,5302404)}--> Dia=0, Semana=0, Mes=0
+14/09/2020 10:03:39 am - Deleted - SPValidacion: 
+14/09/2020 10:03:52 am - group;10181761*Guillermo MARIN ISTURIZ#;; - SPValidacion: 
+14/09/2020 10:04:05 am - include;N/A;1;0;<br>Máximo número de Invitados permitidos: 0 <br>Este participante no puede exceder el numero de partidas por día. <br>Este participante no puede exceder el numero de partidas por Semana. <br>Este participante no puede exceder el numero de partidas por Mes.<br>Invitado No activo; - SPValidacion: {call CalcularParticipaciones(0,1,guillermo)}--> Dia=0, Semana=0, Mes=0
+14/09/2020 10:04:19 am - group;10181761*Guillermo MARIN ISTURIZ#;; - SPValidacion: 
+14/09/2020 10:04:24 am - include;Guillermo MARIN ISTURIZ;0;1;; - SPValidacion: {call CalcularParticipaciones(0,0,10181761)}--> Dia=0, Semana=0, Mes=0
+14/09/2020 09:07:33 pm - group;7444908*Pro Golf#10841544*IBRAHIM ANTONIO GARCIA CARMONA#;; - SPValidacion: 
+14/09/2020 09:11:46 pm - group;12422099*Luca Araneo#9963065*CARLOS  EDUARDO CATO CONTRERAS#;; - SPValidacion: 
+14/09/2020 09:12:05 pm - group;11227205*EDGAR EDMUNDO HERNANDEZ BOSSIO#;; - SPValidacion: 
+14/09/2020 09:12:16 pm - group;11227205*EDGAR EDMUNDO HERNANDEZ BOSSIO#;; - SPValidacion: 
+14/09/2020 09:12:50 pm - group;6702774*ELIZABETH VALENCIA DE IRANZO#;; - SPValidacion: 
+14/09/2020 09:39:27 pm - group;6702774*ELIZABETH VALENCIA DE IRANZO#;; - SPValidacion: 
+14/09/2020 09:39:34 pm - group;5536839*FEDERICO ALBERTO MAYORCA LUGO#;; - SPValidacion: 
+14/09/2020 09:39:48 pm - group;6702774*ELIZABETH VALENCIA DE IRANZO#;; - SPValidacion: 
+14/09/2020 09:40:05 pm - group;11227205*EDGAR EDMUNDO HERNANDEZ BOSSIO#;; - SPValidacion: 

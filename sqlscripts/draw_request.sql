@@ -1,0 +1,1 @@
+ALTER TABLE draw_requests ADD package_type_id INT NULL;

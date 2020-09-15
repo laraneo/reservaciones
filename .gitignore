@@ -1,0 +1,5 @@
+/application/vendor
+/application/.vs
+/application/storage/framework
+/application/bootstrap/*
+config.inc
