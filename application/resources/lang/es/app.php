@@ -66,7 +66,8 @@ return [
 
     'step_three_title' => 'Seleccionar Servicios Adicionales',
     'step_three_subtitle' => 'Agregue cualquier servicio adicional si lo desea.',
-    'step_three_button' => 'Finaliza la reserva',
+    'step_three_button' => 'Siguiente',
+	/*'step_three_button' => 'Finaliza la reserva',*/
 
     'final_step_title' => 'Finaliza la reserva',
     'final_step_subtitle' => 'Por favor, revise todas las opciones y finalice su reserva.',

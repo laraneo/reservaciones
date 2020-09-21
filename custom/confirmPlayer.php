@@ -1,3 +1,7 @@
+<?php
+	//ob_start();
+	$urlBase = "http://portal.clublagunita.com:8084";
+?>
 
 <!DOCTYPE html>
 <html lang="es">
@@ -19,7 +23,7 @@
 
     <!-- Title -->
     <title>Reservacion de Partidas</title>
-    <link rel="stylesheet" href="../css/app.css">
+    <link rel="stylesheet" href="<?php echo $urlBase; ?>/css/app.css">
     <link rel="icon" href="../favicon.png">
         <!-- GENERATED CUSTOM COLORS -->
 <style>
@@ -58,7 +62,7 @@
     }
 </style>    <style>
         .promo {
-            background: linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.7)),rgba(0,0,0,.7) url('../images/promoClosed.jpg') no-repeat;
+            background: linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.7)),rgba(0,0,0,.7) url('<?php echo $urlBase; ?>/images/promoClosed.jpg') no-repeat;
             background-size: cover;
             background-position: center;
         }
@@ -67,7 +71,7 @@
 <body style="background-color: #F2F2F2;">
 
 <nav class="navbar navbar-light navbar-expand-lg bg-primary top-nav">
-    <a class="navbar-brand" href="../" style="color:#FFFFFF;"><img src="../images/logo-light.png" height="40"></a>
+    <a class="navbar-brand" href="../" style="color:#FFFFFF;"><img src="<?php echo $urlBase; ?>/images/logo-light.png" height="40"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -95,6 +99,9 @@
                     <h1 class="text-dark"><strong></strong></h1>	
 
 					<?php
+					
+					$notificar = false;
+					$outPutEmail = "<center>";
 
 					// Show all URL parameters (and
 					// all form data submitted via the 
@@ -206,7 +213,9 @@
 							SELECT p.confirmed,p.doc_id, 
 							CASE p.player_type WHEN 0 THEN u.first_name ELSE g.first_name END AS first_name,
 							CASE p.player_type WHEN 0 THEN u.last_name ELSE g.last_name END AS last_name,
-							b.[booking_date], b.[booking_time] 
+							CASE p.player_type WHEN 0 THEN u.phone_number ELSE g.phone_number END AS phone_number,
+							CASE p.player_type WHEN 0 THEN u.email ELSE g.email END AS email,
+							b.[booking_date], b.[booking_time] , b.locator, b.id as booking_id
 							FROM booking_players p
 							JOIN bookings b ON p.[booking_id]=b.id 
 							LEFT JOIN guests g ON g.doc_id=p.doc_id
@@ -231,30 +240,55 @@
 										if ($cant ==1)
 										{
 											print "                    <p style=\"text-align: center;\">\n";
-											print "                        <img src=\"../images/icon-booking-completed.png\">\n";
+											/*print "                        <img src=\"../images/icon-booking-completed.png\">\n";*/
+											print "                        <img src=\"" . $urlBase . "/images/icon-booking-completed.png\">\n";
 											print "                    </p>\n";
 											print "                    <br>\n";
 											print "                    <h1 class=\"text-dark\"><strong>Recuerde estar 15 minutos <br>antes en el Starter</strong></h1>\n";
 											print "                    <br>\n";
-											print "                    <p class=\"text-muted\"></p>";																			
+											print "                    <p class=\"text-muted\"></p>";	
+
+											$outPutEmail = $outPutEmail . "<img src=\"" . $urlBase . "/images/icon-booking-completed.png\">\n";
+											$outPutEmail = $outPutEmail . "<h1><strong>Recuerde estar 15 minutos <br>antes en el Starter</strong></h1>\n";
 										}
 								
 										$booking_date = $row["booking_date"];
 										$doc_id = $row["doc_id"];
+										$locator = $row["locator"];
 										// $doc_id = $row["p.doc_id"];
+										$booking_id = $row["booking_id"];
+										$phone_number = $row["phone_number"];
+										$email = $row["email"];
 										
+										echo "Localizador<br>";
+										echo "<b><h1><font color='0000ff'>" . $locator . "</font></h1></b><br><br>";
+										
+										$outPutEmail = $outPutEmail . "Localizador<br>";
+										$outPutEmail = $outPutEmail . "<b><h1><font color='0000ff'>" . $locator . "</font></h1></b><br><br>";
 										
 										if ($row["confirmed"] == 0) 
+										{
 											echo "Confirmacion de participante exitosa<br>";
+											$notificar = true;
+										}
 										else if ($row["confirmed"] == 1)
+										{
 											echo "<font color='ff0000'>Participante ya estaba confirmado</font><br>";
+											$notificar = true;
+										}
 										else if ($row["confirmed"] == -1)
 											echo "Participante ya habia sido rechazado por otra confirmacion previa el mismo dia<br>";
 										//echo $row["confirmed"] ." - id: " . $row["doc_id"]. " - Nombre: " . $row["first_name"]. " " . $row["last_name"]. "<br>";
 										
 										echo  $row["first_name"]. " " . $row["last_name"]. "<br>";
-											echo "<b>	Fecha: "  .  $row["booking_date"] . "</b><br/>";
-											echo "	<b>Hora: "  .  $row["booking_time"] .  "</b><br/>";
+										echo "<b>	Fecha: "  .  $row["booking_date"] . "</b><br/>";
+										echo "	<b>Hora: "  .  $row["booking_time"] .  "</b><br/>";
+										
+										
+										$outPutEmail = $outPutEmail . $row["first_name"]. " " . $row["last_name"]. "<br>";
+										$outPutEmail = $outPutEmail . "<b>Fecha: "  .  $row["booking_date"] . "</b><br/>";
+										$outPutEmail = $outPutEmail . "<b>Hora: "  .  $row["booking_time"] .  "</b><br/>";
+										
 									}
 									
 									$sql="UPDATE booking_players SET confirmed=1,confirmed_at=GETDATE() WHERE token = '" . $token . "' and confirmed=0";
@@ -317,7 +351,49 @@
         </div>
     </footer>
 
-<script src="../js/jquery-3.1.1.min.js"></script>
-<script src="../js/app.js"></script>
+<script src="<?php echo $urlBase; ?>/js/jquery-3.1.1.min.js"></script>
+<script src="<?php echo $urlBase; ?>/js/app.js"></script>
+
+
+
+<?php
+	
+	$outPutEmail = $outPutEmail . "</center>";
+	//$outPutEmail = ob_get_contents();
+	//ob_end_clean();
+	//echo $outPutEmail;
+	
+	
+	//enviar notificacion al participante por email
+	if ($notificar)
+	{
+		if ($email != "")
+		{
+			$cabeceras  = 'MIME-Version: 1.0' . "\r\n";
+			$cabeceras .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+			
+			$cabeceras .= 'From: Reservaciones <reservaciones.lcc@gmail.com>' . "\r\n" ;
+			//$cabeceras .= 'From: Tickets Abiertos <webmaster@avaytec.com>' . "\r\n" . "CC: nortiz@avaytec.com";
+
+			$date = date('m/d/Y h:i:s a', time());
+			//$para = "laraneo@gmail.com";
+			$para = $email;
+			$titulo = "Su reserva Nro# " . $booking_id;
+			//$mensaje = $this->buildHTMLMessage2();
+			$mensaje = $outPutEmail;
+			
+			//echo date('m/d/Y h:i:s a', time()) . "<br>";
+			//echo $mensaje . "<br>";
+			
+			if (mail($para, $titulo, $mensaje, $cabeceras)) {
+				//echo "Email successfully sent to $to_email...";
+			} else {
+				echo "Email sending failed...";
+			}
+		}
+	}
+
+?>
+
 </body>
 </html>
