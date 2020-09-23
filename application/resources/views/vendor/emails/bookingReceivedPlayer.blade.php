@@ -579,7 +579,7 @@
 
 																Ha sido seleccionado por 
 																{{ $customer_first_name }} {{ $customer_last_name }} 
-																para participar en una partida de golf
+																para participar en una partida 
 																el dia
 																{{ $booking_date }}
 																{{ $booking_time }}
