@@ -566,7 +566,15 @@
                 },
                 complete: function () {
                     $('#slots_loader').addClass('d-none');
-                }
+                },
+                error: function(XMLHttpRequest, textStatus, errorThrown) { 
+                    $('#slots_loader').removeClass('d-none');
+                    $('#package-type').empty();
+                    $('#selected-package-type').empty();
+                    $('#time-package-type').empty();
+                    $('#package-duration').val('');
+                    $('#tennis_slot').val('');
+                } 
             });
         }
     }
@@ -607,7 +615,15 @@
                             },
                             complete: function () {
                                 $('#slots_loader').addClass('d-none');
-                            }
+                            },
+                            error: function(XMLHttpRequest, textStatus, errorThrown) { 
+                                $('#slots_loader').removeClass('d-none');
+                                $('#package-type').empty();
+                                $('#selected-package-type').empty();
+                                $('#time-package-type').empty();
+                                $('#package-duration').val('');
+                                $('#tennis_slot').val('');
+                            } 
                         });
                     },
                 }); 
@@ -645,7 +661,15 @@
             },
             complete: function () {
                 $('#slots_loader').addClass('d-none');
-            }
+            },
+            error: function(XMLHttpRequest, textStatus, errorThrown) { 
+                $('#slots_loader').removeClass('d-none');
+                $('#package-type').empty();
+                $('#selected-package-type').empty();
+                $('#time-package-type').empty();
+                $('#package-duration').val('');
+                $('#tennis_slot').val('');
+            } 
         });
     });
 
