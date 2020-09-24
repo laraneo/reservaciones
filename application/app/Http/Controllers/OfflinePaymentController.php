@@ -98,7 +98,8 @@ class OfflinePaymentController extends Controller
 				$package_id = Session::get('package_id');
 				$sessionPlayers = DB::table('session_players')->where('session_email','=', Auth::user()->email)->get();
 				foreach ($sessionPlayers as $value)  {		
-					$token = md5($value->doc_id.$booking.date("Y-m-d,h:m:s").rand(microtime()));	
+					//$token = md5($value->doc_id.$booking.date("Y-m-d,h:m:s").rand(microtime()));	
+					$token = md5($value->doc_id.$booking.date("Y-m-d,h:m:s").rand().microtime(true));
 					$value->token = $token;
 					
 					if($bookingType == 1) {

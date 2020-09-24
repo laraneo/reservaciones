@@ -31,7 +31,7 @@ class customException extends Exception {
 function wsCalculateToken()
 {
 	date_default_timezone_set('America/Caracas');
-    $domain_id = "CCC";
+    //$domain_id = "CCC";
     $date = date('Ymd');
     $calculated_token = md5($domain_id.$date);
     $calculated_token = base64_encode(strtoupper(md5($domain_id.$date )));
@@ -42,7 +42,7 @@ function wsCalculateToken()
 
 function wsConsultaSaldo($group_id, &$saldo, &$comments)
 {
-	$skipSaldo = true; // Parametro para desactivar validacion saldo
+	//$skipSaldo = true; // Parametro para desactivar validacion saldo
 	if($skipSaldo) {
 		return 0;
 	}
