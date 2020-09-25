@@ -635,6 +635,7 @@
         selected_date = $(this).val();
         var URL_CONCAT = $('meta[name="index"]').attr('content');
         const categoryType = '{{ Session::get('categoryType') }}';
+        const package = '{{ Session::get('package_id') }}';
 
         //prepare to send ajax request
         $.ajax({
@@ -642,7 +643,7 @@
             url: URL_CONCAT + '/get_timing_slots',
             data: {
                 event_date:selected_date,
-                package: null
+                package: package
                 },
             beforeSend: function() {
                 $('#slots_loader').removeClass('d-none');

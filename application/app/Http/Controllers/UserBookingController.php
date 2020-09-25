@@ -606,13 +606,13 @@ class UserBookingController extends Controller
 				foreach ($sessionSlots as $sessionSlot)
 				{
                     // SessionSlots modo Standard
-                    if($categoryType == 0 && strtotime($sessionSlot->booking_date)==strtotime($event_date) && strtotime($sessionSlot->booking_time)==strtotime($timeslot)) {
+                    if($categoryType == 0 && strtotime($sessionSlot->booking_date)==strtotime($event_date) && strtotime($sessionSlot->booking_time)==strtotime($timeslot) && $selected_package_id == $sessionSlot->package_id) {
                         $list_slot[$i]['is_available'] = false;
                         $list_slot[$i]['is_blocked'] = true;
                         $list_slot[$i]['description'] = "PROGRESS";
                     }
                     // SessionSlots modo Por tiempo
-                    else if($categoryType == 1 && strtotime($sessionSlot->booking_date)==strtotime($event_date) && $sessionSlot->booking_time2 !== null ) {
+                    else if($categoryType == 1 && strtotime($sessionSlot->booking_date)==strtotime($event_date) && $sessionSlot->booking_time2 !== null && $selected_package_id == $sessionSlot->package_id ) {
                         $existSlot = $this->getSlotsPerTime($sessionSlot->booking_date ,$sessionSlot->package_type_id, $sessionSlot->booking_time, $timeslot);
                         if($existSlot) {
                             $list_slot[$i]['is_available'] = false;
