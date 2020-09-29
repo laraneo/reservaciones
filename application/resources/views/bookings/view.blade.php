@@ -70,7 +70,7 @@
                             <div class="row table-row">
                                 <div class="col-md-6 bold-font"><strong>{{ __('backend.invoice_no') }}</strong></div>
                                 <div class="col-md-6">{{ $booking->invoice->id }} -
-                                    <a href="{{ route('invoice.show', $booking->invoice->id) }}">{{ __('backend.click_to_see') }}</a>
+                                   
                                 </div>
                             </div>
                             <div class="row table-row">

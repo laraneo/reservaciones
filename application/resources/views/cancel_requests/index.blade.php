@@ -69,7 +69,7 @@
 											
 											<!-- class="btn btn-primary btn-sm">{{ __('backend.view_booking') }}</a> -->
 
-                                            <a href="{{ route('invoice.show', $cancel_request->booking->invoice->id) }}" class="btn btn-info btn-sm"><i class="fa fa-money fa-fw"></i> {{ __('backend.view_invoice') }}</a>
+                                            {{-- <a href="{{ route('invoice.show', $cancel_request->booking->invoice->id) }}" class="btn btn-info btn-sm"><i class="fa fa-money fa-fw"></i> {{ __('backend.view_invoice') }}</a> --}}
 											
                                             @if($cancel_request->status != __('backend.completed'))
                                                 <a class="btn btn-success btn-sm" data-toggle="modal" data-target="#update_req{{ $cancel_request->id }}"><i class="fa fa-edit fa-fw"></i> {{ __('backend.update') }}</a>
