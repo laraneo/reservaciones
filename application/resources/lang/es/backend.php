@@ -339,6 +339,7 @@ return [
     'reason_for_cancellation' => 'Razón de la cancelación',
     'request_to_cancel' => 'Solicitud de Cancelación',
     'cancel_request_received' => 'Su solicitud de cancelación se recibió con éxito.',
+    'delete_booking' => 'Eliminar reservacion',
 	
     'price' => 'Precio',
     'invoices' => 'Facturas',
@@ -488,4 +489,5 @@ return [
     'general_occupation' => 'Ocupacion General',
     'label_reglamento' => 'Label Reglamento',
     'link_reglamento' => 'Link Reglamento',
+    'client_allow_booking_delete' => 'Permitir a los clientes eliminar sus reservas?',
 ];

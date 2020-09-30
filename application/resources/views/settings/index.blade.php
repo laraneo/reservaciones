@@ -287,7 +287,7 @@
 
 
 
-                                   <div class="col-md-12">
+                                   <div class="col-md-12 form-group">
                                         <label><strong>{{ __('backend.bookingTime_perpackage') }}</strong></label>
                                         <select class="form-control" name="bookingTime_perpackage">
                                             @if($settings->bookingTime_perpackage==1)
@@ -305,36 +305,37 @@
                                     </div>
 
 									
-									
-                                    <div class="col-md-12">&nbsp;</div>								
-									
-                                    <div class="col-md-12">&nbsp;</div>
-                                    <div class="col-md-6">
+                                    <div class="col-md-6 form-group">
                                         <label><strong>{{ __('backend.allow_to_update') }}</strong></label>
                                         <select class="form-control" name="allow_to_update">
                                             <option value="0"{{ $settings->allow_to_update == 0 ? ' selected' : '' }}>{{ __('backend.self_update') }}</option>
                                             <option value="1"{{ $settings->allow_to_update == 1 ? ' selected' : '' }}>{{ __('backend.customer_update') }}</option>
                                         </select>
                                     </div>
-                                    <div class="col-md-6">
+                                    <div class="col-md-6 form-group">
                                         <label><strong>{{ __('backend.days_limit_to_update') }}</strong></label>
                                         <input type="number" class="form-control" name="days_limit_to_update" value="{{ $settings->days_limit_to_update }}">
                                     </div>
 									
-                                    <div class="col-md-12">&nbsp;</div>
-                                    <div class="col-md-6">
+                                    <div class="col-md-6 form-group">
+                                        <label><strong>{{ __('backend.client_allow_booking_delete') }}</strong></label>
+                                        <select class="form-control" name="ClientAllowDeleteBookings">
+                                            <option value="1"{{ $settings->ClientAllowDeleteBookings == 1 ? ' selected' : '' }}>{{ __('backend.yes') }}</option>
+                                            <option value="0"{{ $settings->ClientAllowDeleteBookings == 0 ? ' selected' : '' }}>{{ __('backend.no') }}</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6 form-group">
                                         <label><strong>{{ __('backend.allow_to_cancel') }}</strong></label>
                                         <select class="form-control" name="allow_to_cancel">
                                             <option value="0"{{ $settings->allow_to_cancel == 0 ? ' selected' : '' }}>{{ __('backend.call_to_cancel') }}</option>
                                             <option value="1"{{ $settings->allow_to_cancel == 1 ? ' selected' : '' }}>{{ __('backend.cancel_request') }}</option>
                                         </select>
                                     </div>
-                                    <div class="col-md-6">
+                                    <div class="col-md-6 form-group">
                                         <label><strong>{{ __('backend.days_limit_to_cancel') }}</strong></label>
                                         <input type="number" class="form-control" name="days_limit_to_cancel" value="{{ $settings->days_limit_to_cancel }}">
                                     </div>									
 
-                                    <div class="col-md-12">&nbsp;</div>
                                     <div class="col-md-12">
                                         <div class="alert alert-info">
                                             {{ __('backend.info_booking_cancel_update') }}

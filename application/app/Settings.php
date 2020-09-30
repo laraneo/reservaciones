@@ -79,7 +79,8 @@ class Settings extends Model
         'bookingGuestPlayPerMonth',
         'bookingUser_MinGuests',
         'REGLAMENTO_LINK',
-        'REGLAMENTO_LABEL'
+        'REGLAMENTO_LABEL',
+        'ClientAllowDeleteBookings'
     ];
 
 }

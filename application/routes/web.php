@@ -123,6 +123,7 @@ Route::group(['middleware'=>'customer'], function(){
     Route::post('/cancel-request', 'CancelRequestController@store')->name('cancelRequest');
     Route::get('/update-booking/{id}', 'UserBookingController@update')->name('updateBooking');
     Route::patch('/booking/{id}', 'UserBookingController@update_booking')->name('postUpdateBooking');
+    Route::post('/delete-booking-by-locator', 'UserBookingController@deleteBookingByLocator1')->name('deleteBookingByLocator1');
 });
 
 // ** COMMON ROUTES FOR AUTHENTICATED USERS ** //
@@ -177,6 +178,7 @@ Route::group(['middleware'=>'authenticated'], function() {
     Route::patch('/password/update/{id}', 'UserPasswordController@update')->name('postChangePassword');
 
 	Route::get('/password/register', 'UserPasswordController@registerpassword');
-	Route::post('/password/register', 'UserPasswordController@store')->name('postRegisterPassword');
+    Route::post('/password/register', 'UserPasswordController@store')->name('postRegisterPassword');
+    Route::post('/delete-booking-by-locator', 'UserBookingController@deleteBookingByLocator1')->name('deleteBookingByLocator1');
 	
 });

@@ -2,6 +2,630 @@
 
 @section('content')
 
+<?php
+	$domain_id = config('settings.business_name', 'Reservaciones');
+	$date = date('Y-m-d');
+	$calculated_token = md5($domain_id.$date);	
+	//$calculated_token = $domain_id.$date.date_default_timezone_get();	
+	//$calculated_token = "123";
+?>
+
+<script language="javascript" type="text/javascript"> 
+
+function wait(ms){
+   var start = new Date().getTime();
+   var end = start;
+   while(end < start + ms) {
+     end = new Date().getTime();
+  }
+}
+
+function Reload()
+{
+	document.location.reload(false);
+	//window.location.reload(true); 
+}
+ 
+//Browser Support Code 
+function ajaxFunctionInclude(PlayerSlot){ 
+	console.log('flag');
+	//clean members div
+	document.getElementById("GridMembers").innerHTML = " ";
+	
+	//var PlayerSlot;
+    var ajaxRequest;  // The variable that makes Ajax possible! 
+     
+    try{ 
+        // Opera 8.0+, Firefox, Safari 
+        ajaxRequest = new XMLHttpRequest(); 
+    } catch (e){ 
+        // Internet Explorer Browsers 
+        try{ 
+            ajaxRequest = new ActiveXObject("Msxml2.XMLHTTP"); 
+        } catch (e) { 
+            try{ 
+                ajaxRequest = new ActiveXObject("Microsoft.XMLHTTP"); 
+            } catch (e){ 
+                // Something went wrong 
+                alert("Your browser broke!"); 
+                return false; 
+            } 
+        } 
+    } 
+
+	//disable buttons meanwhile
+	document.getElementById("btnSearch").disabled = true;
+	//document.getElementById("btnRefresh").disabled = true;
+
+	var errorPlayer = 0;
+	const package = '{{ Session::get('package_id') }}';
+    if (PlayerSlot==1)
+	{
+		var player1 = document.getElementById('player1').value; 
+
+		if (player1.trim().toLowerCase()  == 'favorites')
+		{
+			var queryString = "?command=favorites&email=" +  "{{Auth::user()->email}}"  +  "&token=" + "<?php echo $calculated_token; ?>" + "&package_id="+package;  
+		}
+		else if (player1.trim().toLowerCase()  == 'partners')
+		{
+			var queryString = "?command=partners&email=" +  "{{Auth::user()->email}}"  +  "&token=" + "<?php echo $calculated_token; ?>" + "&package_id="+package;  
+		}
+		else if (player1.indexOf('-') > -1)
+		{
+			//it is a group		
+				var queryString = "?command=group&group_id=" + player1	+ "&email=" +  "{{Auth::user()->email}}"  +  "&token=" + "<?php echo $calculated_token; ?>" + "&package_id="+package;  
+		}
+		else
+		{
+			//validate that user is not included as participant again
+			if (player1=={{Auth::user()->doc_id}})
+			{
+				alert("Como solicitante ya estás registrado como participante");
+				errorPlayer = 1;
+			}
+			else
+			{
+
+			}
+			
+	//		if (player1)
+			{
+				var queryString = "?command=include-booking-player&doc_id=" + player1+ "&email=" +  "{{Auth::user()->email}}" 
+				+ "&bookingId=" + "{{ (string)$booking->id }}"
+                +  "&booking_date=" + "{{ Session::get('event_date') }}" 
+				+  "&token=" + "<?php echo $calculated_token; ?>"
+				 + "&package_id="+'{{ Session::get('package_id') }}' 
+				 + "&categoryType="+'{{ Session::get('categoryType') }}' 
+				 + "&packageType="+'{{ Session::get('packageType') }}';
+
+//                 var queryString = `?command=include-booking-player&doc_id=${player1}&email={{Auth::user()->email}}&bookingId={{ $booking->id }}`
+				//PlayerSlot=1;
+			}
+		}
+	}
+
+	if (errorPlayer==0)
+	{
+		// Create a function that will receive data sent from the server 
+		ajaxRequest.onreadystatechange = function()
+		{ 
+			var ajaxDisplay;
+			var ajaxDisplayType;
+			var ajaxDisplayStatus;
+			var ajaxDisplayError;
+			var ajaxDisplayIcons;
+			
+			if(ajaxRequest.readyState == 4){ 
+			
+				if (PlayerSlot==1)
+				{
+					 ajaxDisplay = document.getElementById('player1Name'); 	
+					 ajaxDisplayType = document.getElementById('player1Type');
+					 ajaxDisplayStatus = document.getElementById('player1Status');
+					 ajaxDisplayError = document.getElementById('player1ErrorMessage');
+					 ajaxDisplayIcons = document.getElementById('player1Icons');
+				}	
+				
+				//clean
+				ajaxDisplay.value = '';
+				ajaxDisplayType.value = '';
+				ajaxDisplayStatus.value = '';
+				ajaxDisplayIcons.innerHTML = '';
+				ajaxDisplayError.innerHTML = '';		
+				
+				var ResponseType = '';
+				var responseData = ajaxRequest.responseText; 
+				//split response
+				var partsOfStr = responseData.split(';');
+
+				//alert(responseData);
+				
+				for (var k = 0; k < partsOfStr.length; k++) {
+					if (k==0)
+					{  var ResponseType=partsOfStr[k]; }
+					if (k==1)
+					{  var PlayerName=partsOfStr[k]; }
+					if (k==2)
+					{  var PlayerType=partsOfStr[k]; }
+					if (k==3)
+					{  var PlayerStatus=partsOfStr[k]; }
+					if (k==4)
+					{  var PlayerErrorMessage=partsOfStr[k]; }		
+				}
+				
+				ResponseType = ResponseType.trim();
+				
+				//alert('**' + ResponseType + '**');
+				if (ResponseType =='include-booking-player')
+				{
+					PlayerIcons = '';
+					// if (PlayerType==0)
+					// {
+						// //PlayerIcons = PlayerIcons + '<span class="glyphicon glyphicon-user"></span>';
+						// PlayerIcons = PlayerIcons + 'Socio ';
+					// }
+					// if (PlayerType==1)
+					// {
+						// PlayerIcons = PlayerIcons + 'Invitado ';
+					// }
+					if (PlayerType==-1)
+					{
+						PlayerIcons = PlayerIcons + '<font color="red">Jugador No Registrado </font>';
+					}
+					
+					if (PlayerStatus==0)
+					{
+						//PlayerIcons = PlayerIcons + '<span class="glyphicon glyphicon-ban-circle"></span>';
+						// PlayerIcons = PlayerIcons + '<font color="red">NO PERMITIDO</font>';
+					}	
+					else
+					{
+						//PlayerIcons = PlayerIcons + '<span class="glyphicon glyphicon-ok-circle"></span>';
+						//PlayerIcons = PlayerIcons + 'OK';
+					}	//"?doc_id="
+
+					ajaxDisplay.value = PlayerName;
+					ajaxDisplayType.value = PlayerType;
+					ajaxDisplayStatus.value = PlayerStatus;
+					ajaxDisplayIcons.innerHTML = PlayerIcons;
+					ajaxDisplayError.innerHTML = PlayerErrorMessage;
+							
+
+					//ajaxDisplay.value = ajaxRequest.responseText; 
+					//ajaxDisplay.innerHTML = ajaxRequest.responseText; 
+
+	
+						
+				}
+				else if (ResponseType =='favorites')
+				{
+					//alert(ResponseType);
+
+					//draw table for group
+					//alert(PlayerName); 
+					var partsOfStrMembers = PlayerName.split('#');
+					var errorMessage = PlayerType.trim();
+					
+					//alert (errorMessage);
+					
+					ajaxDisplayError = document.getElementById('player1ErrorMessage');
+				
+					//clean
+					ajaxDisplayError.innerHTML = "";					
+					
+					if (errorMessage == '')
+					{
+						var GridMembers = '';
+						var RowMember = '';
+						
+						for (var w = 0; w < partsOfStrMembers.length; w++) {
+							//member
+							var partsOfStrItem = partsOfStrMembers[w].split('*');	
+							
+							//alert(partsOfStrMembers[w]);
+							//partsOfStrItem = partsOfStrItem.trim();
+							
+							if (partsOfStrMembers[w] !='')
+							{
+								//alert(partsOfStrMembers[w]); 
+								for (var z = 0; z < partsOfStrItem.length; z++) {
+									if (z==0)
+									{  var MemberID=partsOfStrItem[z]; }
+									if (z==1)
+									{  var MemberName=partsOfStrItem[z]; }
+								}
+
+								//draw row
+								RowMember = '';
+
+								RowMember = RowMember + '<div id=\"PlayerRowSelect' + MemberID  + '\" > ';
+								RowMember = RowMember + '<div class=\"row\">';
+								
+								RowMember = RowMember + '<div class=\"col-md-1\"> \
+									<div class=\"text-left player_type\">  \
+										 <i class=\"fa fa-star\"></i>  \
+									</div>  \
+								</div>';
+
+								RowMember = RowMember + '<div class=\"col-md-2\"> \
+									<div class=\"text-left player_doc_id\">'+ MemberID  + '</div> \
+								</div>';
+								
+								RowMember = RowMember +  '<div class="col-md-6"> \
+									<div class="text-left player_name">' + MemberName + '</div> \
+								</div>';
+								
+								RowMember = RowMember + '<form name=\"myFormSelect' + MemberID  + '\" method=\"post\" action=\"outputHelper.php\"> \
+								<div class=\"col-md-2\"> \
+									<div class=\"text-left player_select\" > \
+										<input type=\"button\" \
+										onclick=\"ajaxFunctionSelect(' + MemberID +  ')\" value=\"Seleccionar\" /> \
+									</div> \
+								</div> \
+								</form>	';					
+								
+								RowMember = RowMember + '</div>';
+								RowMember = RowMember + '</div>';
+								
+								//RowMember = MemberID + " - " + MemberName + '<br>';
+								GridMembers = GridMembers + RowMember;
+								//alert (MemberID + " - " + MemberName);
+							}
+							else
+							{
+								
+							}
+						}
+						
+						document.getElementById("GridMembers").innerHTML = GridMembers;
+					}
+					else  //has errors
+					{
+						ajaxDisplayError.innerHTML = errorMessage;
+					}		
+					
+					//enable buttons meanwhile
+					//alert ("habilitando");
+					document.getElementById("btnSearch").disabled = false;
+					//document.getElementById("btnRefresh").disabled = false;		
+					
+					
+					
+				}	
+				else if (ResponseType =='partners')
+				{
+
+					//alert(ResponseType);
+
+					//draw table for group
+					//alert(PlayerName); 
+					var partsOfStrMembers = PlayerName.split('#');
+					var errorMessage = PlayerType.trim();
+					
+					//alert (errorMessage);
+					
+					ajaxDisplayError = document.getElementById('player1ErrorMessage');
+				
+					//clean
+					ajaxDisplayError.innerHTML = "";					
+					
+					if (errorMessage == '')
+					{
+						var GridMembers = '';
+						var RowMember = '';
+						
+						for (var w = 0; w < partsOfStrMembers.length; w++) {
+							//member
+							var partsOfStrItem = partsOfStrMembers[w].split('*');	
+							
+							//alert(partsOfStrMembers[w]);
+							//partsOfStrItem = partsOfStrItem.trim();
+							
+							if (partsOfStrMembers[w] !='')
+							{
+								//alert(partsOfStrMembers[w]); 
+								for (var z = 0; z < partsOfStrItem.length; z++) {
+									if (z==0)
+									{  var MemberID=partsOfStrItem[z]; }
+									if (z==1)
+									{  var MemberName=partsOfStrItem[z]; }
+									if (z==2)
+									{  var MemberCount=partsOfStrItem[z]; }
+								
+								}
+
+								//draw row
+								RowMember = '';
+
+								RowMember = RowMember + '<div id=\"PlayerRowSelect' + MemberID  + '\" > ';
+								RowMember = RowMember + '<div class=\"row\">';
+								
+								RowMember = RowMember + '<div class=\"col-md-1\"> \
+									<div class=\"text-left player_type\">  \
+										 <i class=\"fa fa-star\"></i>  \
+									</div>  \
+								</div>';
+
+								RowMember = RowMember + '<div class=\"col-md-2\"> \
+									<div class=\"text-left player_doc_id\">'+ MemberID  + '</div> \
+								</div>';
+								
+								RowMember = RowMember +  '<div class="col-md-4"> \
+									<div class="text-left player_name">' + MemberName + '</div> \
+								</div>';
+
+								RowMember = RowMember +  '<div class="col-md-2"> \
+									<div class="text-left player_count">( ' + MemberCount + ' )</div> \
+								</div>';
+								
+								RowMember = RowMember + '<form name=\"myFormSelect' + MemberID  + '\" method=\"post\" action=\"outputHelper.php\"> \
+								<div class=\"col-md-2\"> \
+									<div class=\"text-left player_select\" > \
+										<input type=\"button\" \
+										onclick=\"ajaxFunctionSelect(' + MemberID +  ')\" value=\"Seleccionar\" /> \
+									</div> \
+								</div> \
+								</form>	';					
+								
+								RowMember = RowMember + '</div>';
+								RowMember = RowMember + '</div>';
+								
+								//RowMember = MemberID + " - " + MemberName + '<br>';
+								GridMembers = GridMembers + RowMember;
+								//alert (MemberID + " - " + MemberName);
+							}
+							else
+							{
+								
+							}
+						}
+						
+						document.getElementById("GridMembers").innerHTML = GridMembers;
+					}
+					else  //has errors
+					{
+						ajaxDisplayError.innerHTML = errorMessage;
+					}		
+					
+					//enable buttons meanwhile
+					//alert ("habilitando");
+					document.getElementById("btnSearch").disabled = false;
+					//document.getElementById("btnRefresh").disabled = false;		
+					
+								
+			
+				}
+				else if (ResponseType =='group')
+				{
+					//draw table for group
+					//alert(PlayerName); 
+					var partsOfStrMembers = PlayerName.split('#');
+					var errorMessage = PlayerType.trim();
+					
+					//alert (errorMessage);
+					
+					ajaxDisplayError = document.getElementById('player1ErrorMessage');
+				
+					//clean
+					ajaxDisplayError.innerHTML = "";					
+					
+					if (errorMessage == '')
+					{
+						var GridMembers = '';
+						var RowMember = '';
+						
+						for (var w = 0; w < partsOfStrMembers.length; w++) {
+							//member
+							var partsOfStrItem = partsOfStrMembers[w].split('*');	
+							
+							//alert(partsOfStrMembers[w]);
+							//partsOfStrItem = partsOfStrItem.trim();
+							
+							if (partsOfStrMembers[w] !='')
+							{
+								//alert(partsOfStrMembers[w]); 
+								for (var z = 0; z < partsOfStrItem.length; z++) {
+									if (z==0)
+									{  var MemberID=partsOfStrItem[z]; }
+									if (z==1)
+									{  var MemberName=partsOfStrItem[z]; }
+								}
+
+								//draw row
+								RowMember = '';
+
+								RowMember = RowMember + '<div id=\"PlayerRowSelect' + MemberID  + '\" > ';
+								RowMember = RowMember + '<div class=\"row\">';
+								
+								RowMember = RowMember + '<div class=\"col-md-1\"> \
+									<div class=\"text-left player_type\">  \
+										 <i class=\"fa fa-star\"></i>  \
+									</div>  \
+								</div>';
+
+								RowMember = RowMember + '<div class=\"col-md-2\"> \
+									<div class=\"text-left player_doc_id\">'+ MemberID  + '</div> \
+								</div>';
+								
+								RowMember = RowMember +  '<div class="col-md-6"> \
+									<div class="text-left player_name">' + MemberName + '</div> \
+								</div>';
+								
+								RowMember = RowMember + '<form name=\"myFormSelect' + MemberID  + '\" method=\"post\" action=\"outputHelper.php\"> \
+								<div class=\"col-md-2\"> \
+									<div class=\"text-left player_select\" > \
+										<input type=\"button\" \
+										onclick=\"ajaxFunctionSelect(' + MemberID +  ')\" value=\"Seleccionar\" /> \
+									</div> \
+								</div> \
+								</form>	';					
+								
+								RowMember = RowMember + '</div>';
+								RowMember = RowMember + '</div>';
+								
+								//RowMember = MemberID + " - " + MemberName + '<br>';
+								GridMembers = GridMembers + RowMember;
+								//alert (MemberID + " - " + MemberName);
+							}
+							else
+							{
+								
+							}
+						}
+						
+						document.getElementById("GridMembers").innerHTML = GridMembers;
+					}
+					else  //has errors
+					{
+						ajaxDisplayError.innerHTML = errorMessage;
+					}		
+					
+					//enable buttons meanwhile
+					//alert ("habilitando");
+					document.getElementById("btnSearch").disabled = false;
+					//document.getElementById("btnRefresh").disabled = false;		
+					
+				}
+				else if (ResponseType =='delete-booking-player')
+				{
+					
+				}
+				else
+				{
+					
+					
+				}
+				
+				//refresh
+				if (PlayerErrorMessage=='')
+				{
+					//window.location.reload(false);
+					Reload();
+				}
+
+				//enable buttons meanwhile
+				//alert ("habilitando");
+				document.getElementById("btnSearch").disabled = false;
+				//document.getElementById("btnRefresh").disabled = false;					
+	
+
+			} 
+			
+			//refresh page
+			//wait(3000);
+			//document.location.reload(true);
+			//window.location.reload(true); 
+
+		} 
+	
+		//alert ('queryString ' + queryString);
+		ajaxRequest.open("GET", "../../../../dataHelper.php" + queryString, true); 
+		ajaxRequest.send(null);  
+	}
+	else
+	{
+		document.getElementById("btnSearch").disabled = false;
+		//document.getElementById("btnRefresh").disabled = false;	
+	}
+} 
+//--> 
+
+</script> 
+
+
+
+<script language="javascript" type="text/javascript"> 
+
+function ajaxFunctionDelete(doc_id){ 
+	//var PlayerSlot;
+    var ajaxRequest;  // The variable that makes Ajax possible! 
+     
+    try{ 
+        // Opera 8.0+, Firefox, Safari 
+        ajaxRequest = new XMLHttpRequest(); 
+    } catch (e){ 
+        // Internet Explorer Browsers 
+        try{ 
+            ajaxRequest = new ActiveXObject("Msxml2.XMLHTTP"); 
+        } catch (e) { 
+            try{ 
+                ajaxRequest = new ActiveXObject("Microsoft.XMLHTTP"); 
+            } catch (e){ 
+                // Something went wrong 
+                alert("Your browser broke!"); 
+                return false; 
+            } 
+        } 
+    } 
+	
+	var queryString = "?command=delete-booking-player&doc_id=" + doc_id + "&email=" + "{{Auth::user()->email}}" + "&bookingId=" + "{{ $booking->id }}" + 
+	"&token=" + "<?php echo $calculated_token; ?>";  
+	
+
+    // Create a function that will receive data sent from the server 
+    ajaxRequest.onreadystatechange = function()
+	{ 
+		var ajaxDisplay;
+		
+        if(ajaxRequest.readyState == 4){ 
+		
+			 ajaxDisplay = document.getElementById('PlayerRow' + doc_id); 	
+        //ajaxDisplay = document.getElementById('PlayerRow12422099'); 	
+		
+		
+		var responseData = ajaxRequest.responseText; 
+		//split response
+		/*var partsOfStr = responseData.split(';');
+
+		for (var k = 0; k < partsOfStr.length; k++) {
+			if (k==0)
+			{  var PlayerName=partsOfStr[k]; }
+			if (k==1)
+			{  var PlayerType=partsOfStr[k]; }
+			if (k==2)
+			{  var PlayerStatus=partsOfStr[k]; }
+			if (k==3)
+			{  var PlayerErrorMessage=partsOfStr[k]; }		
+		}
+		*/
+		
+		//hide row
+		
+		//ajaxDisplay.value = responseData;
+
+		//ajaxDisplay.value = ajaxRequest.responseText; 
+		//ajaxDisplay.innerHTML = ajaxRequest.responseText; 
+        window.location.href = `/customer/booking/{{ $booking->id }}`;
+        } 
+
+    } 
+
+	
+    ajaxRequest.open("GET", "../../../../dataHelper.php" + queryString, true); 
+    ajaxRequest.send(null);  
+
+} 
+</script>
+
+
+<script language="javascript" type="text/javascript"> 
+
+function ajaxFunctionSelect(doc_id){ 
+
+	PlayerInput = document.getElementById('player1'); 	
+
+	PlayerInput.value = doc_id; 
+	//PlayerInput.innerHTML = doc_id; 
+	btnSearch = document.getElementById('btnSearch'); 	
+	btnSearch.click();
+	//document.getElementById('btnSearch').trigger('click');
+	
+	//alert("Clicked");
+} 
+</script>
+
+
     <div class="page-title">
         <h3>{{ __('backend.booking') }} # {{ $booking->id }}</h3>
         <div class="page-breadcrumb">
@@ -73,6 +697,10 @@
                                     <div class="col-md-6 bold-font"><strong>{{ __('backend.status') }}:</strong></div>
                                     <div class="col-md-6">{{ $booking->status }}</div>
                                 </div>
+                                <div class="row table-row">
+                                    <div class="col-md-6 bold-font"><strong>{{ __('backend.locator') }}:</strong></div>
+                                    <div class="col-md-6" style="color: blue; font-weight: bold" >{{ $booking->locator }}</div>
+                                </div>
 							
 							<!--
                                 <div class="row table-row">
@@ -121,12 +749,18 @@
 				@if(count($booking->bookingplayers))
 					@foreach($booking->bookingplayers as $player)
 							<div class="row table-row">	
-
+                                <div class="col-md-3">
+                                    @if(!$player->isConfirmed())
+                                         <i class="fa fa-user"></i> &nbsp; <a class="btn btn-danger" onclick='ajaxFunctionDelete({{$player->doc_id}})'>  <i class="fa fa-trash"></i> Eliminar</a>  <i class="fa fa-trash"></i> Eliminar</a>
+                                    @endif	
+                                    
+                                    </div>
 								<div class="col-md-3">
+                                
 								{{ $player->PlayerRol() }} - {{ $player->PlayerName2() }}
 								</div>
 								
-								<div  class="col-md-2 bold-font {{ $player->isConfirmed()  ? 'label-success' : 'label-danger' }}"> <p align="center" style="color:white;"><strong> {{ $player->PlayerConfirmedStatus() }}</strong></p></div>
+								<div  class="col-md-2 bold-font {{ $player->isConfirmed()  ? 'label-success' : 'label-danger' }}"> <p align="center" style="color:white; margin: 0 auto; padding: 5px"><strong> {{ $player->PlayerConfirmedStatus() }}</strong></p></div>
 
 								<div class="col-md-3">
 								{{ $player->confirmed_at }} 
@@ -141,7 +775,43 @@
 				@endif
 							
 						</div>
-				
+                        <form name='myForm' method="post" action="outputHelper.php"> 
+
+                            <div class="row">
+                                    <div class="col-md-2">
+                                        <a name="btnSearch" id="btnSearch" class="btn btn-primary" onclick='ajaxFunctionInclude(1)'>  <i class="fa fa-search"></i> Buscar Jugador</a>
+                                    </div>	
+                                    <div class="col-md-3">    
+                                        <input type="text"  rows="" class="form-control has-success has-feedback form-control-lg" name="player1"
+                                               id="player1" placeholder="{{ __('app.player_placeholder') }}" autocomplete="off">
+                                    </div>
+                                    <div id='ajaxDivPlayer1'> 
+                                    </div>
+                                    <div class="col-md-6">
+                                        <input type="text" class="form-control form-control-lg" name="player1Name"
+                                               id="player1Name"  autocomplete="off" disabled>
+                                    </div>        
+                            </div>	
+            
+                            <div class="row" >
+                                    <div class="col-md-1">
+                                    </div>
+                                    <div class="col-md-9">
+                                               
+                                        <input type="hidden" class="form-control form-control-lg" name="player1Type"
+                                               id="player1Type"  autocomplete="off">
+                                        <input type="hidden" class="form-control form-control-lg" name="player1Status"
+                                               id="player1Status"  autocomplete="off">
+                                        <div id="player1Icons" name="player1Icons"></div>
+                                        
+                                        <div id="player1ErrorMessage" name="player1ErrorMessage" style="color:red"></div>							  
+                                    </div>
+            
+                            </div>	
+                            <br>
+				<div  name="GridMembers" id="GridMembers" >
+				</div>
+                            </form> 
 					</div>
 				</div>
 			</div>	
@@ -149,7 +819,7 @@
 
 
 
-                <div class="col-md-12 hidden-xs hidden-sm">
+                <div class="col-md-6 hidden-xs hidden-sm">
                     @if($booking->status != __('backend.cancelled') and count($booking->cancel_request)==0)
                         @if(config('settings.allow_to_cancel'))
                             <button class="btn btn-lg btn-danger {{ !$allow_to_cancel ? 'disabled' : '' }}" data-toggle="modal" data-target="#request_cancellation"><i class="fa fa-times-circle fa-lg"></i> &nbsp; {{ __('backend.request_to_cancel') }}</button>
@@ -160,6 +830,12 @@
                             <br><br>
                         @endif
                     @endif
+                </div>
+
+                <div class="col-md-6 hidden-xs hidden-sm">
+                    @if(config('settings.ClientAllowDeleteBookings'))
+                        <button class="btn btn-lg btn-danger btn-block" type="button" onclick="handleDeleteBooking('{{ $booking->locator }}')" ><i class="fa fa-times-circle fa-lg"></i> &nbsp; {{ __('backend.delete_booking') }}</button>
+                    @endif                 
                 </div>
 
                 <div class="col-md-12 hidden-md hidden-lg">
@@ -174,6 +850,8 @@
                         @endif
                     @endif
                 </div>
+
+
 
             @else
 
@@ -215,5 +893,21 @@
             </form>
         </div>
     </div>
+
+<script>
+
+    function handleDeleteBooking(locator){
+        $.ajax({
+        type: 'POST',
+        url: `/delete-booking-by-locator`,
+        data: { locator: locator }, 
+            success: function(response) {
+				window.location.href = "/home";
+            },
+        });
+    }
+
+
+</script>
 
 @endsection

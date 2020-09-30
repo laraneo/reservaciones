@@ -1948,4 +1948,10 @@ class UserBookingController extends Controller
         ]);
     }
 
+    public function deleteBookingByLocator1(Request $request){
+        $locator = $request['locator'];
+        $params = array($locator);
+        $data = \DB::statement('exec sp_DeleteBookingByLocator ?', array($locator));   
+    }
+
 }
