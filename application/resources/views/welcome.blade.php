@@ -134,11 +134,41 @@
 }
 
 </style>
+<?php
 
+function getClientIP()
+{
+	$ip_address = "";
+	//whether ip is from share internet
+	if (!empty($_SERVER['HTTP_CLIENT_IP']))   
+	  {
+		$ip_address = $_SERVER['HTTP_CLIENT_IP'];
+	  }
+	//whether ip is from proxy
+	elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR']))  
+	  {
+		$ip_address = $_SERVER['HTTP_X_FORWARDED_FOR'];
+	  }
+	//whether ip is from remote address
+	else
+	  {
+		$ip_address = $_SERVER['REMOTE_ADDR'];
+	  }
+	return $ip_address;
+	
+}
+
+?>
 <?php
 	
 	// require 'wsLibrary.php';
 	require 'wsLibrary.php';
+
+	//$whiteList = "192.168.0.123,192.168.0.200,190.217.13.222";
+	//$whitelist = "";
+	//echo $_SERVER['REMOTE_ADDR'];
+	$clientIP = getClientIP();
+	//echo $clientIP ;
 	
 	function str_Normalize($data)
 	{
@@ -200,25 +230,35 @@
 	$curDateTime = new DateTime();
 
 
-	if (($curDateTime > $datetime1) && ($curDateTime < $datetime2)) {
-			//echo "EN HORARIO";	
-	}else
-	{
-		echo "<center>FUERA HORARIO</center>";
-		
-		//return view('custom.restricted');		
-		echo '<script>';
-		echo 'window.location.href = `custom/RestrictedUserBooking.php?type=schedule&StartTime=' . $StartTime . '&EndTime=' . $EndTime .  '`;';
-	//	echo '			window.location.href = `{{ url(index) }}`;';		
-		echo '			</script>';
-	//	exit;		
-	}
 
-	//include 'wsLibrary.php';
+	if ((strpos($whiteList, $clientIP) === false) || ($whiteList=="" ))
+	{
+		$logItem = "IP " . $clientIP; 
+		if (($curDateTime > $datetime1) && ($curDateTime < $datetime2)) {
+				//echo "EN HORARIO";	
+		}else
+		{
+			echo "<center>FUERA HORARIO</center>";
+			
+			//return view('custom.restricted');		
+			echo '<script>';
+			echo 'window.location.href = `custom/RestrictedUserBooking.php?type=schedule&StartTime=' . $StartTime . '&EndTime=' . $EndTime .  '`;';
+		//	echo '			window.location.href = `{{ url(index) }}`;';		
+			echo '			</script>';
+		//	exit;		
+		}
+	}
+	else
+	{
+		$logItem = "IP " . $clientIP . " Whitelisted ";
+		echo $logItem;
+		//die();
+	}
 
 	//validate balance of group-
 	$group_id = Auth::user()->group_id;
 	$user_id = Auth::user()->id ;
+
 	
 	//logged but without group_id
 	if (($user_id!='') && ($group_id ==''))
@@ -441,6 +481,27 @@
 		}
 		
 	}
+
+
+	//access logs
+	$fileLog= "./logAccess/logAccess" . date('Y-m-d', time());
+	//$fileLog="logsdataHelper.txt";
+
+	$logItem = $logItem .  " Accion " . $group_id . " Balance: " . $balance . " - UserID " . $user_id . " - docID: " . $doc_id . " -  ERRORS: " . $err_message ;
+
+	
+	date_default_timezone_set('America/Caracas');
+	$date = date('d/m/Y h:i:s a', time());
+	$myfile = fopen($fileLog, "a") or die("Unable to open file!");
+	//$txt = $date . " - " . $aux;
+	$txt = $date . " - " . $logItem ;
+	fwrite($myfile, "\n". $txt);
+	fclose($myfile);	
+
+
+
+
+
 
 ?>
 
