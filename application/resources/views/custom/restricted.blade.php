@@ -79,7 +79,9 @@
 	switch ($error_message_view_type) {
 		case 1:
 			$title="Horario Reservaciones Cerrado";
-			$body = "Horario de Acceso <br> {{ config('settings.bookingUser_startTime') }} - {{ config('settings.bookingUser_endTime') }}";
+			$body = "Horario de Acceso <br> ";
+			//$body = "Horario de Acceso <br> {{ config('settings.bookingUser_startTime') }} - {{ config('settings.bookingUser_endTime') }}";
+			
 			break;
 		case 2:
 			$title= "Horario no se encuentra disponible";
@@ -114,7 +116,10 @@
                         <img src="images/icon-booking-failed.png">
                     </p>
                     <br>
-                    <h1 class="text-dark"><strong> <?php echo $body; ?>  </strong></h1>
+                    <h1 class="text-dark"><strong> <?php echo $body; ?> 
+					{{ config('settings.bookingUser_startTime') }} - {{ config('settings.bookingUser_endTime') }}
+
+					</strong></h1>
                     
                     <p class="text-muted"></p></b>
                 </div>
