@@ -177,7 +177,7 @@
 		if ($status == -1 )  // -1: error Webservice o error deo conexión a SQL, Se consultarán datos locales en MySQL
 		{
 			//validate balance of group users
-		   $queryBalanceCount = "select u.first_name, u.last_name, u.doc_id, g.balance, g.balance_date, g.is_active, g.is_suspended, u.group_id from users u, groups g where u.group_id=g.id and group_id='" . $group_id . "'";
+			$queryBalanceCount = "select u.first_name, u.last_name, u.doc_id, g.balance, g.balance_date, g.is_active, g.is_suspended, u.group_id from users u, groups g where u.group_id=g.id and group_id='" . $group_id . "'";
 		   
 			$resultBalance = sqlsrv_query($connection, $queryBalanceCount); 
 			  
@@ -1285,6 +1285,7 @@ else if ($command == "include-booking-player") // include booking player
 				//obtener el status de lo que devuelve el procedure
 			}
 		}	
+		
 		//echo ("<br>");
 	}
 		if ($err_message != "") $status=0;
