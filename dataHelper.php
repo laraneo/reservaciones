@@ -1213,37 +1213,48 @@ else if ($command == "include-booking-player") // include booking player
     $query = "SELECT  * from users where doc_id = '" . $doc_id . "' "; 
     $result = sqlsrv_query($connection, $query); 
 	if( $result === false) { die( print_r( sqlsrv_errors(), true) );}
-		while( $row = sqlsrv_fetch_array( $result, SQLSRV_FETCH_ASSOC) ) {
-			$has_errors = 0;
-			$player_type= 0;
-			$playername = $row['first_name'] . " " . $row['last_name'];					
-		}
+	while( $row = sqlsrv_fetch_array( $result, SQLSRV_FETCH_ASSOC) ) {
+		$has_errors = 0;
+		$player_type= 0;
+		$found=1;
+		$playername = $row['first_name'] . " " . $row['last_name'];					
+	}
 
-	$query = "SELECT  * from guests where doc_id = '" . $doc_id . "'"; 
-    $result = sqlsrv_query($connection, $query); 
-	if( $result === false) { die( print_r( sqlsrv_errors(), true) );}
+	if ($found==0)
+	{
+		$query = "SELECT  * from guests where doc_id = '" . $doc_id . "'"; 
+		$result = sqlsrv_query($connection, $query); 
+		if( $result === false) { die( print_r( sqlsrv_errors(), true) );}
 		while( $row = sqlsrv_fetch_array( $result, SQLSRV_FETCH_ASSOC) ) {
 			$has_errors = 0;
+			$found = 1;
 			$player_type= 1;
 			$playername = $row['first_name'] . " " . $row['last_name'];					
 		}
-	
+	}
+	$found = 0;
 	$query = "SELECT  * from bookings where id = '" .$bookingId. "' "; 
 	$result = sqlsrv_query($connection, $query); 
 	if( $result === false) { die( print_r( sqlsrv_errors(), true) );}
-		while( $row = sqlsrv_fetch_array( $result, SQLSRV_FETCH_ASSOC) ) {
-			$locator = $row['locator'];					
-		}
+	while( $row = sqlsrv_fetch_array( $result, SQLSRV_FETCH_ASSOC) ) {
+		$locator = $row['locator'];					
+	}
 
 	//check not already registered			
-	$queryRegistered = "SELECT  * from booking_players where doc_id = ". $doc_id ." and booking_id= " . $bookingId . " ";
+	$queryRegistered = "SELECT  * from booking_players where doc_id = ". $doc_id ." and booking_id= " . $idBookingPlayer . " ";
+	//echo $queryRegistered;
 	$resultRegistered = sqlsrv_query($connection, $queryRegistered);
 	if( $resultRegistered === false) { die( print_r( sqlsrv_errors(), true) ); }
 
+	while( $row = sqlsrv_fetch_array( $resultRegistered, SQLSRV_FETCH_ASSOC) ) {
+		//$locator = $row['locator'];
+		$found = 1;		
+	}
+/*
 	if(count(sqlsrv_fetch_array( $resultRegistered, SQLSRV_FETCH_ASSOC)) > 0) {
 		$found = 1;
 	}
-
+*/
 	if ($found == 1) {
 		$has_errors= 1;
 		$err_message = $err_message . "<br>Este participante ya está registrado";
@@ -1260,6 +1271,8 @@ else if ($command == "include-booking-player") // include booking player
 			array($player_type, SQLSRV_PARAM_IN)
 			);      
 			
+			//print_r($params) . "<br>";
+			
 		$calcularParticipacionesSP = "{call sp_ChangeBookingParticipant(?,?,?,?)}";
 			/* Execute the query. */
 			$stmt3 = sqlsrv_query( $connection, $calcularParticipacionesSP, $params);
@@ -1268,9 +1281,11 @@ else if ($command == "include-booking-player") // include booking player
 			die( print_r( sqlsrv_errors(), true));
 		} else {
 			while( $spChangePlayerRow = sqlsrv_fetch_array( $stmt3, SQLSRV_FETCH_ASSOC) ) {
-				echo 'result '.$spChangePlayerRow;
+				//echo 'result '.  $spChangePlayerRow;
+				//obtener el status de lo que devuelve el procedure
 			}
 		}	
+		//echo ("<br>");
 	}
 		if ($err_message != "") $status=0;
 		$aux = $command  . $field_separator . $playername . $field_separator . $player_type . $field_separator . $status . $field_separator . $err_message . $field_separator; 
