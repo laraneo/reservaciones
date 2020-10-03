@@ -2,6 +2,18 @@
 
 @section('content')
 
+<style>
+
+.show-form {
+	display: block;
+}
+
+.hidde-form {
+	display: none;
+}
+	
+</style>
+
 <?php
 	$domain_id = config('settings.business_name', 'Reservaciones');
 	$date = date('Y-m-d');
@@ -91,8 +103,10 @@ function ajaxFunctionInclude(PlayerSlot){
 			
 	//		if (player1)
 			{
+				const idBookingPlayer = $('#idBookingPlayer').val();
 				var queryString = "?command=include-booking-player&doc_id=" + player1+ "&email=" +  "{{Auth::user()->email}}" 
 				+ "&bookingId=" + "{{ (string)$booking->id }}"
+				+ "&idBookingPlayer=" + idBookingPlayer
                 +  "&booking_date=" + "{{ Session::get('event_date') }}" 
 				+  "&token=" + "<?php echo $calculated_token; ?>"
 				 + "&package_id="+'{{ Session::get('package_id') }}' 
@@ -750,10 +764,21 @@ function ajaxFunctionSelect(doc_id){
 					@foreach($booking->bookingplayers as $player)
 							<div class="row table-row">	
                                 <div class="col-md-3">
-                                    @if(!$player->isConfirmed())
-                                         <i class="fa fa-user"></i> &nbsp; <a class="btn btn-danger" onclick='ajaxFunctionDelete({{$player->doc_id}})'>  <i class="fa fa-trash"></i> Eliminar</a>  <i class="fa fa-trash"></i> Eliminar</a>
-                                    @endif	
-                                    
+                                    {{-- @if(!$player->isConfirmed())
+                                         <i class="{{ $player->player_type === 0 ? 'fa fa-star' : ' fa fa-user-plus' }} "></i> &nbsp; <a class="btn btn-danger" onclick='ajaxFunctionDelete({{$player->doc_id}})'><i class="fa fa-trash"></i> Eliminar</a>
+                                    @endif	 --}}
+									@if(Auth::user()->doc_id === $player->doc_id )
+										<i class="fa fa-star"></i>
+									@endif
+									
+									@if(!$player->isConfirmed() && $player->player_type == 0 )
+										<i class="fa fa-user-plus"></i> &nbsp; <a class="btn btn-info" onclick='handlePlayerChange({{$player->id}})'><i class="fa fa-sync"></i> Cambiar</a>
+									@endif	
+									
+									@if(!$player->isConfirmed() && $player->player_type == 1 )
+										<i class=" fa fa-user"></i> &nbsp; <a class="btn btn-info" onclick='handlePlayerChange({{$player->id}})'><i class="fa fa-sync"></i> Cambiar</a>
+									@endif
+
                                     </div>
 								<div class="col-md-3">
                                 
@@ -775,7 +800,8 @@ function ajaxFunctionSelect(doc_id){
 				@endif
 							
 						</div>
-                        <form name='myForm' method="post" action="outputHelper.php"> 
+						<input type="hidden" id="idBookingPlayer" value="">
+                        <form name='myForm' class="search-helper-player hidde-form" method="post" action="outputHelper.php"> 
 
                             <div class="row">
                                     <div class="col-md-2">
@@ -906,6 +932,11 @@ function ajaxFunctionSelect(doc_id){
             },
         });
     }
+
+	function handlePlayerChange(id) {
+		$('#idBookingPlayer').val(id);
+		$('.search-helper-player').removeClass('hidde-form').addClass('show-form');
+	}
 
 
 </script>

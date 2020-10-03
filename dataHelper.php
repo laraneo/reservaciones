@@ -62,6 +62,7 @@
 	$balanceDate = "";
 	$sDebugSP = '';
 	$bookingId = '';
+	$idBookingPlayer = '';
 		
 	// $max_days = 2;
 	// $max_guests = 2;
@@ -85,7 +86,8 @@
 		}
 		else if ($command == 'include' || $command == 'include-booking-player')
 		{
-			$doc_id = $_GET['doc_id'];	
+			$doc_id = $_GET['doc_id'];
+			$idBookingPlayer =  $_GET['idBookingPlayer'];
 		}
 
 		else if ($command == 'delete' || $command == 'delete-booking-player')
@@ -1196,52 +1198,81 @@ else if ($command == "include") // include player
 	echo $aux; 
 	
 }
-else if ($command == "include-booking-player") // include player
+else if ($command == "include-booking-player") // include booking player
 {
 
-	//checking user table	
-	
 	$playername="N/A";
-    $query = "SELECT  * from users where doc_id = '" . $doc_id . "'"; 
+	$is_user=0;
+	$player_type=0;
+	$is_active=0;
+	$found=0;
+	$locator='';
+
+    $query = "SELECT  * from users where doc_id = '" . $doc_id . "' "; 
     $result = sqlsrv_query($connection, $query); 
 	if( $result === false) { die( print_r( sqlsrv_errors(), true) );}
-
-		$is_user=0;
-		$player_type=1;
-		$is_active=0;
-		$found=0;
-
-		if(count(sqlsrv_fetch_array( $result, SQLSRV_FETCH_ASSOC)) > 0) {
-			$has_errors == 0;
+		while( $row = sqlsrv_fetch_array( $result, SQLSRV_FETCH_ASSOC) ) {
+			$has_errors = 0;
+			$player_type= 0;
+			$playername = $row['first_name'] . " " . $row['last_name'];					
 		}
-		sqlsrv_free_stmt( $result);
 
-		//check not already registered			
-		$queryRegistered = "SELECT  * from booking_players where doc_id = ". $doc_id ." and booking_id= " . $bookingId . " ";
-		$resultRegistered = sqlsrv_query($connection, $queryRegistered);
-		if( $resultRegistered === false) { die( print_r( sqlsrv_errors(), true) ); }
-		
-		if(count(sqlsrv_fetch_array( $resultRegistered, SQLSRV_FETCH_ASSOC)) > 0) {
-			$found = 1;
+	$query = "SELECT  * from guests where doc_id = '" . $doc_id . "'"; 
+    $result = sqlsrv_query($connection, $query); 
+	if( $result === false) { die( print_r( sqlsrv_errors(), true) );}
+		while( $row = sqlsrv_fetch_array( $result, SQLSRV_FETCH_ASSOC) ) {
+			$has_errors = 0;
+			$player_type= 1;
+			$playername = $row['first_name'] . " " . $row['last_name'];					
 		}
-		
-		if ($found == 1) {
-			$has_errors= 1;
-			$err_message = $err_message . "<br>Este participante ya está registrado";
+	
+	$query = "SELECT  * from bookings where id = '" .$bookingId. "' "; 
+	$result = sqlsrv_query($connection, $query); 
+	if( $result === false) { die( print_r( sqlsrv_errors(), true) );}
+		while( $row = sqlsrv_fetch_array( $result, SQLSRV_FETCH_ASSOC) ) {
+			$locator = $row['locator'];					
 		}
-		if ($has_errors == 0) {
-			$query = "INSERT INTO booking_players (player_type, doc_id, booking_id, confirmed , created_at, updated_at ) VALUES (" . $player_type . ", '" . $doc_id . "'," . $bookingId . " , 0 ,GETDATE(), GETDATE())";
-			$qry_result = sqlsrv_query($connection,$query ) or die( print_r( sqlsrv_errors(), true));
-		}
-		
-		sqlsrv_free_stmt( $resultRegistered);
-		$status=1;	
 
+	//check not already registered			
+	$queryRegistered = "SELECT  * from booking_players where doc_id = ". $doc_id ." and booking_id= " . $bookingId . " ";
+	$resultRegistered = sqlsrv_query($connection, $queryRegistered);
+	if( $resultRegistered === false) { die( print_r( sqlsrv_errors(), true) ); }
 
+	if(count(sqlsrv_fetch_array( $resultRegistered, SQLSRV_FETCH_ASSOC)) > 0) {
+		$found = 1;
+	}
+
+	if ($found == 1) {
+		$has_errors= 1;
+		$err_message = $err_message . "<br>Este participante ya está registrado";
+	}
+
+	if ($playername == "N/A") {
+		$has_errors= 1;
+		$err_message = $err_message . "<br>Cedula no registrada";
+	} else {
+		$params = array(
+			array($locator, SQLSRV_PARAM_IN),
+			array($doc_id, SQLSRV_PARAM_IN),
+			array($idBookingPlayer, SQLSRV_PARAM_IN),
+			array($player_type, SQLSRV_PARAM_IN)
+			);      
+			
+		$calcularParticipacionesSP = "{call sp_ChangeBookingParticipant(?,?,?,?)}";
+			/* Execute the query. */
+			$stmt3 = sqlsrv_query( $connection, $calcularParticipacionesSP, $params);
+		if( $stmt3 === false ) {
+			echo "Error in executing statement 3.\n";
+			die( print_r( sqlsrv_errors(), true));
+		} else {
+			while( $spChangePlayerRow = sqlsrv_fetch_array( $stmt3, SQLSRV_FETCH_ASSOC) ) {
+				echo 'result '.$spChangePlayerRow;
+			}
+		}	
+	}
 		if ($err_message != "") $status=0;
 		$aux = $command  . $field_separator . $playername . $field_separator . $player_type . $field_separator . $status . $field_separator . $err_message . $field_separator; 
 		echo $aux; 
-	
 }
 else if ($command == "delete")  ///delete player
 {
