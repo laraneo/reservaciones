@@ -119,6 +119,12 @@
                     <h1 class="text-dark"><strong> <?php echo $body; ?> 
 					{{ config('settings.bookingUser_startTime') }} - {{ config('settings.bookingUser_endTime') }}
 
+					<br><br>
+                    <div class="d-sm-none d-none d-md-block d-lg-block">
+                        <a href="home" class="btn btn-primary btn-lg"><i class="far fa-user"></i>&nbsp;&nbsp;Mi cuenta</a>
+                    </div>
+					
+
 					</strong></h1>
                     
                     <p class="text-muted"></p></b>

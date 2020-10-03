@@ -39,6 +39,7 @@
                                     <th>{{ __('backend.created') }}</th>
                                     <th>{{ __('backend.actions') }}</th>
                                     <th>{{ __('backend.players') }}</th>
+									<th>{{ __('backend.locator') }}</th>
                                 </tr>
                                 </thead>
                                 <tfoot>
@@ -55,6 +56,7 @@
                                     <th>{{ __('backend.created') }}</th>
                                     <th>{{ __('backend.actions') }}</th>
                                     <th>{{ __('backend.players') }}</th>
+									<th>{{ __('backend.locator') }}</th>
                                 </tr>
                                 </tfoot>
                                 <tbody>
@@ -84,6 +86,8 @@
                                             <a href="{{ route('bookings.show', $booking->id) }}" class="btn btn-primary btn-sm">{{ __('backend.playerdetails') }}</a>
 											LA -->
                                         </td>	
+										
+										<td>{{ $booking->locator }}</td>
 										
 										
                                     </tr>

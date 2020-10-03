@@ -96,15 +96,21 @@ $users = App\User::with(['doc_id' => function ($query) {
 
 
 			$tipo = "";
-			if($this->player_type == 0)
+			if($this->player_type == -1)
 			{
-				$tipo = " (S)";
-				return $this->UserName->first_name . " " . $this->UserName->last_name . $tipo;
+				$tipo = " (R) ";
+				return  $tipo . $this->UserName->first_name . " " . $this->UserName->last_name;
 			}
-			else
+
+			else if($this->player_type == 0)
 			{
-				$tipo=" (I)";
-				return $this->GuestName->first_name . " " . $this->GuestName->last_name . $tipo;
+				$tipo = " (S) ";
+				return   $tipo . $this->UserName->first_name . " " . $this->UserName->last_name;
+			}
+			else if($this->player_type == 1)
+			{
+				$tipo=" (I) ";
+				return  $tipo . $this->GuestName->first_name . " " . $this->GuestName->last_name;
 			}
 				
 			
@@ -124,7 +130,15 @@ $users = App\User::with(['doc_id' => function ($query) {
         return $this->belongsTo('App\Guest','doc_id','doc_id');
     }
 
-
+    public function isOwnerUser()
+    {
+        if($this->player_type == -1)
+        {
+            return true;
+        }
+        return false;
+    }
+	
     public function isGuest()
     {
         if($this->player_type == 1)
@@ -179,7 +193,9 @@ $users = App\User::with(['doc_id' => function ($query) {
 	{
 		$tipo = "";
 
-		if($this->isUser())
+		if($this->isOwnerUser()) 
+			$tipo = "(R)";
+		else if($this->isUser())
 			$tipo = "(S)";
 		else
 			$tipo="(I)";
