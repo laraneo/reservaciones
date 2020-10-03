@@ -158,11 +158,15 @@
                         <div class="col-md-6 hidden-xs hidden-sm">
                             <a class="btn btn-danger btn-lg btn-block" data-toggle="modal" data-target="#cancel"><i class="fa fa-times-circle fa-lg"></i> &nbsp; {{ __('backend.cancel_booking') }}</a>
                         </div>
+						
+						<!-- 
                         <div class="col-md-6">
                             <a class="btn btn-info btn-lg btn-block" href="{{ route('bookings.edit', $booking->id) }}"><i class="fa fa-clock-o fa-lg"></i> &nbsp; {{ __('backend.change_booking_time') }}</a>
                         </div>
+						-->
                     @endif
                 </div>
+
 
 
                 <div class="modal fade" id="status" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-keyboard="false">
@@ -263,6 +267,7 @@
 				@if(count($booking->bookingplayers))
 					@foreach($booking->bookingplayers as $player)
 							<div class="row table-row">	
+
 
 								<div class="col-md-3">
 								{{ $player->PlayerRol() }} - {{ $player->PlayerName2() }}

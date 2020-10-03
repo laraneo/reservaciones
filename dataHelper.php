@@ -183,6 +183,7 @@
 			  
 			if ($resultBalance) 
 			{ 
+				$groupActive=1;
 				$rowBalanceCount = sqlsrv_num_rows($resultBalance); 
 			   // printf("Number of row in the table : " . $row); 
 				if ($rowBalanceCount>0) 
@@ -676,6 +677,7 @@ else if ($command == "include") // include player
 				die( print_r( sqlsrv_errors(), true) );
 			}
 
+			$groupActive=1;
 			while( $row = sqlsrv_fetch_array( $resultBalance, SQLSRV_FETCH_ASSOC) ) {
 				$balance = $row['balance'];
 				$balanceDate = $row['balance_date'];
@@ -1305,10 +1307,12 @@ else if ($command == "delete-booking-player")  ///delete player
 } 
 
 
+	$fileLog= "./logDataHelper/logDataHelper_" . date('Y-m-d', time());
+	//$fileLog="logsdataHelper.txt";
 	
 	date_default_timezone_set('America/Caracas');
 	$date = date('d/m/Y h:i:s a', time());
-	$myfile = fopen("logsdataHelper.txt", "a") or die("Unable to open file!");
+	$myfile = fopen($fileLog, "a") or die("Unable to open file!");
 	//$txt = $date . " - " . $aux;
 	$txt = $date . " - " . $aux  . " - SPValidacion: " . $sDebugSP;
 	fwrite($myfile, "\n". $txt);
