@@ -845,7 +845,7 @@ function ajaxFunctionSelect(doc_id){
 
 
 
-                <div class="col-md-6 hidden-xs hidden-sm">
+                <div class="col-md-3 hidden-xs hidden-sm">
                     @if($booking->status != __('backend.cancelled') and count($booking->cancel_request)==0)
                         @if(config('settings.allow_to_cancel'))
                             <button class="btn btn-lg btn-danger {{ !$allow_to_cancel ? 'disabled' : '' }}" data-toggle="modal" data-target="#request_cancellation"><i class="fa fa-times-circle fa-lg"></i> &nbsp; {{ __('backend.request_to_cancel') }}</button>
@@ -858,7 +858,7 @@ function ajaxFunctionSelect(doc_id){
                     @endif
                 </div>
 
-                <div class="col-md-6 hidden-xs hidden-sm">
+                <div class="col-md-3 hidden-xs hidden-sm">
                     @if(config('settings.ClientAllowDeleteBookings'))
                         <button class="btn btn-lg btn-danger btn-block" type="button" onclick="handleDeleteBooking('{{ $booking->locator }}')" ><i class="fa fa-times-circle fa-lg"></i> &nbsp; {{ __('backend.delete_booking') }}</button>
                     @endif                 
