@@ -771,11 +771,11 @@ function ajaxFunctionSelect(doc_id){
 										<i class="fa fa-star"></i>
 									@endif
 									
-									@if(!$player->isConfirmed() && $player->player_type == 0 )
+									@if(!$player->isConfirmed() && $player->player_type == 0 && $booking->status != __('backend.cancelled') )
 										<i class="fa fa-user-plus"></i> &nbsp; <a class="btn btn-info" onclick='handlePlayerChange({{$player->id}})'><i class="fa fa-sync"></i> Cambiar</a>
 									@endif	
 									
-									@if(!$player->isConfirmed() && $player->player_type == 1 )
+									@if(!$player->isConfirmed() && $player->player_type == 1 && $booking->status != __('backend.cancelled') )
 										<i class=" fa fa-user"></i> &nbsp; <a class="btn btn-info" onclick='handlePlayerChange({{$player->id}})'><i class="fa fa-sync"></i> Cambiar</a>
 									@endif
 
