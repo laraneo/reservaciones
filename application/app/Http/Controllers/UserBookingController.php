@@ -6,6 +6,8 @@ use App\Addon;
 use App\SessionAddon;
 use App\SessionPlayer;
 use App\Draw;
+use App\User;
+use App\BookingPlayers;
 use App\BookingTime;
 use App\Settings;
 use App\DrawRequest;
@@ -17,6 +19,8 @@ use Carbon\Carbon;
 use App\SessionSlot;
 use App\PackagesType;
 use App\AddonsParameter;
+use App\Mail\BookingReceivedPlayer;
+use App\Mail\BookingRemovedPlayer;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
@@ -24,6 +28,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Mail;
 //use Spatie\GoogleCalendar\Event;
 
 use DateTime;
@@ -1952,6 +1957,32 @@ class UserBookingController extends Controller
         $locator = $request['locator'];
         $params = array($locator);
         $data = \DB::statement('exec sp_DeleteBookingByLocator ?', array($locator));   
+    }
+
+    public function sendBookingRemoveNotificationPlayers(Request $request) {
+
+        $settings = Settings::first();
+        $userSession = auth()->user();
+        $bookingId = $request['booking'];
+        $oldPlayerDocId = $request['oldPlayerDocId'];
+        $booking = $request['booking'];
+        $newPlayerDocId = $request['newPlayerDocId'];
+
+        $booking = Booking::find($bookingId);
+        $oldPlayer = User::where('doc_id', $oldPlayerDocId)->first();
+        $newPlayer = User::where('doc_id', $newPlayerDocId)->first();
+        $tokenPlayer = BookingPlayers::where('doc_id', $newPlayer->doc_id)->where('booking_id', $bookingId->id)->first()->token;
+
+        if($settings->AllowNotificationChangeNewBookingPlayer) {
+            Mail::to($newPlayer)->send(new BookingReceivedPlayer($booking, $userSession, $newPlayer, $tokenPlayer));
+        }
+        if($settings->AllowNotificationPreviousBookingPlayer) {
+            Mail::to($oldPlayer)->send(new BookingRemovedPlayer($booking, $userSession, $oldPlayer, $tokenPlayer));
+        }
+        return response()->json([
+            'status' => true,
+        ]);
+        
     }
 
 }

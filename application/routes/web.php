@@ -124,6 +124,7 @@ Route::group(['middleware'=>'customer'], function(){
     Route::get('/update-booking/{id}', 'UserBookingController@update')->name('updateBooking');
     Route::patch('/booking/{id}', 'UserBookingController@update_booking')->name('postUpdateBooking');
     Route::post('/delete-booking-by-locator', 'UserBookingController@deleteBookingByLocator1')->name('deleteBookingByLocator1');
+    Route::get('/send-booking-notification-remove-player', 'UserBookingController@sendBookingRemoveNotificationPlayers')->name('sendBookingRemoveNotificationPlayers');
 });
 
 // ** COMMON ROUTES FOR AUTHENTICATED USERS ** //
@@ -147,6 +148,7 @@ Route::group(['middleware'=>'authenticated'], function() {
     Route::post('/extra-service-set-participant', 'UserBookingController@setParticipant')->name('setParticipant');
     Route::get('/check-user-package-parameters', 'UserBookingController@checkUserPackageParameters')->name('checkUserPackageParameters');
     Route::resource('/package-types-exception', 'AdminPackageTypeExceptionController');
+    Route::get('/send-booking-notification-remove-player', 'UserBookingController@sendBookingRemoveNotificationPlayers')->name('sendBookingRemoveNotificationPlayers');
 
 
     //PAYMENT GATEWAYS

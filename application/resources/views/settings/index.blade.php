@@ -316,6 +316,40 @@
                                         <label><strong>{{ __('backend.days_limit_to_update') }}</strong></label>
                                         <input type="number" class="form-control" name="days_limit_to_update" value="{{ $settings->days_limit_to_update }}">
                                     </div>
+
+                                    <div class="col-md-6 form-group">
+                                        <label><strong>{{ __('backend.AllowNotificationChangeNewBookingPlayer') }}</strong></label>
+                                        <select class="form-control" name="AllowNotificationChangeNewBookingPlayer">
+                                            <option value="1"{{ $settings->AllowNotificationChangeNewBookingPlayer == 1 ? ' selected' : '' }}>{{ __('backend.yes') }}</option>
+                                            <option value="0"{{ $settings->AllowNotificationChangeNewBookingPlayer == 0 ? ' selected' : '' }}>{{ __('backend.no') }}</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="col-md-6 form-group">
+                                        <label><strong>{{ __('backend.AllowNotificationPreviousBookingPlayer') }}</strong></label>
+                                        <select class="form-control" name="AllowNotificationPreviousBookingPlayer">
+                                            <option value="1"{{ $settings->AllowNotificationPreviousBookingPlayer == 1 ? ' selected' : '' }}>{{ __('backend.yes') }}</option>
+                                            <option value="0"{{ $settings->AllowNotificationPreviousBookingPlayer == 0 ? ' selected' : '' }}>{{ __('backend.no') }}</option>
+                                        </select>
+                                    </div>
+
+
+                                    <div class="col-md-6 form-group">
+                                        <label><strong>{{ __('backend.admin_allow_booking_delete') }}</strong></label>
+                                        <select class="form-control" name="AdminAllowDeleteBookings">
+                                            <option value="1"{{ $settings->AdminAllowDeleteBookings == 1 ? ' selected' : '' }}>{{ __('backend.yes') }}</option>
+                                            <option value="0"{{ $settings->AdminAllowDeleteBookings == 0 ? ' selected' : '' }}>{{ __('backend.no') }}</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="col-md-6 form-group">
+                                        <label><strong>{{ __('backend.admin_allow_booking_cancel') }}</strong></label>
+                                        <select class="form-control" name="AdminAllowCancelBookings">
+                                            <option value="1"{{ $settings->AdminAllowCancelBookings == 1 ? ' selected' : '' }}>{{ __('backend.yes') }}</option>
+                                            <option value="0"{{ $settings->AdminAllowCancelBookings == 0 ? ' selected' : '' }}>{{ __('backend.no') }}</option>
+                                        </select>
+                                    </div>
+
 									
                                     <div class="col-md-6 form-group">
                                         <label><strong>{{ __('backend.client_allow_booking_delete') }}</strong></label>
@@ -324,6 +358,9 @@
                                             <option value="0"{{ $settings->ClientAllowDeleteBookings == 0 ? ' selected' : '' }}>{{ __('backend.no') }}</option>
                                         </select>
                                     </div>
+
+                                    <div class="col-md-6 form-group" style="padding: 20px">&nbsp;</div>
+
                                     <div class="col-md-6 form-group">
                                         <label><strong>{{ __('backend.allow_to_cancel') }}</strong></label>
                                         <select class="form-control" name="allow_to_cancel">

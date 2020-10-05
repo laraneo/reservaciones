@@ -22,3 +22,9 @@
 -- ALTER TABLE settings ADD bookingUser_MinGuests INT NULL;
 
 ALTER TABLE settings ADD ClientAllowDeleteBookings INT NULL;
+
+ALTER TABLE settings ADD AdminAllowDeleteBookings INT NULL;
+ALTER TABLE settings ADD AdminAllowCancelBookings INT NULL;
+
+ALTER TABLE settings ADD AllowNotificationChangeNewBookingPlayer INT NULL;
+ALTER TABLE settings ADD AllowNotificationPreviousBookingPlayer INT NULL;

@@ -100,6 +100,17 @@
 		}			
 	}
 
+	function getBookingPlayer($connection, $player, $booking) {	
+		$exist = 0;	
+		$query = "SELECT  * from booking_players where doc_id = '". $player ."' and booking_id= " . $booking . " ";
+		$result = sqlsrv_query($connection, $query);
+		if( $result === false) { die( print_r( sqlsrv_errors(), true) ); }
+		if(count(sqlsrv_fetch_array( $result, SQLSRV_FETCH_ASSOC)) > 0) {
+			$exist = 1;
+		}
+		return $exist;
+	}	
+
 	
 	function GetSaldo($connection, $group_id, &$balance, &$comments, &$has_errors, &$err_message)
 	{
@@ -1240,27 +1251,14 @@ else if ($command == "include-booking-player") // include booking player
 		$locator = $row['locator'];					
 	}
 
-	//check not already registered			
-	$queryRegistered = "SELECT  * from booking_players where doc_id = ". $doc_id ." and booking_id= " . $idBookingPlayer . " ";
-	//echo $queryRegistered;
-	$resultRegistered = sqlsrv_query($connection, $queryRegistered);
-	if( $resultRegistered === false) { die( print_r( sqlsrv_errors(), true) ); }
-
-	while( $row = sqlsrv_fetch_array( $resultRegistered, SQLSRV_FETCH_ASSOC) ) {
-		//$locator = $row['locator'];
-		$found = 1;		
-	}
-/*
-	if(count(sqlsrv_fetch_array( $resultRegistered, SQLSRV_FETCH_ASSOC)) > 0) {
-		$found = 1;
-	}
-*/
-	if ($found == 1) {
+	$playerExist = getBookingPlayer($connection, $doc_id, $bookingId);
+	
+	if ($playerExist) {
 		$has_errors= 1;
 		$err_message = $err_message . "<br>Este participante ya está registrado";
 	}
 
-	if ($playername == "N/A") {
+	else if ($playername == "N/A") {
 		$has_errors= 1;
 		$err_message = $err_message . "<br>Cedula no registrada";
 	} else {
@@ -1273,21 +1271,28 @@ else if ($command == "include-booking-player") // include booking player
 			
 			//print_r($params) . "<br>";
 			
-		$calcularParticipacionesSP = "{call sp_ChangeBookingParticipant(?,?,?,?)}";
+		$changeBookingParticipantQuery = "{call sp_ChangeBookingParticipant(?,?,?,?)}";
 			/* Execute the query. */
-			$stmt3 = sqlsrv_query( $connection, $calcularParticipacionesSP, $params);
-		if( $stmt3 === false ) {
+			$changeBookingParticipantResult = sqlsrv_query( $connection, $changeBookingParticipantQuery, $params);
+		if( $changeBookingParticipantResult === false ) {
 			echo "Error in executing statement 3.\n";
 			die( print_r( sqlsrv_errors(), true));
 		} else {
-			while( $spChangePlayerRow = sqlsrv_fetch_array( $stmt3, SQLSRV_FETCH_ASSOC) ) {
-				//echo 'result '.  $spChangePlayerRow;
-				//obtener el status de lo que devuelve el procedure
+			while( $spChangePlayerRow = sqlsrv_fetch_array( $changeBookingParticipantResult, SQLSRV_FETCH_ASSOC) ) {
+				//print_r($spChangePlayerRow);
+				
 			}
 		}	
-		
-		//echo ("<br>");
+		$checknewPlayer = getBookingPlayer($connection, $doc_id, $bookingId);
+		if(!$checknewPlayer) {
+			$found = 0;
+			$playername = "N/A";
+			$has_errors= 1;
+			$err_message = $err_message . "<br> Error durante el cambio de jugador, intentar nuevamente";
+			$status = 0;
+		}
 	}
+
 		if ($err_message != "") $status=0;
 		$aux = $command  . $field_separator . $playername . $field_separator . $player_type . $field_separator . $status . $field_separator . $err_message . $field_separator; 
 		echo $aux; 

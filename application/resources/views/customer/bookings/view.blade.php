@@ -11,6 +11,13 @@
 .hidde-form {
 	display: none;
 }
+
+.booking-player-active {
+	border: 1px solid white;
+	-webkit-box-shadow: -1px 1px 5px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: -1px 1px 5px 0px rgba(0,0,0,0.75);
+	box-shadow: -1px 1px 5px 0px rgba(0,0,0,0.75);
+}
 	
 </style>
 
@@ -40,7 +47,6 @@ function Reload()
  
 //Browser Support Code 
 function ajaxFunctionInclude(PlayerSlot){ 
-	console.log('flag');
 	//clean members div
 	document.getElementById("GridMembers").innerHTML = " ";
 	
@@ -505,25 +511,33 @@ function ajaxFunctionInclude(PlayerSlot){
 				{
 					
 				}
-				else
-				{
-					
-					
-				}
 				
 				//refresh
-				if (PlayerErrorMessage=='')
-				{
-					//window.location.reload(false);
-					Reload();
+				if (PlayerErrorMessage=='') {
+					console.log('flag');
+					const booking = "{{ (string)$booking->id }}";
+					const oldPlayerDocId = $('#oldPlayer').val();
+					const newPlayerDocId = $('#player1').val();
+					console.log(`bookingId ${booking} -- oldPlayerDocId ${oldPlayerDocId} -- newPlayerDocId ${newPlayerDocId}`);
+
+					$.ajax({
+						type: 'GET',
+						url: '/send-booking-notification-remove-player',
+						headers: { 'Content-Type': 'application/json' },
+						data: {
+							booking: booking,
+							oldPlayerDocId: oldPlayerDocId,
+							newPlayerDocId: newPlayerDocId,
+						},
+						success: function(response) {
+							Reload();
+						},
+					});
+
 				}
 
-				//enable buttons meanwhile
-				//alert ("habilitando");
 				document.getElementById("btnSearch").disabled = false;
-				//document.getElementById("btnRefresh").disabled = false;					
-	
-
+		
 			} 
 			
 			//refresh page
@@ -762,7 +776,7 @@ function ajaxFunctionSelect(doc_id){
 			
 				@if(count($booking->bookingplayers))
 					@foreach($booking->bookingplayers as $player)
-							<div class="row table-row">	
+						<div class="row table-row booking-players player-{{$player->id}} active">	
                                 <div class="col-md-3">
                                     {{-- @if(!$player->isConfirmed())
                                          <i class="{{ $player->player_type === 0 ? 'fa fa-star' : ' fa fa-user-plus' }} "></i> &nbsp; <a class="btn btn-danger" onclick='ajaxFunctionDelete({{$player->doc_id}})'><i class="fa fa-trash"></i> Eliminar</a>
@@ -772,11 +786,11 @@ function ajaxFunctionSelect(doc_id){
 									@endif
 									
 									@if(!$player->isConfirmed() && $player->player_type == 0 && $booking->status != __('backend.cancelled') )
-										<i class="fa fa-user-plus"></i> &nbsp; <a class="btn btn-info" onclick='handlePlayerChange({{$player->id}})'><i class="fa fa-sync"></i> Cambiar</a>
+										<i class="fa fa-user-plus"></i> &nbsp; <a class="btn btn-info" onclick='handlePlayerChange({{$player->id}}, {{$player->doc_id}})'><i class="fa fa-sync"></i> Cambiar</a>
 									@endif	
 									
 									@if(!$player->isConfirmed() && $player->player_type == 1 && $booking->status != __('backend.cancelled') )
-										<i class=" fa fa-user"></i> &nbsp; <a class="btn btn-info" onclick='handlePlayerChange({{$player->id}})'><i class="fa fa-sync"></i> Cambiar</a>
+										<i class=" fa fa-user"></i> &nbsp; <a class="btn btn-info" onclick='handlePlayerChange({{$player->id}}, {{$player->doc_id}})'><i class="fa fa-sync"></i> Cambiar</a>
 									@endif
 
                                     </div>
@@ -801,7 +815,8 @@ function ajaxFunctionSelect(doc_id){
 							
 						</div>
 						<input type="hidden" id="idBookingPlayer" value="">
-                        <form name='myForm' class="search-helper-player hidde-form" method="post" action="outputHelper.php"> 
+						<input type="hidden" id="oldPlayer" value="">
+                        <form name='myForm' class="search-helper-player hidde-form" method="post" action="outputHelper.php" style="margin-top: 20px"> 
 
                             <div class="row">
                                     <div class="col-md-2">
@@ -933,8 +948,11 @@ function ajaxFunctionSelect(doc_id){
         });
     }
 
-	function handlePlayerChange(id) {
+	function handlePlayerChange(id, doc_id) {
+		console.log('doc_id ', doc_id);
 		$('#idBookingPlayer').val(id);
+		$('#oldPlayer').val(doc_id);
+		$(`.booking-players.player-${id}`).addClass('booking-player-active');
 		$('.search-helper-player').removeClass('hidde-form').addClass('show-form');
 	}
 

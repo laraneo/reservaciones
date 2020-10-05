@@ -80,7 +80,11 @@ class Settings extends Model
         'bookingUser_MinGuests',
         'REGLAMENTO_LINK',
         'REGLAMENTO_LABEL',
-        'ClientAllowDeleteBookings'
+        'ClientAllowDeleteBookings',
+        'AdminAllowDeleteBookings',
+        'AdminAllowCancelBookings',
+        'AllowNotificationChangeNewBookingPlayer',
+        'AllowNotificationPreviousBookingPlayer'
     ];
 
 }
