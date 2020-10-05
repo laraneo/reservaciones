@@ -31,4 +31,9 @@ class CustomLoginController extends Controller
         return redirect()->route('home');  
     }
 
+    public function customLogout() {
+        Auth::logout();
+        return redirect()->route('home');  
+    }
+
 }
