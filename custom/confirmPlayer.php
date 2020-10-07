@@ -220,7 +220,7 @@
 							JOIN bookings b ON p.[booking_id]=b.id 
 							LEFT JOIN guests g ON g.doc_id=p.doc_id
 							LEFT JOIN users u ON u.doc_id=p.doc_id
-							WHERE  p.token = '" . $token . "'";
+							WHERE  p.token = '" . $token . "'" . " AND b.status = 'Procesando'  ;
 
 								// $sql = "SELECT  p.confirmed,p.doc_id,g.first_name, g.last_name ,b.`booking_date`, b.`booking_time`
 									// FROM  booking_players p, guests g , bookings b
@@ -318,7 +318,7 @@
 									print "                        <img src=\"../images/icon-booking-failed.png\">\n";
 									print "                    </p>\n";
 									print "                    <br>\n";
-									print "                    <h1 class=\"text-dark\"><strong>Token no valido</strong></h1>\n";
+									print "                    <h1 class=\"text-dark\"><strong>Token inalido</strong></h1>\n";
 									print "                    <br>\n";
 									print "                    <p class=\"text-muted\"></p>";																
 								}
