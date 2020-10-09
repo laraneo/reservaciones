@@ -482,6 +482,11 @@ function getClientIP()
 		
 	}
 
+	/* Creates the directory if it does not exist */
+	$path_to_directory = './logAccess';
+	if (!file_exists($path_to_directory) && !is_dir($path_to_directory)) {
+		mkdir($path_to_directory, 0777, true);
+	}
 
 	//access logs
 	$fileLog= "./logAccess/logAccess" . date('Y-m-d', time());
