@@ -949,7 +949,7 @@ function ajaxFunctionSelect(doc_id){
     }
 
 	function handlePlayerChange(id, doc_id) {
-		console.log('doc_id ', doc_id);
+		$('.booking-players').removeClass('booking-player-active');
 		$('#idBookingPlayer').val(id);
 		$('#oldPlayer').val(doc_id);
 		$(`.booking-players.player-${id}`).addClass('booking-player-active');
