@@ -142,6 +142,11 @@
 			//update local table
 			$query = "DELETE FROM groups WHERE id='" . $group_id . "'";	
 			$qry_result = sqlsrv_query($connection,$query ) or die( print_r( sqlsrv_errors(), true));
+
+			$balance = 0;
+			$query = "INSERT INTO groups (id, balance,is_suspended, is_active, balance_date,created_at, updated_at) VALUES ('" . $group_id . "'," . $balance . ",0,1,GETDATE(),GETDATE(), GETDATE())";	
+			// echo $query;
+			$qry_result = sqlsrv_query($connection,$query ) or die( print_r( sqlsrv_errors(), true));
 			
 		}			
 		elseif ($status == -1 )  //-1: error (no hubo conexión a SQL) , Se consultarán datos locales en MySQL
@@ -194,7 +199,7 @@
 			  
 			if ($resultBalance) 
 			{ 
-				$groupActive=1;
+				//$groupActive=1;
 				$rowBalanceCount = sqlsrv_num_rows($resultBalance); 
 			   // printf("Number of row in the table : " . $row); 
 				if ($rowBalanceCount>0) 
@@ -642,6 +647,11 @@ else if ($command == "include") // include player
 			//update local table
 			$query = "DELETE FROM groups WHERE id='" . $group_id . "'";	
 			$qry_result = sqlsrv_query($connection,$query ) or die( print_r( sqlsrv_errors(), true));
+
+			$balance = 0;
+			$query = "INSERT INTO groups (id, balance,is_suspended, is_active, balance_date,created_at, updated_at) VALUES ('" . $group_id . "'," . $balance . ",0,1,GETDATE(),GETDATE(), GETDATE())";	
+			// echo $query;
+			$qry_result = sqlsrv_query($connection,$query ) or die( print_r( sqlsrv_errors(), true));
 			
 		}			
 		elseif ($status == -1 )  //-1: error (no hubo conexión a SQL) , Se consultarán datos locales en MySQL
@@ -695,7 +705,7 @@ else if ($command == "include") // include player
 				die( print_r( sqlsrv_errors(), true) );
 			}
 
-			$groupActive=1;
+			//$groupActive=1;
 			while( $row = sqlsrv_fetch_array( $resultBalance, SQLSRV_FETCH_ASSOC) ) {
 				$balance = $row['balance'];
 				$balanceDate = $row['balance_date'];

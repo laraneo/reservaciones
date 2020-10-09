@@ -154,7 +154,7 @@
 						$conn = sqlsrv_connect($servername, $connectionInfo);
 						// Check connection
 						if (!$conn) {
-							die("Connection failed: " . sqlsrv_error());
+							die("Connection failed: " . sqlsrv_errors());
 						}
 						
 						//validar horario para confirmacion con horario de uso de app
@@ -296,7 +296,7 @@
 									$result = sqlsrv_query($conn, $sql);
 
 									if (!$result) {
-										die('Consulta invalida: ' . sqlsrv_error());
+										die('Consulta invalida: ' . sqlsrv_errors());
 									}
 									else							
 									{
