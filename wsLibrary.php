@@ -32,6 +32,11 @@ function wsCalculateToken()
 {
 	date_default_timezone_set('America/Caracas');
     //$domain_id = "CCC";
+	
+	global $domain_id;
+	
+	if ($domain_id=="") $domain_id = WS_DOMAIN_ID;
+	
     $date = date('Ymd');
     $calculated_token = md5($domain_id.$date);
     $calculated_token = base64_encode(strtoupper(md5($domain_id.$date )));

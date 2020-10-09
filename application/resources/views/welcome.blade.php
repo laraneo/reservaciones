@@ -335,13 +335,10 @@ function getClientIP()
 				
 				//update local database
 				$query = "DELETE FROM groups WHERE id='" . $group_id . "'";	
-				$qry_result = sqlsrv_query($connection,$query ) or die(sqlsrv_error($connection));
+				$qry_result = sqlsrv_query($connection,$query ) or die(sqlsrv_errors($connection));
 
-				$query = "INSERT INTO groups (id, balance,is_suspended, is_active, balance_date,created_at, updated_at) VALUES ('" . $group_id . "'," . $balance . ",0,1,NOW(),NOW(), NOW())";	
-				
-				//echo $query;
-
-				$qry_result = sqlsrv_query($connection,$query ) or die(sqlsrv_error($connection));
+				$query = "INSERT INTO groups (id, balance,is_suspended, is_active, balance_date,created_at, updated_at) VALUES ('" . $group_id . "'," . $balance . ",0,1,GETDATE(),GETDATE(), GETDATE())";	
+				$qry_result = sqlsrv_query($connection,$query ) or die(sqlsrv_errors($connection));
 			}
 	}
 
@@ -407,19 +404,19 @@ function getClientIP()
 			
 			//update local table
 			$query = "DELETE FROM blacklists WHERE doc_id='" . $doc_id . "'";	
-			$qry_result = sqlsrv_query($connection,$query ) or die(sqlsrv_error($connection));
+			$qry_result = sqlsrv_query($connection,$query ) or die(sqlsrv_errors($connection));
 
 
 
-			$query = "INSERT INTO blacklists (doc_id, comments, created_at, updated_at, first_name, last_name) VALUES ('" . $doc_id . "','" . $comments . "',NOW(), NOW(),'" . $first_name . "','" . $last_name . "')";	
-			$qry_result = sqlsrv_query($connection,$query ) or die(sqlsrv_error($connection));
+			$query = "INSERT INTO blacklists (doc_id, comments, created_at, updated_at, first_name, last_name) VALUES ('" . $doc_id . "','" . $comments . "',GETDATE(), GETDATE(),'" . $first_name . "','" . $last_name . "')";	
+			$qry_result = sqlsrv_query($connection,$query ) or die(sqlsrv_errors($connection));
 			echo "jjj";
 		}
 		else  if ($retval == 0 )
 		{
 			//update local table deleting records
 			$query = "DELETE FROM blacklists WHERE doc_id='" . $doc_id . "'";	
-			$qry_result = sqlsrv_query($connection,$query ) or die(sqlsrv_error($connection));
+			$qry_result = sqlsrv_query($connection,$query ) or die(sqlsrv_errors($connection));
 			
 		}
 		elseif ($retval == -1 )  //error WS
@@ -482,6 +479,11 @@ function getClientIP()
 		
 	}
 
+	/* Creates the directory if it does not exist */
+	$path_to_directory = './logAccess';
+	if (!file_exists($path_to_directory) && !is_dir($path_to_directory)) {
+		mkdir($path_to_directory, 0777, true);
+	}
 
 	//access logs
 	$fileLog= "./logAccess/logAccess" . date('Y-m-d', time());

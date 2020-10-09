@@ -142,6 +142,11 @@
 			//update local table
 			$query = "DELETE FROM groups WHERE id='" . $group_id . "'";	
 			$qry_result = sqlsrv_query($connection,$query ) or die( print_r( sqlsrv_errors(), true));
+
+			$balance = 0;
+			$query = "INSERT INTO groups (id, balance,is_suspended, is_active, balance_date,created_at, updated_at) VALUES ('" . $group_id . "'," . $balance . ",0,1,GETDATE(),GETDATE(), GETDATE())";	
+			// echo $query;
+			$qry_result = sqlsrv_query($connection,$query ) or die( print_r( sqlsrv_errors(), true));
 			
 		}			
 		elseif ($status == -1 )  //-1: error (no hubo conexión a SQL) , Se consultarán datos locales en MySQL
@@ -194,7 +199,7 @@
 			  
 			if ($resultBalance) 
 			{ 
-				$groupActive=1;
+				//$groupActive=1;
 				$rowBalanceCount = sqlsrv_num_rows($resultBalance); 
 			   // printf("Number of row in the table : " . $row); 
 				if ($rowBalanceCount>0) 
@@ -294,7 +299,7 @@
 			}
 			
 			while( $row = sqlsrv_fetch_array( $resultSettings, SQLSRV_FETCH_ASSOC) ) {
-				$domain_id = $row['business_name'];
+				//$domain_id = $row['business_name'];   //esto no va se toma de config.inc
 				$max_days = $row['bookingUser_maxDays'];
 				// $min_players = $row['bookingUser_minPlayers'];
 				$max_players = $row['bookingUser_maxPlayers'];
@@ -619,6 +624,13 @@ else if ($command == "include") // include player
         // -1: error (no hubo conexión a SQL)
         //  0: saldo<=0
         //  1: saldo>0 con deuda, 
+
+		if ($status == -4) // -4: ERROR DE TOKEN
+		{
+			$has_errors = 1;	
+			$err_message = $err_message . "<br>Error de token";
+		}
+
 		
 		if ($status == -3 ) // -3: Cuando no se puedo recuperar la variable de ambiente de la URI del Webservice
 		{
@@ -634,6 +646,11 @@ else if ($command == "include") // include player
 			
 			//update local table
 			$query = "DELETE FROM groups WHERE id='" . $group_id . "'";	
+			$qry_result = sqlsrv_query($connection,$query ) or die( print_r( sqlsrv_errors(), true));
+
+			$balance = 0;
+			$query = "INSERT INTO groups (id, balance,is_suspended, is_active, balance_date,created_at, updated_at) VALUES ('" . $group_id . "'," . $balance . ",0,1,GETDATE(),GETDATE(), GETDATE())";	
+			// echo $query;
 			$qry_result = sqlsrv_query($connection,$query ) or die( print_r( sqlsrv_errors(), true));
 			
 		}			
@@ -688,7 +705,7 @@ else if ($command == "include") // include player
 				die( print_r( sqlsrv_errors(), true) );
 			}
 
-			$groupActive=1;
+			//$groupActive=1;
 			while( $row = sqlsrv_fetch_array( $resultBalance, SQLSRV_FETCH_ASSOC) ) {
 				$balance = $row['balance'];
 				$balanceDate = $row['balance_date'];
@@ -1327,6 +1344,11 @@ else if ($command == "delete-booking-player")  ///delete player
 
 } 
 
+	/* Creates the directory if it does not exist */
+	$path_to_directory = './logDataHelper';
+	if (!file_exists($path_to_directory) && !is_dir($path_to_directory)) {
+		mkdir($path_to_directory, 0777, true);
+	}
 
 	$fileLog= "./logDataHelper/logDataHelper_" . date('Y-m-d', time());
 	//$fileLog="logsdataHelper.txt";
