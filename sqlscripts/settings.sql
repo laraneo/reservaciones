@@ -28,3 +28,6 @@ ALTER TABLE settings ADD AdminAllowCancelBookings INT NULL;
 
 ALTER TABLE settings ADD AllowNotificationChangeNewBookingPlayer INT NULL;
 ALTER TABLE settings ADD AllowNotificationPreviousBookingPlayer INT NULL;
+
+ALTER TABLE settings ADD MaxDaysPlayerDeleteBookings INT NULL;
+ALTER TABLE settings ADD BookingMaxTimeChangePlayer varchar(255) NULL;

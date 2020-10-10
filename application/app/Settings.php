@@ -84,7 +84,9 @@ class Settings extends Model
         'AdminAllowDeleteBookings',
         'AdminAllowCancelBookings',
         'AllowNotificationChangeNewBookingPlayer',
-        'AllowNotificationPreviousBookingPlayer'
+        'AllowNotificationPreviousBookingPlayer',
+        'MaxDaysPlayerDeleteBookings',
+        'BookingMaxTimeChangePlayer'
     ];
 
 }

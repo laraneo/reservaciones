@@ -785,11 +785,11 @@ function ajaxFunctionSelect(doc_id){
 										<i class="fa fa-star"></i>
 									@endif
 									
-									@if(!$player->isConfirmed() && $player->player_type == 0 && $booking->status != __('backend.cancelled') )
+									@if(!$player->isConfirmed() && $player->player_type == 0 && $booking->status != __('backend.cancelled') && $allowToChangePlayer )
 										<i class="fa fa-user-plus"></i> &nbsp; <a class="btn btn-info" onclick='handlePlayerChange({{$player->id}}, {{$player->doc_id}})'><i class="fa fa-sync"></i> Cambiar</a>
 									@endif	
 									
-									@if(!$player->isConfirmed() && $player->player_type == 1 && $booking->status != __('backend.cancelled') )
+									@if(!$player->isConfirmed() && $player->player_type == 1 && $booking->status != __('backend.cancelled') && $allowToChangePlayer)
 										<i class=" fa fa-user"></i> &nbsp; <a class="btn btn-info" onclick='handlePlayerChange({{$player->id}}, {{$player->doc_id}})'><i class="fa fa-sync"></i> Cambiar</a>
 									@endif
 
@@ -874,14 +874,14 @@ function ajaxFunctionSelect(doc_id){
                 </div>
 
                 <div class="col-md-3 hidden-xs hidden-sm">
-                    @if(config('settings.ClientAllowDeleteBookings'))
+                    @if($allowDeleteBooking)
                         <button class="btn btn-lg btn-danger btn-block" type="button" onclick="handleDeleteBooking('{{ $booking->locator }}')" ><i class="fa fa-times-circle fa-lg"></i> &nbsp; {{ __('backend.delete_booking') }}</button>
                     @endif                 
                 </div>
 
                 <div class="col-md-12 hidden-md hidden-lg">
                     @if($booking->status != __('backend.cancelled') and count($booking->cancel_request)==0)
-                        @if(config('settings.allow_to_cancel'))
+                        @if($allowDeleteBooking)
                             <button class="btn btn-lg btn-danger btn-block {{ !$allow_to_cancel ? 'disabled' : '' }}" data-toggle="modal" data-target="#request_cancellation"><i class="fa fa-times-circle fa-lg"></i> &nbsp; {{ __('backend.request_to_cancel') }}</button>
                         @endif
 

@@ -490,8 +490,10 @@ return [
     'label_reglamento' => 'Label Reglamento',
     'link_reglamento' => 'Link Reglamento',
     'client_allow_booking_delete' => 'Permitir a los clientes eliminar sus reservas?',
+    'MaxDaysPlayerDeleteBookings' => 'Maximo de Dias para Eliminar jugador',
     'admin_allow_booking_delete' => 'Permitir a los Administradores elminar reservas directamente?',
     'admin_allow_booking_cancel' => 'Permitir a los Administradores cancelar reservas directamente?',
     'AllowNotificationChangeNewBookingPlayer' => 'Enviar notificacion de cambio a nuevo jugador?',
     'AllowNotificationPreviousBookingPlayer' => 'Enviar notificacion de cambio a jugador anterior?',
+    'BookingMaxTimeChangePlayer' => 'Maximo de hora para cambiar jugador',
 ];

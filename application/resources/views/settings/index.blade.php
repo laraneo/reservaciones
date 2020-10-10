@@ -359,6 +359,43 @@
                                         </select>
                                     </div>
 
+                                    <div class="col-md-6 form-group">
+                                        <label><strong>{{ __('backend.MaxDaysPlayerDeleteBookings') }}</strong></label>
+                                        <select class="form-control" name="MaxDaysPlayerDeleteBookings">
+                                            <option value="">Seleccione</option>
+                                            <option value="1"{{ $settings->MaxDaysPlayerDeleteBookings == 1 ? ' selected' : '' }}>1</option>
+                                            <option value="2"{{ $settings->MaxDaysPlayerDeleteBookings == 2 ? ' selected' : '' }}>2</option>
+                                            <option value="3"{{ $settings->MaxDaysPlayerDeleteBookings == 3 ? ' selected' : '' }}>3</option>
+                                            <option value="4"{{ $settings->MaxDaysPlayerDeleteBookings == 4 ? ' selected' : '' }}>4</option>
+                                            <option value="5"{{ $settings->MaxDaysPlayerDeleteBookings == 5 ? ' selected' : '' }}>5</option>
+                                            <option value="6"{{ $settings->MaxDaysPlayerDeleteBookings == 6 ? ' selected' : '' }}>6</option>
+                                            <option value="7"{{ $settings->MaxDaysPlayerDeleteBookings == 7 ? ' selected' : '' }}>7</option>
+                                            <option value="8"{{ $settings->MaxDaysPlayerDeleteBookings == 8 ? ' selected' : '' }}>8</option>
+                                            <option value="9"{{ $settings->MaxDaysPlayerDeleteBookings == 9 ? ' selected' : '' }}>9</option>
+                                            <option value="10"{{ $settings->MaxDaysPlayerDeleteBookings == 10 ? ' selected' : '' }}>10</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="col-md-6 form-group">
+                                        <label><strong>{{ __('backend.BookingMaxTimeChangePlayer') }}</strong></label>
+                                        <select class="form-control" name="BookingMaxTimeChangePlayer">
+                                            <option value="">Seleccione</option>
+                                            <option value="06:00 AM"{{ $settings->BookingMaxTimeChangePlayer == '06:00 AM' ? ' selected' : '' }}>06:00 AM</option>
+                                            <option value="07:00 AM"{{ $settings->BookingMaxTimeChangePlayer == '07:00 AM' ? ' selected' : '' }}>07:00 AM</option>
+                                            <option value="08:00 AM"{{ $settings->BookingMaxTimeChangePlayer == '08:00 AM' ? ' selected' : '' }}>08:00 AM</option>
+                                            <option value="09:00 AM"{{ $settings->BookingMaxTimeChangePlayer == '09:00 AM' ? ' selected' : '' }}>09:00 AM</option>
+                                            <option value="10:00 AM"{{ $settings->BookingMaxTimeChangePlayer == '10:00 AM' ? ' selected' : '' }}>10:00 AM</option>
+                                            <option value="11:00 AM"{{ $settings->BookingMaxTimeChangePlayer == '11:00 AM' ? ' selected' : '' }}>11:00 AM</option>
+                                            <option value="12:00 AM"{{ $settings->BookingMaxTimeChangePlayer == '12:00 AM' ? ' selected' : '' }}>12:00 AM</option>
+                                            <option value="01:00 PM"{{ $settings->BookingMaxTimeChangePlayer == '01:00 PM' ? ' selected' : '' }}>01:00 PM</option>
+                                            <option value="02:00 PM"{{ $settings->BookingMaxTimeChangePlayer == '02:00 PM' ? ' selected' : '' }}>02:00 PM</option>
+                                            <option value="03:00 PM"{{ $settings->BookingMaxTimeChangePlayer == '03:00 PM' ? ' selected' : '' }}>03:00 PM</option>
+                                            <option value="04:00 PM"{{ $settings->BookingMaxTimeChangePlayer == '45:00 PM' ? ' selected' : '' }}>05:00 PM</option>
+                                            <option value="05:00 PM"{{ $settings->BookingMaxTimeChangePlayer == '05:00 PM' ? ' selected' : '' }}>05:00 PM</option>
+                                            <option value="06:00 PM"{{ $settings->BookingMaxTimeChangePlayer == '06:00 PM' ? ' selected' : '' }}>06:00 PM</option>
+                                        </select>
+                                    </div>
+
                                     <div class="col-md-6 form-group" style="padding: 20px">&nbsp;</div>
 
                                     <div class="col-md-6 form-group">

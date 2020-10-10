@@ -1658,12 +1658,28 @@ class UserBookingController extends Controller
      */
     public function show($id)
     {
+        $settings = Settings::first();
+        $allowToChangePlayer = false;
+        $allowDeleteBooking = false;
+        $currentDate = Carbon::now()->format('d-m-Y');
         $booking = Booking::find($id);
+        $today = date('Y-m-d');
+
+        $daysLimitToDeleteBooking= $settings->MaxDaysPlayerDeleteBookings * 86400;
+
+        if($settings->ClientAllowDeleteBookings && strtotime($booking->booking_date) - strtotime($today) >= $daysLimitToDeleteBooking) {
+            $allowDeleteBooking = true;
+        }
+
+        if(Carbon::parse($booking->booking_date)->format('d-m-Y') <= Carbon::parse($currentDate)->format('d-m-Y') && strtotime($booking->booking_time) <= strtotime($settings->BookingMaxTimeChangePlayer)) {
+            $allowToChangePlayer = true; 
+        }
 
         //checking booking date to allow update or cancel
         $days_limit_to_update = config('settings.days_limit_to_update') * 86400;
         $days_limit_to_cancel = config('settings.days_limit_to_cancel') * 86400;
-        $today = date('Y-m-d');
+       
+        
 
         if(strtotime($booking->booking_date) - strtotime($today) >= $days_limit_to_update)
         {
@@ -1683,7 +1699,7 @@ class UserBookingController extends Controller
             $allow_to_cancel = false;
         }
 
-        return view('customer.bookings.view' , compact('booking','allow_to_update', 'allow_to_cancel'));
+        return view('customer.bookings.view' , compact('booking','allow_to_update', 'allow_to_cancel', 'allowToChangePlayer','allowDeleteBooking' ));
     }
 
     /**
