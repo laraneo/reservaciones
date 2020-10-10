@@ -325,6 +325,13 @@ class UserBookingController extends Controller
 				exit(); //die();
 			}
 			$resultqueryBookingPlayerCount = sqlsrv_query($connection, $queryExpiredSlots); 
+			
+			//reset session data
+			$queryExpiredSlots = "DELETE FROM session_players WHERE session_email = '" . Auth::user()->email . "'";
+			$resultqueryBookingPlayerCount = sqlsrv_query($connection, $queryExpiredSlots); 
+			
+			$queryExpiredSlots = "DELETE FROM session_addons WHERE session_email = '" . Auth::user()->email . "'";
+			$resultqueryBookingPlayerCount = sqlsrv_query($connection, $queryExpiredSlots); 
 		
         $bookingType =  Session::get('booking_type_id');
 		

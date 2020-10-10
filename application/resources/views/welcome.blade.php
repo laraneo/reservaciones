@@ -280,13 +280,11 @@ function getClientIP()
 		
 	}
 
-
 	//echo "$group_id" . $group_id;
 	if ($group_id !='')
 	{
 		$result = wsConsultaSaldo($group_id, $balance, $comments);
 		$balance_date = date('Y-m-d H:i:s');
-		
 		
 		//echo $result;
 		//exit();
@@ -312,20 +310,13 @@ function getClientIP()
 				// Auth::user()->group->balance = $balance;
 				// Auth::user()->group->balance_date = $balance_date;
 				// Auth::user()->group->update();
-				
-				
-				
-				// $servername = env('DB_HOST');
-				// $username=  env('DB_USERNAME');
-				// $password = env('DB_PASSWORD');
-				// $database = env('DB_DATABASE');
 
-			$connectionInfo = array( 
-				"Database"=> $database,
-				"UID"=> $username, 
-				"PWD"=> $password
-			);
-            $connection = sqlsrv_connect($servername, $connectionInfo);
+				$connectionInfo = array( 
+					"Database"=> $database,
+					"UID"=> $username, 
+					"PWD"=> $password
+				);
+				$connection = sqlsrv_connect($servername, $connectionInfo);
 				
 				// Check connection 
 				if (!$connection) 
@@ -339,9 +330,12 @@ function getClientIP()
 
 				$query = "INSERT INTO groups (id, balance,is_suspended, is_active, balance_date,created_at, updated_at) VALUES ('" . $group_id . "'," . $balance . ",0,1,GETDATE(),GETDATE(), GETDATE())";	
 				$qry_result = sqlsrv_query($connection,$query ) or die(sqlsrv_errors($connection));
+				
+				sqlsrv_close($connection);
 			}
-	}
-
+		}
+		
+		
 		if ($result<=0) {
 				//echo "SOLVENTE";	
 		}else
@@ -360,23 +354,15 @@ function getClientIP()
 		}		
 	}
 	
-	//check blacklist
-	
-	//user is logged
-	//echo "check blacklist";
-	if($user = Auth::user())
 	//if (!Auth::check())	
 	//if ($user_id != '')
+
+	//blacklist
+	if($user = Auth::user())  //user is logged
 	{
-		
-		//echo "check blacklist";
-		
 		$doc_id = Auth::user()->doc_id ;
 		// 0: ok , 1: en lista negra, -1: error
-		
 		//echo $doc_id ;
-		
-		
 		
 		$retval = wsConsultarBlackList($doc_id, $comments, $first_name, $last_name);
 		  //echo $retval;
@@ -394,19 +380,13 @@ function getClientIP()
 		
 		if ($retval == 1 )
 		{
-			
-			
 			$blacklist = 1;
 			$err_message = $err_message . "<br>Actualmente Sr/a " . $first_name . " " .  $last_name . " posee una condicion que le impide realizar reservas - " . $comments ;
 			$has_errors = 1;
 			
-			
-			
 			//update local table
 			$query = "DELETE FROM blacklists WHERE doc_id='" . $doc_id . "'";	
 			$qry_result = sqlsrv_query($connection,$query ) or die(sqlsrv_errors($connection));
-
-
 
 			$query = "INSERT INTO blacklists (doc_id, comments, created_at, updated_at, first_name, last_name) VALUES ('" . $doc_id . "','" . $comments . "',GETDATE(), GETDATE(),'" . $first_name . "','" . $last_name . "')";	
 			$qry_result = sqlsrv_query($connection,$query ) or die(sqlsrv_errors($connection));
@@ -417,11 +397,9 @@ function getClientIP()
 			//update local table deleting records
 			$query = "DELETE FROM blacklists WHERE doc_id='" . $doc_id . "'";	
 			$qry_result = sqlsrv_query($connection,$query ) or die(sqlsrv_errors($connection));
-			
 		}
 		elseif ($retval == -1 )  //error WS
 		{
-
 			$queryBlackList = "SELECT * from blacklists where doc_id='" . $doc_id . "'";
 		   
 			$resultBlackList = sqlsrv_query($connection, $queryBlackList); 
@@ -452,13 +430,12 @@ function getClientIP()
 				//$err_message = $err_message . "<br>Participantes - " . $cant;
 			}
 			sqlsrv_next_result($resultBlackList); 
-
-			
 		}
 		
 		// echo '$has_errors' . $has_errors;
 		// exit();
-		
+
+		sqlsrv_close($connection);
 		
 		if ($has_errors==1)
 		{
@@ -478,6 +455,8 @@ function getClientIP()
 		}
 		
 	}
+
+
 
 	/* Creates the directory if it does not exist */
 	$path_to_directory = './logAccess';
