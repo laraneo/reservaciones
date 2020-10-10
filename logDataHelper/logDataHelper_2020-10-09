@@ -1,0 +1,63 @@
+
+09/10/2020 01:12:46 pm - include;ALVARO JOSE GREGORIO MATOS CANCINI;0;0;<br>Acción 0006-0006 presenta deuda  - Dirijase al Club para mayor informacion; - SPValidacion: {call CalcularParticipaciones(0,0,6702743)}--> Dia=0, Semana=0, Mes=0
+09/10/2020 01:13:55 pm - include;CARLOS  EDUARDO CATO CONTRERAS;0;1;; - SPValidacion: {call CalcularParticipaciones(0,0,9963065)}--> Dia=0, Semana=1, Mes=1
+09/10/2020 01:36:39 pm - Deleted - SPValidacion: 
+09/10/2020 01:36:41 pm - include;CARLOS  EDUARDO CATO CONTRERAS;0;1;; - SPValidacion: {call CalcularParticipaciones(0,0,9963065 )}--> Dia=0, Semana=1, Mes=1
+09/10/2020 01:36:51 pm - include;FEDERICO ALBERTO MAYORCA LUGO;0;0;<br>Acción 0610-0610 presenta deuda  - Dirijase al Club para mayor informacion; - SPValidacion: {call CalcularParticipaciones(0,0,5536839)}--> Dia=0, Semana=1, Mes=1
+09/10/2020 01:37:07 pm - include;CARLOS ENRIQUE ANZOLA DIAZ;0;1;; - SPValidacion: {call CalcularParticipaciones(0,0,11310275)}--> Dia=0, Semana=0, Mes=0
+09/10/2020 01:37:18 pm - include;JOSE ROBERTO SOTO CAMACHO;0;0;<br>Acción 0004-0004 presenta deuda  - Dirijase al Club para mayor informacion; - SPValidacion: {call CalcularParticipaciones(0,0,12624549  )}--> Dia=0, Semana=0, Mes=0
+09/10/2020 01:37:28 pm - include;GUILLERMO SIMON CARBONELL JIMENEZ;0;0;<br>Acción 0021-0021 presenta deuda  - Dirijase al Club para mayor informacion; - SPValidacion: {call CalcularParticipaciones(0,0,12917980  )}--> Dia=0, Semana=0, Mes=0
+09/10/2020 04:49:39 pm - include-booking-player;JOSE ROBERTO SOTO CAMACHO;0;0;; - SPValidacion: 
+09/10/2020 04:50:33 pm - include-booking-player;CARLOS  EDUARDO CATO CONTRERAS;0;0;<br>Este participante ya está registrado; - SPValidacion: 
+09/10/2020 04:50:43 pm - include-booking-player;Guillermo MARIN ISTURIZ;0;0;; - SPValidacion: 
+09/10/2020 04:51:06 pm - include-booking-player;ALVARO JOSE GREGORIO MATOS CANCINI;0;0;; - SPValidacion: 
+09/10/2020 06:42:12 pm - include-booking-player;JOSE ROBERTO SOTO CAMACHO;0;0;<br>Este participante ya está registrado; - SPValidacion: 
+09/10/2020 06:46:07 pm - include-booking-player;ALVARO JOSE GREGORIO MATOS CANCINI;0;0;<br>Este participante ya está registrado; - SPValidacion: 
+09/10/2020 06:47:28 pm - include-booking-player;CLEMENTINA EUGENIA ELLENBERG ALARCON;0;0;<br>Este participante ya está registrado; - SPValidacion: 
+09/10/2020 06:50:10 pm - include-booking-player;CLEMENTINA EUGENIA ELLENBERG ALARCON;0;1;; - SPValidacion: 
+09/10/2020 06:53:18 pm - include-booking-player;JOSE ROBERTO SOTO CAMACHO;0;0;; - SPValidacion: 
+09/10/2020 07:02:48 pm - include-booking-player;CLEMENTINA EUGENIA ELLENBERG ALARCON;0;0;; - SPValidacion: 
+09/10/2020 10:01:41 pm - include;N/A;1;0;<br>Máximo número de participantes permitidos: <br>Máximo número de Socios permitidos: <br>Máximo número de Invitados permitidos:  <br>Este participante no puede exceder el numero de partidas por día. <br>Este participante no puede exceder el numero de partidas por Semana. <br>Este participante no puede exceder el numero de partidas por Mes.<br>Invitado No activo; - SPValidacion: 
+09/10/2020 10:02:51 pm - include;CARLOS  EDUARDO CATO CONTRERAS;0;1;<br>Máximo número de participantes permitidos: <br>Máximo número de Socios permitidos:  <br>Este participante no puede exceder el numero de partidas por día. <br>Este participante no puede exceder el numero de partidas por Semana. <br>Este participante no puede exceder el numero de partidas por Mes.; - SPValidacion: 
+09/10/2020 10:10:29 pm - include;CARLOS  EDUARDO CATO CONTRERAS;0;1;<br>Máximo número de participantes permitidos: <br>Máximo número de Socios permitidos:  <br>Este participante no puede exceder el numero de partidas por día. <br>Este participante no puede exceder el numero de partidas por Semana. <br>Este participante no puede exceder el numero de partidas por Mes.; - SPValidacion: 
+09/10/2020 10:11:59 pm - include;CARLOS  EDUARDO CATO CONTRERAS;0;1;<br>Máximo número de participantes permitidos: <br>Máximo número de Socios permitidos:  <br>Este participante no puede exceder el numero de partidas por día. <br>Este participante no puede exceder el numero de partidas por Semana. <br>Este participante no puede exceder el numero de partidas por Mes.; - SPValidacion: 
+09/10/2020 10:12:10 pm - include-booking-player;JOSE ROBERTO SOTO CAMACHO;0;1;<br>Acción 0004-0004 presenta deuda  - Dirijase al Club para mayor informacion<br>Máximo número de participantes permitidos: <br>Máximo número de Socios permitidos:  <br>Este participante no puede exceder el numero de partidas por día. <br>Este participante no puede exceder el numero de partidas por Semana. <br>Este participante no puede exceder el numero de partidas por Mes.; - SPValidacion: 
+09/10/2020 10:12:36 pm - include-booking-player;JOSE ROBERTO SOTO CAMACHO;0;1;<br>Acción 0004-0004 presenta deuda  - Dirijase al Club para mayor informacion<br>Máximo número de participantes permitidos: <br>Máximo número de Socios permitidos:  <br>Este participante no puede exceder el numero de partidas por día. <br>Este participante no puede exceder el numero de partidas por Semana. <br>Este participante no puede exceder el numero de partidas por Mes.; - SPValidacion: 
+09/10/2020 10:12:39 pm - include;CARLOS  EDUARDO CATO CONTRERAS;0;1;<br>Máximo número de participantes permitidos: <br>Máximo número de Socios permitidos:  <br>Este participante no puede exceder el numero de partidas por día. <br>Este participante no puede exceder el numero de partidas por Semana. <br>Este participante no puede exceder el numero de partidas por Mes.; - SPValidacion: 
+09/10/2020 10:13:15 pm - include;CARLOS  EDUARDO CATO CONTRERAS;0;1;<br>Máximo número de participantes permitidos: <br>Máximo número de Socios permitidos:  <br>Este participante no puede exceder el numero de partidas por día. <br>Este participante no puede exceder el numero de partidas por Semana. <br>Este participante no puede exceder el numero de partidas por Mes.; - SPValidacion: 
+09/10/2020 10:16:42 pm - include;CARLOS  EDUARDO CATO CONTRERAS;0;1;; - SPValidacion: 
+09/10/2020 10:17:03 pm - include;CARLOS  EDUARDO CATO CONTRERAS;0;1;; - SPValidacion: 
+09/10/2020 10:17:20 pm - include;CARLOS  EDUARDO CATO CONTRERAS;0;1;; - SPValidacion: 
+09/10/2020 10:17:29 pm - include-booking-player;JOSE ROBERTO SOTO CAMACHO;0;1;<br>Acción 0004-0004 presenta deuda  - Dirijase al Club para mayor informacion; - SPValidacion: 
+09/10/2020 10:17:35 pm - include;CARLOS  EDUARDO CATO CONTRERAS;0;1;; - SPValidacion: 
+09/10/2020 10:20:09 pm - include;CARLOS  EDUARDO CATO CONTRERAS;0;1;; - SPValidacion: 
+09/10/2020 10:21:23 pm - include;CARLOS  EDUARDO CATO CONTRERAS;0;1;; - SPValidacion: 
+09/10/2020 10:24:17 pm - include;CARLOS  EDUARDO CATO CONTRERAS;0;1;; - SPValidacion: 
+09/10/2020 10:24:55 pm - include;CARLOS  EDUARDO CATO CONTRERAS;0;1;; - SPValidacion: 
+09/10/2020 10:26:07 pm - include;CARLOS  EDUARDO CATO CONTRERAS;0;0;; - SPValidacion: 
+09/10/2020 10:26:50 pm - Deleted - SPValidacion: 
+09/10/2020 10:32:06 pm - include;CARLOS  EDUARDO CATO CONTRERAS;0;0;; - SPValidacion: 
+09/10/2020 10:32:49 pm - include;ALVARO JOSE GREGORIO MATOS CANCINI;0;1;<br>Acción 0006-0006 presenta deuda  - Dirijase al Club para mayor informacion; - SPValidacion: 
+09/10/2020 10:32:58 pm - include;EDDY MARTIN;1;1;<br>Máximo número de Invitados permitidos: 0 <br>Este participante no puede exceder el numero de partidas por día. <br>Este participante no puede exceder el numero de partidas por Semana. <br>Este participante no puede exceder el numero de partidas por Mes.; - SPValidacion: 
+09/10/2020 10:33:06 pm - include;FEDERICO ALBERTO MAYORCA LUGO;0;1;<br>Acción 0610-0610 presenta deuda  - Dirijase al Club para mayor informacion; - SPValidacion: 
+09/10/2020 10:33:15 pm - include;EDGAR EDMUNDO HERNANDEZ BOSSIO;0;0;; - SPValidacion: 
+09/10/2020 10:33:24 pm - include;CLEMENTINA EUGENIA ELLENBERG ALARCON;0;1;<br>Acción 0035-2200 presenta deuda  - Dirijase al Club para mayor informacion; - SPValidacion: 
+09/10/2020 10:33:41 pm - include;Guillermo MARIN ISTURIZ;0;0;; - SPValidacion: 
+09/10/2020 10:34:37 pm - include-booking-player;N/A;0;0;<br>Error al Cambiar el partcipante<br> Error durante el cambio de jugador, intentar nuevamente; - SPValidacion: 
+09/10/2020 10:34:58 pm - include-booking-player;JOSE ROBERTO SOTO CAMACHO;0;1;<br>Acción 0004-0004 presenta deuda  - Dirijase al Club para mayor informacion; - SPValidacion: 
+09/10/2020 10:40:28 pm - include-booking-player;JOSE ROBERTO SOTO CAMACHO;0;1;<br>Acción 0004-0004 presenta deuda  - Dirijase al Club para mayor informacion; - SPValidacion: 
+09/10/2020 10:40:43 pm - include-booking-player;ALVARO JOSE GREGORIO MATOS CANCINI;0;1;<br>Acción 0006-0006 presenta deuda  - Dirijase al Club para mayor informacion; - SPValidacion: 
+09/10/2020 10:40:55 pm - include-booking-player;CARLOS  EDUARDO CATO CONTRERAS;0;0;<br>Error al Cambiar el partcipante; - SPValidacion: 
+09/10/2020 10:41:06 pm - include-booking-player;FEDERICO ALBERTO MAYORCA LUGO;0;1;<br>Acción 0610-0610 presenta deuda  - Dirijase al Club para mayor informacion; - SPValidacion: 
+09/10/2020 10:41:15 pm - include-booking-player;N/A;0;0;<br>Error al Cambiar el partcipante<br> Error durante el cambio de jugador, intentar nuevamente; - SPValidacion: 
+09/10/2020 10:41:30 pm - include-booking-player;N/A;0;0;<br>Error al Cambiar el partcipante<br> Error durante el cambio de jugador, intentar nuevamente; - SPValidacion: 
+09/10/2020 10:44:47 pm - include-booking-player;Guillermo MARIN ISTURIZ;0;0;; - SPValidacion: 
+09/10/2020 10:45:26 pm - include-booking-player;CARLOS ENRIQUE ANZOLA DIAZ;0;0;; - SPValidacion: 
+09/10/2020 10:45:38 pm - include-booking-player;FEDERICO ALBERTO MAYORCA LUGO;0;1;<br>Acción 0610-0610 presenta deuda  - Dirijase al Club para mayor informacion; - SPValidacion: 
+09/10/2020 10:45:46 pm - include-booking-player;JOSE ROBERTO SOTO CAMACHO;0;1;<br>Acción 0004-0004 presenta deuda  - Dirijase al Club para mayor informacion; - SPValidacion: 
+09/10/2020 10:45:53 pm - include-booking-player;GRENDYS GARCIA;1;1;<br>Máximo número de Invitados permitidos: 0 <br>Este participante no puede exceder el numero de partidas por día. <br>Este participante no puede exceder el numero de partidas por Semana. <br>Este participante no puede exceder el numero de partidas por Mes.; - SPValidacion: 
+09/10/2020 10:46:02 pm - include-booking-player;ALBA VIRGINIA CONTRERAS DE CATO;0;0;; - SPValidacion: 
+09/10/2020 10:47:06 pm - include;ALBA VIRGINIA CONTRERAS DE CATO;0;0;; - SPValidacion: 
+09/10/2020 10:47:15 pm - include;Guillermo MARIN ISTURIZ;0;0;; - SPValidacion: 
+09/10/2020 10:47:28 pm - include;FEDERICO ALBERTO MAYORCA LUGO;0;1;<br>Acción 0610-0610 presenta deuda  - Dirijase al Club para mayor informacion; - SPValidacion: 
+09/10/2020 10:47:34 pm - include;CARLOS  EDUARDO CATO CONTRERAS;0;0;; - SPValidacion: 

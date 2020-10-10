@@ -2,4 +2,7 @@
 /application/.vs
 /application/storage/framework
 /application/bootstrap/*
+/logDataHelper/*
+/logAccess/*
+/logSMS/*
 config.inc

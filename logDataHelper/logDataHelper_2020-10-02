@@ -1,0 +1,28 @@
+
+02/10/2020 09:30:02 pm - Deleted - SPValidacion: 
+02/10/2020 09:30:19 pm - include;CARLOS  EDUARDO CATO CONTRERAS;0;1;; - SPValidacion: {call CalcularParticipaciones(0,0,9963065)}--> Dia=0, Semana=0, Mes=0
+02/10/2020 09:30:29 pm - include;EDGAR EDMUNDO HERNANDEZ BOSSIO;0;1;; - SPValidacion: {call CalcularParticipaciones(0,0,11227205)}--> Dia=0, Semana=1, Mes=0
+02/10/2020 09:30:43 pm - include;Guillermo MARIN ISTURIZ;0;1;; - SPValidacion: {call CalcularParticipaciones(0,0,10181761)}--> Dia=0, Semana=0, Mes=0
+02/10/2020 10:34:24 pm - include;LEONARDO ENRIQUE HERRERA RODRIGUEZ;0;1;; - SPValidacion: {call CalcularParticipaciones(0,0,4579795)}--> Dia=0, Semana=0, Mes=0
+02/10/2020 10:43:43 pm - include;Luca Araneo;0;1;; - SPValidacion: {call CalcularParticipaciones(0,0,12422099)}--> Dia=0, Semana=0, Mes=0
+02/10/2020 10:46:44 pm - include;Guillermo MARIN ISTURIZ;0;1;; - SPValidacion: {call CalcularParticipaciones(0,0,10181761)}--> Dia=0, Semana=0, Mes=0
+02/10/2020 10:46:44 pm - include;Guillermo MARIN ISTURIZ;0;0;<br>Este participante ya está registrado; - SPValidacion: {call CalcularParticipaciones(0,0,10181761)}--> Dia=0, Semana=0, Mes=0
+02/10/2020 10:46:56 pm - include;IBRAHIM ANTONIO GARCIA CARMONA;0;1;; - SPValidacion: {call CalcularParticipaciones(0,0,10841544)}--> Dia=0, Semana=0, Mes=0
+02/10/2020 10:47:06 pm - include;MARIANELA ACEDO DE BOULTON;0;0;<br>Máximo número de participantes permitidos: 4<br>Máximo número de Socios permitidos: 4; - SPValidacion: {call CalcularParticipaciones(0,0,11566763   )}--> Dia=0, Semana=0, Mes=0
+02/10/2020 10:55:03 pm - include;Luca Araneo;0;1;; - SPValidacion: {call CalcularParticipaciones(0,0,12422099)}--> Dia=0, Semana=0, Mes=1
+02/10/2020 10:55:22 pm - include;MARIANELA ACEDO DE BOULTON;0;1;; - SPValidacion: {call CalcularParticipaciones(0,0,11566763)}--> Dia=0, Semana=0, Mes=0
+02/10/2020 10:55:29 pm - include;JULIO CESAR VILLARREAL ABREU;0;1;; - SPValidacion: {call CalcularParticipaciones(0,0,10797013)}--> Dia=0, Semana=1, Mes=0
+02/10/2020 11:19:37 pm - group;12624549*JOSE ROBERTO SOTO CAMACHO#2939211*EDMUNDO HENRIQUE KEHRHAHN GONZALEZ#11740146*KALENA KEHRHAHN SOCORRO#6103131*CLOTILDE MERCEDES CAMACHO CONCEPCION#3188730*CARMEN ELENA SOCORRO DE KEHRHAHN#3242958*JOSE MARIA SOTO GONZALEZ#;; - SPValidacion: 
+02/10/2020 11:19:42 pm - include;JOSE ROBERTO SOTO CAMACHO;0;1;; - SPValidacion: {call CalcularParticipaciones(0,0,12624549)}--> Dia=0, Semana=0, Mes=0
+02/10/2020 11:19:49 pm - Deleted - SPValidacion: 
+02/10/2020 11:19:56 pm - include;JOSE ROBERTO SOTO CAMACHO;0;1;; - SPValidacion: {call CalcularParticipaciones(0,0,12624549)}--> Dia=0, Semana=0, Mes=0
+02/10/2020 11:20:01 pm - Deleted - SPValidacion: 
+02/10/2020 11:36:01 pm - include;Luca Araneo;0;1;; - SPValidacion: {call CalcularParticipaciones(0,0,12422099)}--> Dia=0, Semana=0, Mes=1
+02/10/2020 11:36:14 pm - include;JOSE ROBERTO SOTO CAMACHO;0;1;; - SPValidacion: {call CalcularParticipaciones(0,0,12624549)}--> Dia=0, Semana=0, Mes=0
+02/10/2020 11:36:19 pm - include;CLEMENTINA EUGENIA ELLENBERG ALARCON;0;1;; - SPValidacion: {call CalcularParticipaciones(0,0,15343245)}--> Dia=0, Semana=0, Mes=0
+02/10/2020 11:43:02 pm - include;Luca Araneo;0;1;; - SPValidacion: {call CalcularParticipaciones(0,0,12422099)}--> Dia=0, Semana=0, Mes=2
+02/10/2020 11:43:14 pm - group;;; - SPValidacion: 
+02/10/2020 11:43:18 pm - group;;; - SPValidacion: 
+02/10/2020 11:43:23 pm - group;12917980*GUILLERMO SIMON CARBONELL JIMENEZ#1753137*GISELA DE LAS NIEVES OTERO DE TRAMONTIN#2118789*RAFAEL ARTURO TRAMONTIN QUERALES#14095786*ADRIANA GISELA TRAMONTIN DE CARBONELL#4272784*LOURDES JOSEFINA JIMENEZ MACIAS#;; - SPValidacion: 
+02/10/2020 11:43:25 pm - include;GISELA DE LAS NIEVES OTERO DE TRAMONTIN;0;1;; - SPValidacion: {call CalcularParticipaciones(0,0,1753137)}--> Dia=0, Semana=0, Mes=0
+02/10/2020 11:43:31 pm - include;CLEMENTINA EUGENIA ELLENBERG ALARCON;0;1;; - SPValidacion: {call CalcularParticipaciones(0,0,15343245)}--> Dia=0, Semana=0, Mes=1

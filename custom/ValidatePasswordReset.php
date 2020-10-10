@@ -137,7 +137,7 @@
 					$conn = sqlsrv_connect($servername, $connectionInfo);
 					// Check connection
 					if (!$conn) {
-						die("Connection failed: " . sqlsrv_error());
+						die("Connection failed: " . sqlsrv_errors());
 					}
 					$sql = "SELECT * FROM users WHERE  email = '" . trim($email) . "' AND group_id = '" . trim($group_id) . "' AND doc_id = '" . trim($doc_id) . "'";
 
@@ -164,7 +164,7 @@
 							$result = sqlsrv_query($conn, $sql);
 
 							if (!$result) {
-								die('Consulta inválida: ' . sqlsrv_error());
+								die('Consulta inválida: ' . sqlsrv_errors());
 							}
 							else
 							{

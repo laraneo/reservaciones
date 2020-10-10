@@ -14,7 +14,7 @@ return [
     */
 
 	'player' => 'Jugador',
-	'player_placeholder' => 'Cédula del Jugador',
+	'player_placeholder' => 'Cédula o Acción',
 
 
 	'group_id' => 'Acción',
