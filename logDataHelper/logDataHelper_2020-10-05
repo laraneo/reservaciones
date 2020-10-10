@@ -1,0 +1,36 @@
+
+05/10/2020 01:55:07 pm - include;DAMIAN GOMEZ DIAZ;0;1;; - SPValidacion: {call CalcularParticipaciones(0,0,13308113)}--> Dia=0, Semana=0, Mes=0
+05/10/2020 01:56:23 pm - include;LEON MAURICE BENATAR SHAMIS;0;0;<br>Este participante ya está registrado; - SPValidacion: {call CalcularParticipaciones(0,0,5311065)}--> Dia=0, Semana=0, Mes=0
+05/10/2020 01:56:43 pm - include;STEVEN IRWIN MISHKIN PENSIN;0;1;; - SPValidacion: {call CalcularParticipaciones(0,0,5310450)}--> Dia=0, Semana=0, Mes=0
+05/10/2020 01:56:54 pm - include;JOSE LUIS CASTILLO PAREDES;0;1;; - SPValidacion: {call CalcularParticipaciones(0,0,6516433)}--> Dia=0, Semana=0, Mes=0
+05/10/2020 01:57:21 pm - include;N/A;1;0;<br>Máximo número de Invitados permitidos: 0 <br>Este participante no puede exceder el numero de partidas por día. <br>Este participante no puede exceder el numero de partidas por Semana. <br>Este participante no puede exceder el numero de partidas por Mes.<br>Invitado No activo; - SPValidacion: {call CalcularParticipaciones(0,1,)}--> Dia=0, Semana=0, Mes=0
+05/10/2020 01:57:33 pm - Deleted - SPValidacion: 
+05/10/2020 01:57:34 pm - Deleted - SPValidacion: 
+05/10/2020 01:57:46 pm - include;DOW QUIZENA LAWRENCE RENFER;0;1;; - SPValidacion: {call CalcularParticipaciones(0,0,6900914)}--> Dia=0, Semana=0, Mes=0
+05/10/2020 01:58:43 pm - include;MARIA ALEJANDRA TRUJILLO PINEDA;0;1;; - SPValidacion: {call CalcularParticipaciones(0,0,13285088)}--> Dia=0, Semana=0, Mes=0
+05/10/2020 01:59:25 pm - include;EUGENIO GONZALEZ DE LA VEGA BENEDICO;0;1;; - SPValidacion: {call CalcularParticipaciones(0,0,5533564)}--> Dia=0, Semana=0, Mes=0
+05/10/2020 01:59:28 pm - include;N/A;1;0;<br>Máximo número de Invitados permitidos: 0 <br>Este participante no puede exceder el numero de partidas por día. <br>Este participante no puede exceder el numero de partidas por Semana. <br>Este participante no puede exceder el numero de partidas por Mes.<br>Invitado No activo; - SPValidacion: {call CalcularParticipaciones(0,1,)}--> Dia=0, Semana=0, Mes=0
+05/10/2020 02:00:03 pm - include;N/A;1;0;<br>Máximo número de Invitados permitidos: 0 <br>Este participante no puede exceder el numero de partidas por día. <br>Este participante no puede exceder el numero de partidas por Semana. <br>Este participante no puede exceder el numero de partidas por Mes.<br>Invitado No activo; - SPValidacion: {call CalcularParticipaciones(0,1,Dembo)}--> Dia=0, Semana=0, Mes=0
+05/10/2020 02:00:29 pm - include;DAVID ENRIQUE DEMBO PEROZA;0;1;; - SPValidacion: {call CalcularParticipaciones(0,0,18359325)}--> Dia=0, Semana=0, Mes=0
+05/10/2020 02:00:40 pm - include;EDELMIRA CASTRO DE ESCOBAR;0;1;; - SPValidacion: {call CalcularParticipaciones(0,0,25215013)}--> Dia=0, Semana=0, Mes=0
+05/10/2020 02:00:43 pm - Deleted - SPValidacion: 
+05/10/2020 02:00:47 pm - include;DANIEL ALBERTO DEMBO PEROZA;0;1;; - SPValidacion: {call CalcularParticipaciones(0,0,19242855)}--> Dia=0, Semana=0, Mes=0
+05/10/2020 02:00:49 pm - include;EMIRO ESCOBAR MAHECHA;0;1;; - SPValidacion: {call CalcularParticipaciones(0,0,25215014)}--> Dia=0, Semana=0, Mes=0
+05/10/2020 02:01:03 pm - include;RAFAEL JOSE CORDERO SALDIVIA;0;1;; - SPValidacion: {call CalcularParticipaciones(0,0,2931982)}--> Dia=0, Semana=0, Mes=0
+05/10/2020 02:01:05 pm - include;CARLOS ARMANDO PEREZ ANDRADE;0;1;; - SPValidacion: {call CalcularParticipaciones(0,0,19557887)}--> Dia=0, Semana=0, Mes=0
+05/10/2020 02:01:18 pm - include;LEON MAURICE BENATAR SHAMIS;0;1;; - SPValidacion: {call CalcularParticipaciones(0,0,5311065)}--> Dia=0, Semana=1, Mes=1
+05/10/2020 02:01:31 pm - include;STEVEN IRWIN MISHKIN PENSIN;0;1;; - SPValidacion: {call CalcularParticipaciones(0,0,5310450)}--> Dia=0, Semana=1, Mes=1
+05/10/2020 02:01:53 pm - include;PEDRO VICENTE MANCERA SALAZAR;0;1;; - SPValidacion: {call CalcularParticipaciones(0,0,18967225)}--> Dia=0, Semana=0, Mes=0
+05/10/2020 02:02:08 pm - include;JUAN FRANCISCO DIAZ IVANOV;0;1;; - SPValidacion: {call CalcularParticipaciones(0,0,32236177)}--> Dia=0, Semana=0, Mes=0
+05/10/2020 02:04:40 pm - include;ANDRES ALBERTO BRILLEMBOURG LAVIE;0;1;; - SPValidacion: {call CalcularParticipaciones(0,0,9882163)}--> Dia=0, Semana=0, Mes=0
+05/10/2020 02:04:52 pm - include;LUIS JOSE ITURRIAGA CASANOVA;0;1;; - SPValidacion: {call CalcularParticipaciones(0,0,3977299)}--> Dia=0, Semana=1, Mes=1
+05/10/2020 02:11:27 pm - include;HERIBERTO JOSE HERRERA PERDOMO;0;1;; - SPValidacion: {call CalcularParticipaciones(0,0,6970652)}--> Dia=0, Semana=0, Mes=0
+05/10/2020 02:11:35 pm - include;CARLOS EDUARDO PENAS VASQUEZ;0;1;; - SPValidacion: {call CalcularParticipaciones(0,0,28155954)}--> Dia=0, Semana=0, Mes=0
+05/10/2020 02:11:44 pm - include;CARLOS EDUARDO PENAS VASQUEZ;0;0;<br>Este participante ya está registrado; - SPValidacion: {call CalcularParticipaciones(0,0,28155954)}--> Dia=0, Semana=0, Mes=0
+05/10/2020 02:11:57 pm - include;DIEGO ARTURO HERRERA CHACIN;0;1;; - SPValidacion: {call CalcularParticipaciones(0,0,30751012)}--> Dia=0, Semana=0, Mes=0
+05/10/2020 02:13:08 pm - include;ALBERTO JOSE POLETTO ESPINEL;0;1;; - SPValidacion: {call CalcularParticipaciones(0,0,14501579)}--> Dia=0, Semana=1, Mes=1
+05/10/2020 02:13:15 pm - include;MATHIAS DREYER PICOTT;0;1;; - SPValidacion: {call CalcularParticipaciones(0,0,31230078)}--> Dia=0, Semana=0, Mes=0
+05/10/2020 02:13:27 pm - include;NELSON EDUARDO BOCARANDA  BELISARIO;0;1;; - SPValidacion: {call CalcularParticipaciones(0,0,15976079)}--> Dia=0, Semana=0, Mes=0
+05/10/2020 02:14:10 pm - include;CARLOS EDUARDO PENAS VASQUEZ;0;1;; - SPValidacion: {call CalcularParticipaciones(0,0,28155954)}--> Dia=0, Semana=1, Mes=1
+05/10/2020 02:14:31 pm - include;HERIBERTO JOSE HERRERA PERDOMO;0;1;; - SPValidacion: {call CalcularParticipaciones(0,0,6970652)}--> Dia=0, Semana=1, Mes=1
+05/10/2020 02:22:31 pm - include;DIEGO ARTURO HERRERA CHACIN;0;1;; - SPValidacion: {call CalcularParticipaciones(,0,30751012)}--> Dia=0, Semana=1, Mes=1

@@ -24,8 +24,108 @@
 	// use App\Application;
 
 
-	function ValidateBookingPlayer(&$playername, &$player_type,&$status, &$has_errors)
+	function ValidateBookingPlayer($doc_id, &$playername, &$first_name , &$last_name , &$is_active, &$email, &$phone_number, &$player_type,&$status, &$has_errors)
 	{
+		global $connection;
+		
+		{ //get settings
+
+			$querySettings = "select * from settings";
+			$resultSettings = sqlsrv_query($connection, $querySettings);
+
+			if( $resultSettings === false) {
+				die( print_r( sqlsrv_errors(), true) );
+			}
+			
+			while( $row = sqlsrv_fetch_array( $resultSettings, SQLSRV_FETCH_ASSOC) ) {
+				//$domain_id = $row['business_name'];   //esto no va se toma de config.inc
+				$max_days = $row['bookingUser_maxDays'];
+				// $min_players = $row['bookingUser_minPlayers'];
+				$max_players = $row['bookingUser_maxPlayers'];
+				$max_guests = $row['bookingUser_maxGuests'];
+				$bookings_perday =  $row['bookingUserPerDay'];
+				$bookings_playsperday =  $row['bookingUserPlayPerDay'];
+
+
+				//Validaciones genericas
+				$booking_min = '';
+				$booking_max = '';
+				$player_min = '';
+				$player_max = '';
+				$guest_min = '';
+				$guest_max = '';
+
+				//Validaciones Limites
+				$bookingUser_maxPerDay = '';
+				$bookingUser_maxPerWeek = '';
+				$bookingUser_maxPerMonth = '';
+				$bookingGuest_maxPerDay = '';
+				$bookingGuest_maxPerWeek = '';
+				$bookingGuest_maxPerMonth = '';
+
+
+				// Standard
+				if($categoryType == 0) {
+
+					$booking_min = $row['bookingUser_minPlayers'];
+					$booking_max = $row['bookingUser_maxPlayers'];
+					$player_min = 1;
+					$player_max = $row['bookingUser_maxPlayers'];
+					$guest_min = 0;
+					$guest_max = $row['bookingUser_maxGuests'];
+
+					$bookingUser_maxPerDay = $row['bookingUserPlayPerDay'];
+					$bookingUser_maxPerWeek = $row['bookingUserPlayPerWeek'];
+					$bookingUser_maxPerMonth = $row['bookingUserPlayPerMonth'];
+					$bookingGuest_maxPerDay = $row['bookingGuestPlayPerDay'];
+					$bookingGuest_maxPerWeek = $row['bookingGuestPlayPerWeek'];
+					$bookingGuest_maxPerMonth =$row['bookingGuestPlayPerMonth'];
+
+				}
+
+				// Per Time
+				if($categoryType == 1) {
+
+					// Consultar parametros para el Tipo de Paquete
+					$query = "SELECT * from packages_types where id='" . $packageType . "'";
+					$result = sqlsrv_query($connection, $query); 
+
+					if( $result === false) {
+						die( print_r( sqlsrv_errors(), true) );
+					}
+
+					// Setear los parametros por tipo de paquete
+					while( $packageTypeRow = sqlsrv_fetch_array( $result, SQLSRV_FETCH_ASSOC) ) {
+						$cant = $packageTypeRow['cant'];
+						$booking_min = $packageTypeRow['booking_min'];
+						$booking_max = $packageTypeRow['booking_max'];
+						$player_min = $packageTypeRow['player_min'];
+						$player_max = $packageTypeRow['player_max'];
+						$guest_min = $packageTypeRow['guest_min'];
+						$guest_max = $packageTypeRow['guest_max'];
+					}
+
+
+					$bookingUser_maxPerDay = $row['bookingUser_maxTimePerDay'];
+					$bookingUser_maxPerWeek = $row['bookingUser_maxTimePerWeek'];
+					$bookingUser_maxPerMonth = $row['bookingUser_maxTimePerMonth'];
+					$bookingGuest_maxPerDay = $row['bookingGuest_maxTimePerDay'];
+					$bookingGuest_maxPerWeek = $row['bookingGuest_maxTimePerWeek'];
+					$bookingGuest_maxPerMonth =$row['bookingGuest_maxTimePerMonth'];
+
+				}
+
+
+
+
+
+
+			}
+
+			sqlsrv_free_stmt( $resultSettings);			
+
+		}
+		
 		//get group_id
 		$is_user= 1;
 		$group_id = -1;
@@ -923,103 +1023,6 @@
 			exit(); //die();
 		}
 
-		{ //get settings
-
-			$querySettings = "select * from settings";
-			$resultSettings = sqlsrv_query($connection, $querySettings);
-
-			if( $resultSettings === false) {
-				die( print_r( sqlsrv_errors(), true) );
-			}
-			
-			while( $row = sqlsrv_fetch_array( $resultSettings, SQLSRV_FETCH_ASSOC) ) {
-				//$domain_id = $row['business_name'];   //esto no va se toma de config.inc
-				$max_days = $row['bookingUser_maxDays'];
-				// $min_players = $row['bookingUser_minPlayers'];
-				$max_players = $row['bookingUser_maxPlayers'];
-				$max_guests = $row['bookingUser_maxGuests'];
-				$bookings_perday =  $row['bookingUserPerDay'];
-				$bookings_playsperday =  $row['bookingUserPlayPerDay'];
-
-
-				//Validaciones genericas
-				$booking_min = '';
-				$booking_max = '';
-				$player_min = '';
-				$player_max = '';
-				$guest_min = '';
-				$guest_max = '';
-
-				//Validaciones Limites
-				$bookingUser_maxPerDay = '';
-				$bookingUser_maxPerWeek = '';
-				$bookingUser_maxPerMonth = '';
-				$bookingGuest_maxPerDay = '';
-				$bookingGuest_maxPerWeek = '';
-				$bookingGuest_maxPerMonth = '';
-
-
-				// Standard
-				if($categoryType == 0) {
-
-					$booking_min = $row['bookingUser_minPlayers'];
-					$booking_max = $row['bookingUser_maxPlayers'];
-					$player_min = 1;
-					$player_max = $row['bookingUser_maxPlayers'];
-					$guest_min = 0;
-					$guest_max = $row['bookingUser_maxGuests'];
-
-					$bookingUser_maxPerDay = $row['bookingUserPlayPerDay'];
-					$bookingUser_maxPerWeek = $row['bookingUserPlayPerWeek'];
-					$bookingUser_maxPerMonth = $row['bookingUserPlayPerMonth'];
-					$bookingGuest_maxPerDay = $row['bookingGuestPlayPerDay'];
-					$bookingGuest_maxPerWeek = $row['bookingGuestPlayPerWeek'];
-					$bookingGuest_maxPerMonth =$row['bookingGuestPlayPerMonth'];
-
-				}
-
-				// Per Time
-				if($categoryType == 1) {
-
-					// Consultar parametros para el Tipo de Paquete
-					$query = "SELECT * from packages_types where id='" . $packageType . "'";
-					$result = sqlsrv_query($connection, $query); 
-
-					if( $result === false) {
-						die( print_r( sqlsrv_errors(), true) );
-					}
-
-					// Setear los parametros por tipo de paquete
-					while( $packageTypeRow = sqlsrv_fetch_array( $result, SQLSRV_FETCH_ASSOC) ) {
-						$cant = $packageTypeRow['cant'];
-						$booking_min = $packageTypeRow['booking_min'];
-						$booking_max = $packageTypeRow['booking_max'];
-						$player_min = $packageTypeRow['player_min'];
-						$player_max = $packageTypeRow['player_max'];
-						$guest_min = $packageTypeRow['guest_min'];
-						$guest_max = $packageTypeRow['guest_max'];
-					}
-
-
-					$bookingUser_maxPerDay = $row['bookingUser_maxTimePerDay'];
-					$bookingUser_maxPerWeek = $row['bookingUser_maxTimePerWeek'];
-					$bookingUser_maxPerMonth = $row['bookingUser_maxTimePerMonth'];
-					$bookingGuest_maxPerDay = $row['bookingGuest_maxTimePerDay'];
-					$bookingGuest_maxPerWeek = $row['bookingGuest_maxTimePerWeek'];
-					$bookingGuest_maxPerMonth =$row['bookingGuest_maxTimePerMonth'];
-
-				}
-
-
-
-
-
-
-			}
-
-			sqlsrv_free_stmt( $resultSettings);			
-
-		}
 	}
 	
 	{ //token
@@ -1219,15 +1222,18 @@ else if ($command == "group") // query group
 }	
 else if ($command == "include") // include player
 {
-	$err_message = ValidateBookingPlayer($playername, $player_type,$status, $has_errors);
-
-	if (($err_message != "") && ($has_errors == 0))
+	$err_message = ValidateBookingPlayer($doc_id,$playername, $first_name , $last_name , $is_active, $email, $phone_number, $player_type,$status, $has_errors);
+	
+	if (($err_message == "") && ($has_errors == 0))
 	{
+		
 		$status=0;	
 		//ejecuto el insert o el SP
 		//insert row into session players
 		$query = "INSERT INTO session_players (doc_id, player_type, session_email, created_at, updated_at, first_name, last_name, email, phone_number, package_id) VALUES ('" . $doc_id . "'," . $player_type . ",'" . $session_email . "',GETDATE(), GETDATE(),'" . $first_name . "','" . $last_name . "','" . $email . "','" . $phone_number . "','" . $package_id . "')"; 
 		$qry_result = sqlsrv_query($connection,$query ) or die( print_r( sqlsrv_errors(), true));
+		echo $query;
+		
 	}
 	//$player_type = 1;
 	
@@ -1236,13 +1242,19 @@ else if ($command == "include") // include player
 }
 else if ($command == "include-booking-player") // include booking player
 {
-	$err_message = ValidateBookingPlayer($playername, $player_type,$status, $has_errors);
+	$err_message = ValidateBookingPlayer($doc_id,$playername, $first_name , $last_name , $is_active, $email, $phone_number, $player_type,$status, $has_errors);
 
-	if (($err_message != "") && ($has_errors == 0))
+	if (($err_message == "") && ($has_errors == 0))
 	{
 		$status=0;	
 		//ejecuto el insert o el SP
 		
+		$query = "SELECT  * from bookings where id = '" .$bookingId. "' "; 
+		$result = sqlsrv_query($connection, $query); 
+		if( $result === false) { die( print_r( sqlsrv_errors(), true) );}
+		while( $row = sqlsrv_fetch_array( $result, SQLSRV_FETCH_ASSOC) ) {
+			$locator = $row['locator'];					
+		}
 		
 		$params = array(
 			array($locator, SQLSRV_PARAM_IN),
