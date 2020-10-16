@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Booking;
 use App\Settings;
 use App\CancelRequest;
+use Illuminate\Http\Request;
 use App\Invoice;
 use App\Role;
 use Carbon\Carbon;
@@ -39,7 +40,7 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         //if Auth user role is admin
         if(Auth::user()->isAdmin())
@@ -104,8 +105,9 @@ class HomeController extends Controller
         //if Auth user role is customer
         else if(Auth::user()->isCustomer())
         {
+            
             $settings =  Settings::query()->first();
-            if($settings->SSOLoginOnly) {
+            if($settings->SSOLoginOnly && !$request['externalLogin']) {
                 $isSSO = true;
                 return view('auth.login', compact('isSSO'));
             }
