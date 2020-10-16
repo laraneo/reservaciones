@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Booking;
+use App\Settings;
 use App\CancelRequest;
 use App\Invoice;
 use App\Role;
@@ -103,6 +104,12 @@ class HomeController extends Controller
         //if Auth user role is customer
         else if(Auth::user()->isCustomer())
         {
+            $settings =  Settings::query()->first();
+            if($settings->SSOLoginOnly) {
+                $isSSO = true;
+                return view('auth.login', compact('isSSO'));
+            }
+            
             $user = Auth::user();
             $bookings = $user->bookings()->where('status','!=', __('backend.cancelled'))->count('id');
             $recent_bookings = $user->bookings()->orderBy('created_at', 'DESC')->limit('5')->get();
