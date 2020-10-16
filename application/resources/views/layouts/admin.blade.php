@@ -105,7 +105,7 @@
                                         <i class="icon-logout m-r-xs"></i>{{ __('backend.logout') }}
                                     </a>
                                 </li>
-                                <form id="logout-form" action="{{ route('logoutBooking') }}" method="POST" style="display: none;">
+                                <form id="logout-form" action="{{ route('customLogout') }}" method="POST" style="display: none;">
                                     @csrf
                                 </form>
                             </ul>
