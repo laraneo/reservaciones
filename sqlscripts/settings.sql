@@ -33,3 +33,6 @@ ALTER TABLE settings ADD MaxDaysPlayerDeleteBookings INT NULL;
 ALTER TABLE settings ADD BookingMaxTimeChangePlayer varchar(255) NULL;
 
 ALTER TABLE settings ADD SSOLoginOnly INT NULL;
+
+ALTER TABLE settings ADD portal_link INT NULL;
+ALTER TABLE settings ADD allowRedirectPortal INT NULL;

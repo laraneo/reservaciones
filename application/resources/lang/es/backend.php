@@ -498,4 +498,6 @@ return [
     'BookingMaxTimeChangePlayer' => 'Maximo de hora para cambiar jugador',
     'SSOErrorMessage' => 'Acceso no autorizado, debe ingresar por el Portal ',
     'SSOLoginOnly' => 'Login Integrado Portal',
+    'allowRedirectPortal' => 'Redireccionar a Portal Socios?',
+    'portal_link' => 'Link de Portal Socios',
 ];

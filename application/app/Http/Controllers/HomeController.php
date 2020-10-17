@@ -12,6 +12,8 @@ use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Redirect;
 
 class HomeController extends Controller
 {
@@ -109,7 +111,11 @@ class HomeController extends Controller
             $settings =  Settings::query()->first();
             if($settings->SSOLoginOnly && !$request['externalLogin']) {
                 $isSSO = true;
-                return view('auth.login', compact('isSSO'));
+                Auth::logout();
+                if($settings->allowRedirectPortal) {
+                    return Redirect::to($settings->portal_link);
+                }
+                return redirect()->route('login'); 
             }
             
             $user = Auth::user();

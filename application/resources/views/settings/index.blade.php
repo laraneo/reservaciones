@@ -144,6 +144,25 @@
                                         <input type="text" class="form-control" name="REGLAMENTO_LABEL" value="{{ $settings->REGLAMENTO_LABEL }}">
                                     </div>
 
+
+
+                                    <div class="col-md-6 form-group">
+                                        <label><strong>{{ __('backend.allowRedirectPortal') }}</strong></label>
+                                        <select class="form-control" name="allowRedirectPortal">
+                                            <option value="1"{{ $settings->allowRedirectPortal == 1 ? ' selected' : '' }}>{{ __('backend.yes') }}</option>
+                                            <option value="0"{{ $settings->allowRedirectPortal == 0 ? ' selected' : '' }}>{{ __('backend.no') }}</option>
+                                        </select>
+                                    </div>
+
+
+                                    <div class="col-md-6 form-group">
+                                        <label><strong>{{ __('backend.portal_link') }}</strong></label>
+                                        <input type="text" class="form-control" name="portal_link" value="{{ $settings->portal_link }}">
+                                    </div>
+
+
+
+
                                 </div>
                             </div>
                             <div role="tabpanel" class="tab-pane fade in" id="currency">
