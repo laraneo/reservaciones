@@ -497,4 +497,5 @@ return [
     'AllowNotificationPreviousBookingPlayer' => 'Enviar notificacion de cambio a jugador anterior?',
     'BookingMaxTimeChangePlayer' => 'Maximo de hora para cambiar jugador',
     'SSOErrorMessage' => 'Acceso no autorizado, debe ingresar por el Portal ',
+    'SSOLoginOnly' => 'Login Integrado Portal',
 ];
