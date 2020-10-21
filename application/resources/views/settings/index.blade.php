@@ -53,6 +53,30 @@
                         <div class="tab-content">
                             <div role="tabpanel" class="tab-pane active fade in" id="business">
                                 <div class="row clearfix">
+
+
+                                    <div class="col-md-3 form-group">
+                                        <label><strong>{{ __('backend.SSOLoginOnly') }}</strong></label>
+                                        <select class="form-control" name="SSOLoginOnly">
+                                            <option value="1"{{ $settings->SSOLoginOnly == 1 ? ' selected' : '' }}>{{ __('backend.yes') }}</option>
+                                            <option value="0"{{ $settings->SSOLoginOnly == 0 ? ' selected' : '' }}>{{ __('backend.no') }}</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="col-md-3 form-group">
+                                        <label><strong>{{ __('backend.allowRedirectPortal') }}</strong></label>
+                                        <select class="form-control" name="allowRedirectPortal">
+                                            <option value="1"{{ $settings->allowRedirectPortal == 1 ? ' selected' : '' }}>{{ __('backend.yes') }}</option>
+                                            <option value="0"{{ $settings->allowRedirectPortal == 0 ? ' selected' : '' }}>{{ __('backend.no') }}</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="col-md-6 form-group">
+                                        <label><strong>{{ __('backend.portal_link') }}</strong></label>
+                                        <input type="text" class="form-control" name="portal_link" value="{{ $settings->portal_link }}">
+                                    </div>
+
+
                                     <div class="form-group col-md-6">
                                         <label><strong>{{ __('backend.business_name') }}</strong></label>
                                         <input type="text" class="form-control" name="business_name" value="{{ $settings->business_name }}">
@@ -145,24 +169,6 @@
                                     </div>
 
 
-
-                                    <div class="col-md-6 form-group">
-                                        <label><strong>{{ __('backend.allowRedirectPortal') }}</strong></label>
-                                        <select class="form-control" name="allowRedirectPortal">
-                                            <option value="1"{{ $settings->allowRedirectPortal == 1 ? ' selected' : '' }}>{{ __('backend.yes') }}</option>
-                                            <option value="0"{{ $settings->allowRedirectPortal == 0 ? ' selected' : '' }}>{{ __('backend.no') }}</option>
-                                        </select>
-                                    </div>
-
-
-                                    <div class="col-md-6 form-group">
-                                        <label><strong>{{ __('backend.portal_link') }}</strong></label>
-                                        <input type="text" class="form-control" name="portal_link" value="{{ $settings->portal_link }}">
-                                    </div>
-
-
-
-
                                 </div>
                             </div>
                             <div role="tabpanel" class="tab-pane fade in" id="currency">
@@ -220,17 +226,6 @@
                             </div>
                             <div role="tabpanel" class="tab-pane fade in" id="booking">
                                 <div class="row clearfix">
-
-                                    <div class="col-md-6 form-group">
-                                        <label><strong>{{ __('backend.SSOLoginOnly') }}</strong></label>
-                                        <select class="form-control" name="SSOLoginOnly">
-                                            <option value="1"{{ $settings->SSOLoginOnly == 1 ? ' selected' : '' }}>{{ __('backend.yes') }}</option>
-                                            <option value="0"{{ $settings->SSOLoginOnly == 0 ? ' selected' : '' }}>{{ __('backend.no') }}</option>
-                                        </select>
-                                    </div>
-
-                                    <div class="col-md-6 form-group" style="padding: 30px" >  </div>
-
 
                                     <div class="form-group col-md-6">
                                         <label><strong>{{ __('backend.slots_method') }}</strong></label>
