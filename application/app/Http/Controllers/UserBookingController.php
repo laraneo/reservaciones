@@ -53,10 +53,49 @@ class UserBookingController extends Controller
      * get user bookings and load user bookings view
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function index()
+    public function index(Request $request)
     {
-        $bookings = Auth::user()->bookings()->orderBy('created_at', 'ASC')->get();
-        return view('customer.bookings.index', compact('bookings'));
+        $searchQuery = $request;
+        $categories = Category::all();
+        $packages = [];
+
+        $selectedCategory = $request['category'] !== null ? $request['category'] : null;
+        $selectedPackage = $request['package'] !== null ? $request['package'] : null;
+        $selectedDateStart = $request['dateStart'] !== null ? $request['dateStart'] : null;
+        $selectedDateEnd = $request['dateEnd'] !== null ? $request['dateEnd'] : null;
+        
+        $queryStrings = (object)[
+            'category' => $selectedCategory,
+            'package' => $selectedPackage,
+            'dateStart' => $selectedDateStart,
+            'dateEnd' => $selectedDateEnd,
+        ];
+
+
+        if($request['category'] && $request['category'] !== null) {
+            $packages = Package::query()->where('category_id', $request['category'])->get();
+        }
+
+        $bookings = Auth::user()->bookings()->where(function($q) use($searchQuery) {
+            if ($searchQuery['category'] !== null && $searchQuery['package'] === null ) {
+                $category = $searchQuery['category'];
+                $q->whereHas('package', function($query) use($category) {
+                    $query->where('category_id', $category);
+                });
+            }
+            if ($searchQuery['category'] !== null && $searchQuery['package'] !== null ) {
+                $q->where('package_id', $searchQuery['package']);
+            }
+
+            if ($searchQuery['dateStart'] !== NULL && $searchQuery['dateEnd'] !== NULL) {
+                $q->orWhereBetween('booking_date', [Carbon::parse($searchQuery['dateStart'])->format('d-m-Y'), Carbon::parse($searchQuery['dateEnd'])->format('d-m-Y')]);
+            }
+
+          })->orderBy('created_at', 'ASC')->get();
+
+        Session::put('UserBookingControllerIndexQueryStrings',$queryStrings);
+
+        return view('customer.bookings.index', compact('bookings','categories','packages','selectedCategory','selectedPackage','selectedDateStart','selectedDateEnd'));
     }
 
     /**

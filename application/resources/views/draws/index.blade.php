@@ -24,7 +24,7 @@
                             <select class="form-control" id="category_id" name="category_id" onchange="onSelecCategory()">
                                     <option value="">Seleccione Categoria</option>
                                     @foreach($categories as $category)
-                                        <option value="{{ $category->id }}">{{ $category->title }}</option>
+                                        <option value="{{ $category->id }}" {{ $selectedCategory == $category->id ? 'selected' : '' }} >{{ $category->title }}</option>
                                     @endforeach
                                 </select>
                         </div>
