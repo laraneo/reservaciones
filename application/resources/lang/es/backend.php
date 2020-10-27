@@ -500,4 +500,6 @@ return [
     'SSOLoginOnly' => 'Login Integrado Portal',
     'allowRedirectPortal' => 'Redireccionar a Portal Socios?',
     'portal_link' => 'Link de Portal Socios',
+    'from' => 'Desde',
+    'to' => 'Hasta',
 ];

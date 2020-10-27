@@ -32,21 +32,44 @@ class AdminEventsController extends Controller
      */
     public function index(Request $request)
     {
-        $searchQuery = $request;
-        $selectedType = $request['type'] !== null ? $request['type'] : null;
-        $selectedCategory = $request['category'] !== null ? $request['category'] : null;;
-        $selectedInternal = $request['internal'] !== null ?  $request['internal'] : null;;
         $categories = Category::all();
-        $events = Event::query()->where(function($q) use($searchQuery) {
-            if ($searchQuery['type'] !== null) {
-                $q->where('event_type', $searchQuery['type']);
+
+        if($request['type']  === null && $request['category']  === null && $request['internal']  === null) {
+            if(Session::get('AdminEventsControllerIndexQueryStrings')) {
+                $queryStrings = Session::get('AdminEventsControllerIndexQueryStrings');
+                $selectedType = $queryStrings->type !== null ? $queryStrings->type : null;
+                $selectedCategory = $queryStrings->category !== null ? $queryStrings->category : null;
+                $selectedInternal = $queryStrings->internal !== null ? $queryStrings->internal : null;
             }
-            if ($searchQuery['category'] !== null) {
-                $q->where('category_id', $searchQuery['category']);
+        } else {
+            $selectedType = $request['type'] !== null ? $request['type'] : null;
+            $selectedCategory = $request['category'] !== null ? $request['category'] : null;
+            $selectedInternal = $request['internal'] !== null ?  $request['internal'] : null;
+            $queryStrings = (object)[
+                'type' => $selectedType,
+                'category' => $selectedCategory,
+                'internal' => $selectedInternal,
+            ];
+            Session::put('AdminEventsControllerIndexQueryStrings',$queryStrings);
+        }
+
+       
+        $searchQuery = (object)[
+            'type' => $selectedType,
+            'category' => $selectedCategory,
+            'internal' => $selectedInternal,
+        ];
+
+        $events = Event::query()->where(function($q) use($searchQuery) {
+            if ($searchQuery->type !== null) {
+                $q->where('event_type', $searchQuery->type);
+            }
+            if ($searchQuery->category !== null) {
+                $q->where('category_id', $searchQuery->category);
             }
 
-            if ($searchQuery['internal'] !== null) {
-                $q->where('internal', $searchQuery['internal']);
+            if ($searchQuery->internal !== null) {
+                $q->where('internal', $searchQuery->internal);
             }
           })->orderBy('category_id', 'ASC')->orderBy('event_type', 'ASC')->orderBy('date', 'ASC')->orderBy('time1', 'ASC')->get();
         
@@ -150,7 +173,6 @@ class AdminEventsController extends Controller
         if($input['event_type'] === "2") {
             Draw::where('event_id', $id)->update(['status' => $input['is_active']]);
         }
-
         //set session message and redirect back events.index
         Session::flash('event_updated', __('backend.event_updated'));
         return redirect('/events');

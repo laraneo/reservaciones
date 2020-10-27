@@ -6,6 +6,7 @@ use App\Category;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 
 class AdminDrawsController extends Controller
 {
@@ -25,6 +26,8 @@ class AdminDrawsController extends Controller
     public function index(Request $request)
     {
         $category = $request['category'] ? "AND p.category_id = ".$request['category']." " : '';
+        $selectedCategory = $request['category'] !== null ? $request['category'] : null;
+        Session::put('AdminDrawsControllerIndexQueryStrings',$selectedCategory);
         $user = auth()->user()->id;
         $categories = Category::all();
         $draws = \DB::select("SELECT u.doc_id , u.first_name, u.last_name ,dr.id, dr.draw_id,e.description as evento,   dr.package_id, p.title as package, p.category_id, c.title as categoria, dr.draw_date, dr.draw_time, dr.priority, dr.locator, dr.booking_id, dr.status
@@ -37,6 +40,9 @@ class AdminDrawsController extends Controller
         {$category}
         order by dr.draw_date DESC, dr.priority ASC");
 
-        return view('draws.index', compact('draws','categories'));
+        
+        $selectedCategory = Session::get('AdminDrawsControllerIndexQueryStrings');
+
+        return view('draws.index', compact('draws','categories','selectedCategory'));
     }
 }

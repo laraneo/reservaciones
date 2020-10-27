@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Booking;
+use App\Package;
+use App\Category;
 use App\Mail\BookingCancelled;
 use Carbon\Carbon;
 use Cartalyst\Stripe\Laravel\Facades\Stripe;
@@ -57,10 +59,63 @@ class AdminBookingsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $bookings = Booking::all();
-        return view('bookings.index', compact('bookings'));
+        $categories = Category::all();
+        $packages = [];
+
+
+        if($request['category']  === null && $request['package']  === null && $request['dateStart']  === null && $request['dateEnd']  === null) {
+            if(Session::get('AdminBookingsControllerQueryStrings')) {
+                $queryStrings = Session::get('AdminBookingsControllerQueryStrings');
+                $selectedCategory = $queryStrings->category !== null ? $queryStrings->category : null;
+                $selectedPackage = $queryStrings->package !== null ? $queryStrings->package : null;
+                $selectedDateStart = $queryStrings->dateStart !== null ? $queryStrings->dateStart : null;
+                $selectedDateEnd = $queryStrings->dateEnd !== null ? $queryStrings->dateEnd : null;
+            }
+        } else {
+            $selectedCategory = $request['category'] !== null ? $request['category'] : null;
+            $selectedPackage = $request['package'] !== null ? $request['package'] : null;
+            $selectedDateStart = $request['dateStart'] !== null ? $request['dateStart'] : null;
+            $selectedDateEnd = $request['dateEnd'] !== null ? $request['dateEnd'] : null;
+            $queryStrings = (object)[
+                'category' => $selectedCategory,
+                'package' => $selectedPackage,
+                'dateStart' => $selectedDateStart,
+                'dateEnd' => $selectedDateEnd,
+            ];
+            Session::put('AdminBookingsControllerQueryStrings',$queryStrings);
+        }
+
+       
+        if($selectedCategory && $selectedCategory !== null) {
+            $packages = Package::query()->where('category_id', $selectedCategory)->get();
+        }
+        $searchQuery = (object)[
+            'category' => $selectedCategory,
+            'package' => $selectedPackage,
+            'dateStart' => $selectedDateStart,
+            'dateEnd' => $selectedDateEnd,
+        ];
+        $bookings = Booking::query()->where(function($q) use($searchQuery) {
+            if ($searchQuery->category !== null && $searchQuery->package === null ) {
+                $category = $searchQuery->category;
+                $q->whereHas('package', function($query) use($category) {
+                    $query->where('category_id', $category);
+                });
+            }
+            if ($searchQuery->category !== null && $searchQuery->package !== null ) {
+                $q->where('package_id', $searchQuery->package);
+            }
+
+            if ($searchQuery->dateStart !== NULL && $searchQuery->dateEnd !== NULL) {
+                $q->orWhereBetween('booking_date', [Carbon::parse($searchQuery->dateStart)->format('d-m-Y'), Carbon::parse($searchQuery->dateEnd)->format('d-m-Y')]);
+            }
+
+          })->get();
+
+        
+        return view('bookings.index', compact('bookings','categories','packages','selectedCategory','selectedPackage','selectedDateStart','selectedDateEnd'));
     }
 
     /**
@@ -174,7 +229,6 @@ class AdminBookingsController extends Controller
                 //do nothing
             }
         }
-
         //set session message and redirect back to bookings.show
         Session::flash('booking_updated', __('backend.booking_updated'));
         return redirect()->route('bookings.show',$id);
