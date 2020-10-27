@@ -3,13 +3,17 @@
 namespace App\Http\Controllers;
 
 use App\Booking;
+use App\Settings;
 use App\CancelRequest;
+use Illuminate\Http\Request;
 use App\Invoice;
 use App\Role;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Redirect;
 
 class HomeController extends Controller
 {
@@ -38,7 +42,7 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         //if Auth user role is admin
         if(Auth::user()->isAdmin())
@@ -103,6 +107,17 @@ class HomeController extends Controller
         //if Auth user role is customer
         else if(Auth::user()->isCustomer())
         {
+            
+            $settings =  Settings::query()->first();
+            if($settings->SSOLoginOnly && !$request['externalLogin']) {
+                $isSSO = true;
+                Auth::logout();
+                if($settings->allowRedirectPortal) {
+                    return Redirect::to($settings->portal_link);
+                }
+                return redirect()->route('login'); 
+            }
+            
             $user = Auth::user();
             $bookings = $user->bookings()->where('status','!=', __('backend.cancelled'))->count('id');
             $recent_bookings = $user->bookings()->orderBy('created_at', 'DESC')->limit('5')->get();

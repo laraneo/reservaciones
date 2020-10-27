@@ -10,6 +10,12 @@
                 </p>
                 <p class="text-center m-t-md">{{ __('auth.login_title') }}</p>
 
+                @if ($isSSO)
+                    <div class="alert alert-danger">
+                        <strong>{{ __('backend.SSOErrorMessage') }}</strong>
+                    </div>
+                @endif
+                
                 @if ($errors->has('email'))
                     <div class="alert alert-danger">
                         <strong>{{ $errors->first('email') }}</strong>

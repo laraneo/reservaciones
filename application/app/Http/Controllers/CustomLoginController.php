@@ -6,6 +6,7 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Session;
 
 use App\User;
 
@@ -27,13 +28,19 @@ class CustomLoginController extends Controller
         if($user) {
             Auth::login($user);
         }
-        
-        return redirect()->route('home');  
+        return redirect()->route('home',['externalLogin' => true]);  
     }
 
     public function customLogout() {
         Auth::logout();
-        return redirect()->route('home');  
+        Session::flush();
+        return redirect()->route('login');  
+    }
+
+    public function forcedLogout(Request $request) {
+        Auth::logout();
+        Session::flush();
+        return redirect()->route('login');  
     }
 
 }

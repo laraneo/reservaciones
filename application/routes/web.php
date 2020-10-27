@@ -23,6 +23,7 @@ use Illuminate\Support\Facades\Route;
 //LA Logout
 Route::get('logoutBooking', 'Auth\LoginController@logout')->name('logoutBooking');
 Route::post('/custom-logout', 'CustomLoginController@customLogout')->name('customLogout');
+Route::get('/forced-logout', 'CustomLoginController@forcedLogout')->name('forcedLogout');
 
 // ** INIT BOOKING ** //
 

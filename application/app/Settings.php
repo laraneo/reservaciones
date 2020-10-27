@@ -86,7 +86,11 @@ class Settings extends Model
         'AllowNotificationChangeNewBookingPlayer',
         'AllowNotificationPreviousBookingPlayer',
         'MaxDaysPlayerDeleteBookings',
-        'BookingMaxTimeChangePlayer'
+        'BookingMaxTimeChangePlayer',
+        'SSOLoginOnly',
+        'portal_link',
+        'allowRedirectPortal',
+
     ];
 
 }
