@@ -205,6 +205,13 @@ LA -->
                     </a>
                 </li>
 
+                <li class="{{ Request::is('starter-report') ? 'active' : '' }}">
+                    <a href="{{ route('starter-report.index') }}" class="waves-effect waves-button">
+                        <span class="menu-icon icon-calendar"></span>
+                        <p>{{ __('backend.starter') }}</p>
+                    </a>
+                </li>
+
                 <li class="{{ Request::is('general-occupation') ? 'active' : '' }}">
                     <a href="{{ route('general-occupation.index') }}" class="waves-effect waves-button">
                         <span class="menu-icon icon-calendar"></span>

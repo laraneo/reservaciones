@@ -97,6 +97,8 @@ Route::group(['middleware'=>'admin'], function(){
     Route::post('/cancel-booking/{id}', 'AdminBookingsController@cancel')->name('cancelBooking');
     Route::patch('/updateBooking/{id}', 'AdminBookingsController@update_booking_time')->name('updateBookingTime');
     Route::resource('/general-occupation','AdminGeneralOccupationController');
+    Route::resource('/starter-report','AdminStarterController');
+    Route::get('/starter-report-packages','AdminStarterController@getSchedulePackages');
     Route::get('/booking-category-calendar', 'UserBookingController@getBookingCategoryCalendar')->name('getBookingCategoryCalendar');
 
    
