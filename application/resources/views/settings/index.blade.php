@@ -366,6 +366,8 @@
                                         </select>
                                     </div>
 
+                                    <div class="col-md-6 form-group" style="padding: 20px">&nbsp;</div>
+
                                     <div class="col-md-6 form-group">
                                         <label><strong>{{ __('backend.MaxDaysPlayerDeleteBookings') }}</strong></label>
                                         <select class="form-control" name="MaxDaysPlayerDeleteBookings">
@@ -402,8 +404,6 @@
                                             <option value="06:00 PM"{{ $settings->BookingMaxTimeChangePlayer == '06:00 PM' ? ' selected' : '' }}>06:00 PM</option>
                                         </select>
                                     </div>
-
-                                    <div class="col-md-6 form-group" style="padding: 20px">&nbsp;</div>
 
                                     <div class="col-md-6 form-group">
                                         <label><strong>{{ __('backend.allow_to_cancel') }}</strong></label>

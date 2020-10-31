@@ -5,11 +5,13 @@ namespace App\Http\Controllers;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Maatwebsite\Excel\Facades\Excel;
 
 use App\Category;
 use App\Settings;
 use App\Booking;
 use App\Package;
+use App\Exports\StarterExport;
 
 class AdminStarterController extends Controller
 {
@@ -19,7 +21,7 @@ class AdminStarterController extends Controller
      */
     public function index(Request $request)
     {
-        $categories = Category::query()->where('category_type', 1)->get();
+        $categories = Category::orderBy('category_type', 'asc')->get();
         //return response()->json([ 'success' => true, 'dates' => $dates ]);
         return view('starter-report.index', compact('dates','categories'));
     }
@@ -45,7 +47,6 @@ class AdminStarterController extends Controller
             }
         }
 
-        
         return count($bookings) ? $bookings : [];
     }
 
@@ -61,6 +62,22 @@ class AdminStarterController extends Controller
             }      
         }
         return response()->json([ 'success' => true, 'dates' => $dates ]);
+    }
+
+    public function exportCSV(Request $request) {
+        $category = $request['category'];
+        $bookingDate = $request['bookingDate'];
+        $bookingDate = Carbon::parse($bookingDate)->format('d-m-Y');
+        $packages = Package::where('category_id', $category)->get();
+        $bookings = array();
+        foreach ($packages as $key => $package) {
+            $newBooking = $this->getBookingByPackage($package->id, $bookingDate);
+            if(count($newBooking)) {
+                $newPackage = [ 'package' => $package, 'bookings' => $newBooking ];
+                array_push($bookings, $newPackage);
+            }
+        }
+        return Excel::download(new StarterExport($bookings), 'list.csv');
     }
 
 

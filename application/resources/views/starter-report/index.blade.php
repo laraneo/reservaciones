@@ -94,6 +94,9 @@
     padding-top: 10px;
     padding-bottom: 10px;
     font-weight: bold;
+    background-color: #7f8c8d;
+    font-weight: bold;
+    color: white;
 }
 
 .starter-report-clearfix {
@@ -108,13 +111,6 @@
         border-top: 1px solid black;
         border-bottom: 1px solid black;
     }
-
-    .starter-report-time-package-title {
-        background-color: #7f8c8d;
-        font-weight: bold;
-        color: white;
-    }
-
     .starter-report-clearfix {
         height: 180px !important;
     }
@@ -145,12 +141,17 @@
                         </div>
 
                         <div class="col-md-4 form-group" style="margin-top: 20px;">
+                            <div class="row">
+                                <div class="col-md-3 form-group" style="line-height: 2;" >{{ __('backend.category') }}</div>
+                                <div class="col-md-9 form-group">
                                     <select class="form-control" id="category_id" name="category_id" onchange="onSelecCategory()">
                                         <option value="">Seleccione Categoria</option>
                                         @foreach($categories as $category)
                                             <option value="{{ $category->id }}">{{ $category->title }}</option>
                                         @endforeach
                                     </select> 
+                                </div>
+                            </div>   
                         </div>
                         <div class="col-md-4 form-group starter-calendar-container starter-report-hidde-calendar" style="margin-top: 20px;">
                             <div class="row">
@@ -160,7 +161,7 @@
                                 </div>
                             </div>
                         </div>
-                        
+                        {{-- <button onclick="exportCSV()" >Export</button>  --}}
                        
                         
                 </div>
@@ -359,6 +360,16 @@
                         
                     },
                 });
+        }
+
+        function exportCSV() {
+            const URL_CONCAT = $('meta[name="index"]').attr('content');
+            const bookingDate = document.getElementById("bookingDate").value;
+            const category = document.getElementById("category_id").value;
+            console.log('bookingDate ', bookingDate);
+            if(category > 0 && bookingDate !== '') {
+                window.location.href = `/starter-csv-report?category=${category}&bookingDate=${bookingDate}`;
+            }
         }
     
 </script>

@@ -143,9 +143,11 @@
                             <a class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#status"><i class="fa fa-bell fa-lg"></i> &nbsp; {{ __('backend.change_booking_status') }}</a>
                         </div>
                     @endif
+                    @if(config('settings.AdminAllowDeleteBookings'))
                     <div class="col-md-6">
                         <a class="btn btn-danger btn-lg btn-block" data-toggle="modal" data-target="#confirm"><i class="fa fa-trash-o fa-lg"></i> &nbsp; {{ __('backend.delete_booking') }}</a>
                     </div>
+                    @endif
                 </div>
 
                 <div class="row">
@@ -155,10 +157,11 @@
                             <a class="btn btn-danger btn-lg btn-block" data-toggle="modal" data-target="#cancel"><i class="fa fa-times-circle fa-lg"></i> &nbsp; {{ __('backend.cancel_booking') }}</a>
                             <br>
                         </div>
+                        @if(config('settings.AdminAllowCancelBookings'))
                         <div class="col-md-6 hidden-xs hidden-sm">
                             <a class="btn btn-danger btn-lg btn-block" data-toggle="modal" data-target="#cancel"><i class="fa fa-times-circle fa-lg"></i> &nbsp; {{ __('backend.cancel_booking') }}</a>
                         </div>
-						
+						@endif
 						<!-- 
                         <div class="col-md-6">
                             <a class="btn btn-info btn-lg btn-block" href="{{ route('bookings.edit', $booking->id) }}"><i class="fa fa-clock-o fa-lg"></i> &nbsp; {{ __('backend.change_booking_time') }}</a>
