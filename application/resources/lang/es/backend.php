@@ -487,6 +487,8 @@ return [
     'by_category_type' => 'Por Tipo de Categoria',
 
     'general_occupation' => 'Ocupacion General',
+    'starter' => 'Starter',
+    'starter_report' => 'Starter Report',
     'label_reglamento' => 'Label Reglamento',
     'link_reglamento' => 'Link Reglamento',
     'client_allow_booking_delete' => 'Permitir a los clientes eliminar sus reservas?',

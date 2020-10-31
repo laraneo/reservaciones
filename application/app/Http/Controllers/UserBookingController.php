@@ -1694,6 +1694,7 @@ class UserBookingController extends Controller
     {
         return view('payment-failed');
     }
+    
 
     /**
      *
@@ -1708,6 +1709,7 @@ class UserBookingController extends Controller
         $allowToChangePlayer = false;
         $allowDeleteBooking = false;
         $currentDate = Carbon::now()->format('d-m-Y');
+		$currentDateFixed = Carbon::now()->format('Y-m-d');
         $booking = Booking::find($id);
         $today = date('Y-m-d');
 
@@ -1716,11 +1718,17 @@ class UserBookingController extends Controller
         if($settings->ClientAllowDeleteBookings && strtotime($booking->booking_date) - strtotime($today) >= $daysLimitToDeleteBooking) {
             $allowDeleteBooking = true;
         }
-
-        if(Carbon::parse($booking->booking_date)->format('d-m-Y') <= Carbon::parse($currentDate)->format('d-m-Y') && strtotime($booking->booking_time) <= strtotime($settings->BookingMaxTimeChangePlayer)) {
+		
+		$var_subtracted_date = date("Y-m-d", strtotime("-" . $settings->MaxDaysPlayerDeleteBookings . " days", strtotime(Carbon::parse($booking->booking_date)->format('Y-m-d'))));
+		//echo $var_subtracted_date . "<br>";
+		//echo $currentDateFixed . "<br>";
+		//echo Carbon::parse($booking->booking_date)->format('Y-m-d') . "<br>";
+		
+        if ((Carbon::parse($booking->booking_date)->format('Y-m-d') <= Carbon::parse($currentDate)->format('Y-m-d') && strtotime($booking->booking_time) <= strtotime($settings->BookingMaxTimeChangePlayer)) 
+			|| (($currentDateFixed <= Carbon::parse($booking->booking_date)->format('Y-m-d')) && ( $currentDateFixed >= $var_subtracted_date) )  )
+		{
             $allowToChangePlayer = true; 
         }
-
         //checking booking date to allow update or cancel
         $days_limit_to_update = config('settings.days_limit_to_update') * 86400;
         $days_limit_to_cancel = config('settings.days_limit_to_cancel') * 86400;
