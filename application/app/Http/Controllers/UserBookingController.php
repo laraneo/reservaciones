@@ -59,41 +59,56 @@ class UserBookingController extends Controller
         $categories = Category::all();
         $packages = [];
 
-        $selectedCategory = $request['category'] !== null ? $request['category'] : null;
-        $selectedPackage = $request['package'] !== null ? $request['package'] : null;
-        $selectedDateStart = $request['dateStart'] !== null ? $request['dateStart'] : null;
-        $selectedDateEnd = $request['dateEnd'] !== null ? $request['dateEnd'] : null;
+        if($request['category']  === null && $request['package']  === null && $request['dateStart']  === null && $request['dateEnd']  === null) {
+            if(Session::get('UserBookingControllerIndexQueryStrings')) {
+                $queryStrings = Session::get('UserBookingControllerIndexQueryStrings');
+                $selectedCategory = $queryStrings->category !== null ? $queryStrings->category : null;
+                $selectedPackage = $queryStrings->package !== null ? $queryStrings->package : null;
+                $selectedDateStart = $queryStrings->dateStart !== null ? $queryStrings->dateStart : null;
+                $selectedDateEnd = $queryStrings->dateEnd !== null ? $queryStrings->dateEnd : null;
+            }
+        } else {
+            $selectedCategory = $request['category'] !== null ? $request['category'] : null;
+            $selectedPackage = $request['package'] !== null ? $request['package'] : null;
+            $selectedDateStart = $request['dateStart'] !== null ? $request['dateStart'] : null;
+            $selectedDateEnd = $request['dateEnd'] !== null ? $request['dateEnd'] : null;
+            $queryStrings = (object)[
+                'category' => $selectedCategory,
+                'package' => $selectedPackage,
+                'dateStart' => $selectedDateStart,
+                'dateEnd' => $selectedDateEnd,
+            ];
+            Session::put('UserBookingControllerIndexQueryStrings',$queryStrings);
+        }
+
+
         
-        $queryStrings = (object)[
+        if($selectedCategory && $selectedCategory !== null) {
+            $packages = Package::query()->where('category_id', $selectedCategory)->get();
+        }
+        $searchQuery = (object)[
             'category' => $selectedCategory,
             'package' => $selectedPackage,
             'dateStart' => $selectedDateStart,
             'dateEnd' => $selectedDateEnd,
         ];
 
-
-        if($request['category'] && $request['category'] !== null) {
-            $packages = Package::query()->where('category_id', $request['category'])->get();
-        }
-
         $bookings = Auth::user()->bookings()->where(function($q) use($searchQuery) {
-            if ($searchQuery['category'] !== null && $searchQuery['package'] === null ) {
-                $category = $searchQuery['category'];
+            if ($searchQuery->category !== null && $searchQuery->package === null ) {
+                $category = $searchQuery->category;
                 $q->whereHas('package', function($query) use($category) {
                     $query->where('category_id', $category);
                 });
             }
-            if ($searchQuery['category'] !== null && $searchQuery['package'] !== null ) {
-                $q->where('package_id', $searchQuery['package']);
+            if ($searchQuery->category !== null && $searchQuery->package !== null) {
+                $q->where('package_id', $searchQuery->package);
             }
 
-            if ($searchQuery['dateStart'] !== NULL && $searchQuery['dateEnd'] !== NULL) {
-                $q->orWhereBetween('booking_date', [Carbon::parse($searchQuery['dateStart'])->format('d-m-Y'), Carbon::parse($searchQuery['dateEnd'])->format('d-m-Y')]);
+            if ($searchQuery->dateStart !== NULL && $searchQuery->dateEnd !== NULL) {
+                $q->orWhereBetween('booking_date', [Carbon::parse($searchQuery->dateStart)->format('d-m-Y'), Carbon::parse($searchQuery->dateEnd)->format('d-m-Y')]);
             }
 
           })->orderBy('created_at', 'ASC')->get();
-
-        Session::put('UserBookingControllerIndexQueryStrings',$queryStrings);
 
         return view('customer.bookings.index', compact('bookings','categories','packages','selectedCategory','selectedPackage','selectedDateStart','selectedDateEnd'));
     }
