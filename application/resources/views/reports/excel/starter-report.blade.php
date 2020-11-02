@@ -36,13 +36,13 @@
                 content: "Pagina " counter(page);
             }
             thead th{
-                font-size: 8px;
+                font-size: 10px;
                 border-bottom: 1px black solid;
                 padding-bottom: 5px;
                 text-align: left;
             }
             tbody td{
-                font-size: 8px;
+                font-size: 10px;
                 padding-top: 5px;
                 padding-bottom: 5px;
             }
@@ -53,12 +53,28 @@
     <body>
         <table width="100%" cellspacing="0">
             <tr>
-            <td>{{ $test }}</td>
-                </tr> 
-            @foreach($packages as $element)
+                <td style="font-weight: bold; font-size: 14">Starter Report</td>
+            </tr>
+            <tr><td></td></tr>
+            @foreach($data as $element)
                 <tr>
-                    <td>{{ $element->package->title }}</td>
+                    <td style="font-weight: bold; font-size: 13">{{ $element->package->title }}</td>
+                </tr>
+                <tr><td></td></tr>
+                @foreach($element->bookings as $booking)
+                <tr>
+                    <td>{{ $booking->booking_time }}</td>
+                    <td>
+                        <table>
+                            @foreach($booking->bookingplayers()->get() as $player)
+                                <tr>
+                                    <td>{{ $player->UserName()->first()->first_name }} {{ $player->UserName()->first()->last_name }}</td>
+                                </tr>
+                            @endforeach
+                        </table>
+                    </td>
                 </tr> 
+                @endforeach
             @endforeach
         </table>
     </body>

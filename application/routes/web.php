@@ -99,7 +99,7 @@ Route::group(['middleware'=>'admin'], function(){
     Route::resource('/general-occupation','AdminGeneralOccupationController');
     Route::resource('/starter-report','AdminStarterController');
     Route::get('/starter-report-packages','AdminStarterController@getSchedulePackages');
-    Route::get('/starter-csv-report','AdminStarterController@exportCSV')->name('starterExportCSV');;
+    Route::get('/starter-get-report','AdminStarterController@getReport')->name('getReport');;
     Route::get('/booking-category-calendar', 'UserBookingController@getBookingCategoryCalendar')->name('getBookingCategoryCalendar');
     Route::get('/update-booking/{id}', 'UserBookingController@update')->name('updateBooking');
 

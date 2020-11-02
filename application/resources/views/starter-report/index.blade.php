@@ -104,6 +104,16 @@
     height: 90px !important;
 }
 
+.social-buttons {
+    color: white;
+    margin-top: 20px;
+}
+
+.social-buttons button {
+    border: none;
+    line-height: 2.3;
+}
+
 @media only screen and (max-width: 600px) {
 
     .starter-report-time {
@@ -112,8 +122,13 @@
         border-bottom: 1px solid black;
     }
     .starter-report-clearfix {
-        height: 180px !important;
+        height: 300px !important;
     }
+
+    .social-buttons {
+    margin-top: 1px;
+}
+
 	
 }
 
@@ -161,7 +176,14 @@
                                 </div>
                             </div>
                         </div>
-                        {{-- <button onclick="exportCSV()" >Export</button>  --}}
+                        <div class="col-md-1 col-xs-6 form-group social-buttons" >
+                            <button class="button" onclick="exportCSV('pdf')" style="background-color: #c0392b;" >PDF</button>  
+                        </div>
+                        <div class="col-md-1 col-xs-6 form-group social-buttons" >
+                            <button class="button" onclick="exportCSV('csv')" style="background-color:#27ae60;" >CSV</button>   
+                        </div>
+                       
+                         
                        
                         
                 </div>
@@ -362,13 +384,12 @@
                 });
         }
 
-        function exportCSV() {
+        function exportCSV(type) {
             const URL_CONCAT = $('meta[name="index"]').attr('content');
             const bookingDate = document.getElementById("bookingDate").value;
             const category = document.getElementById("category_id").value;
-            console.log('bookingDate ', bookingDate);
             if(category > 0 && bookingDate !== '') {
-                window.location.href = `/starter-csv-report?category=${category}&bookingDate=${bookingDate}`;
+                window.location.href = `/starter-get-report?type=${type}&category=${category}&bookingDate=${bookingDate}`;
             }
         }
     

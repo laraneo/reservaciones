@@ -6,6 +6,7 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Maatwebsite\Excel\Facades\Excel;
+use Barryvdh\DomPDF\Facade as PDF;
 
 use App\Category;
 use App\Settings;
@@ -64,7 +65,7 @@ class AdminStarterController extends Controller
         return response()->json([ 'success' => true, 'dates' => $dates ]);
     }
 
-    public function exportCSV(Request $request) {
+    public function getReport(Request $request) {
         $category = $request['category'];
         $bookingDate = $request['bookingDate'];
         $bookingDate = Carbon::parse($bookingDate)->format('d-m-Y');
@@ -73,11 +74,23 @@ class AdminStarterController extends Controller
         foreach ($packages as $key => $package) {
             $newBooking = $this->getBookingByPackage($package->id, $bookingDate);
             if(count($newBooking)) {
-                $newPackage = [ 'package' => $package, 'bookings' => $newBooking ];
+                $newPackage = (object)[ 'package' => $package, 'bookings' => $newBooking ];
                 array_push($bookings, $newPackage);
             }
         }
-        return Excel::download(new StarterExport($bookings), 'list.csv');
+        $data = [
+            'data' => (object)$bookings
+        ];
+        if($request['type'] === 'pdf') {
+            $pdf = PDF::loadView('reports/excel/starter-report', $data);
+            return $pdf->download('starterReport.pdf');
+        }
+
+        if($request['type'] === 'csv') {
+            return Excel::download(new StarterExport($data), 'starterReport.csv');
+        }
+        
+        
     }
 
 

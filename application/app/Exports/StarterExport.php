@@ -17,8 +17,6 @@ class StarterExport implements FromView
 
     public function view(): View
     {
-        $packages = $this->data;
-        $test = 'testssssss';
-        return view('reports.excel.starter-report', compact('packages','test'));
+        return view('reports.excel.starter-report',$this->data);
     }
 }
