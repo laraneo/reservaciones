@@ -82,7 +82,7 @@ class AdminStarterController extends Controller
             'data' => (object)$bookings
         ];
         if($request['type'] === 'pdf') {
-            $pdf = PDF::loadView('reports/excel/starter-report', $data);
+            $pdf = PDF::loadView('reports/pdf/starter-report', $data);
             return $pdf->download('starterReport.pdf');
         }
 
