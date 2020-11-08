@@ -65,6 +65,8 @@ function wsConsultaSaldo($group_id, &$saldo, &$comments)
 		//$servicioweb = $webservice;
 
 		 //echo $servicioweb . "***";
+		 //echo $token;
+		 //echo $group_id;
 
 		if ($servicioweb == '') {
 			throw new customException('La cadena de URI_WEB_SERVICE está vacia');
@@ -76,12 +78,16 @@ function wsConsultaSaldo($group_id, &$saldo, &$comments)
 
 		$parametros['group_id']=$group_id;
 		$parametros['token']=$token;
-
+		
+		//print_r ($parametros);
+		//die();
+		
 		$result = $client->GetSaldoCSV($parametros);  //llamamos al método que nos interesa con los parámetros
 
 		$resultados = explode(const_delimitador, $result->GetSaldoCSVResult);
 	
 		//print_r ($resultados);
+		
 	
 		$cant = count($resultados); 
 		//   status:-2: (no existe), 1: saldo>0 con deuda, -1: error (no hubo conexión a SQL), 0: saldo<=0
@@ -89,6 +95,10 @@ function wsConsultaSaldo($group_id, &$saldo, &$comments)
 		// $saldo = $resultados[1];
 		$status = ($cant >=1 ? $resultados[0] : -1);
 		$saldo = ($cant >=2 ? $resultados[1] : "");		
+	
+		//echo $saldo;
+		//die();
+		
 	
 		if ($status == const_Error_Token)
 		{
