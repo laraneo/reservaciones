@@ -71,6 +71,14 @@
   width: 168px;
 }
 
+.starter-report-hidde-calendar {
+    display: none;
+}
+
+.starter-report-show-calendar {
+    display: block;
+}
+
 @media only screen and (max-width: 600px) {
 
     .custom-table th, .custom-table td {
@@ -123,7 +131,16 @@
                                             <option value="{{ $category->id }}">{{ $category->title }}</option>
                                         @endforeach
                                     </select> 
-                        </div>  
+                        </div>
+
+                        <div class="col-md-4 form-group starter-calendar-container starter-report-hidde-calendar" style="margin-top: 20px;">
+                            <div class="row">
+                                <div class="col-md-2 form-group" style="    line-height: 2;" >{{ __('backend.date') }}</div>
+                                <div class="col-md-10 form-group">
+                                    <input type="date" class="form-control" id="bookingDate" name="bookingDate" onchange="onSelectDate()" >
+                                </div>
+                            </div>
+                        </div>
                         
                 </div>
                     <div class="panel-body">
@@ -164,8 +181,9 @@
             return html;
         }
 
-		function handleSelectDay(category) {
-            let date = document.getElementById("tennis-time").value;
+		function onSelectDate() {
+            const category = document.getElementById("category_id").value;
+            let date = document.getElementById("bookingDate").value;
 			var URL_CONCAT = $('meta[name="index"]').attr('content');
             if(date !== '') {
                 let number = moment(date).weekday();
@@ -183,38 +201,48 @@
                         $('#packages-calendar').empty();
                     },
                     success: function(response) {
-                        const packages = response.packages;
-                        const schedule = response.schedule;
-                        let html = '';
-                        const header = `
-                            <tr class="header">
-                                <td class="cell init-default" ></td>
-                                ${renderCalendarHeader(packages)}
-                            </tr>`;
+                        if(response.success) {
+                            const packages = response.packages;
+                            const schedule = response.schedule;
+                            let html = '';
+                            const header = `
+                                <tr class="header">
+                                    <td class="cell init-default" ></td>
+                                    ${renderCalendarHeader(packages)}
+                                </tr>`;
 
-                        let content = '';
-                        
-                        schedule.forEach(element => {
-                            content += `
-                                <tr>
-                                    <td class="cell time" >${moment(element.hour, 'hh:mm A').format('hh:mm A')}</td>
-                                    ${renderSchedule(element.packages)}
-                                </tr>
-                            `;
-                        } );
+                            let content = '';
+                            
+                            schedule.forEach(element => {
+                                content += `
+                                    <tr>
+                                        <td class="cell time" >${moment(element.hour, 'hh:mm A').format('hh:mm A')}</td>
+                                        ${renderSchedule(element.packages)}
+                                    </tr>
+                                `;
+                            } );
 
-                        html += `
-                        <div class="row">
-                            <div class="col-sm-12 col-xs-12 col-md-12">
-                                <table class="custom-table" >
-                                    <thead>${header}</thead>
-                                    <tbody>${content}  </tbody>
-                                </table>   
+                            html += `
+                            <div class="row">
+                                <div class="col-sm-12 col-xs-12 col-md-12">
+                                    <table class="custom-table" >
+                                        <thead>${header}</thead>
+                                        <tbody>${content}  </tbody>
+                                    </table>   
+                                </div>
                             </div>
-                        </div>
-                        `;
-                        $('#packages-calendar').fadeIn().html(html);
-                        $('#packages_loader').addClass('d-none');
+                            `;
+                            $('#packages-calendar').fadeIn().html(html);
+                            $('#packages_loader').addClass('d-none');
+                        } else {
+                            const html = `
+                            <div class="row">
+                                <div class="col-md-12" style="color: red; font-weight: bold">NO SE ENCUENTRAN REGISTROS</div>
+                            </div>
+                            `;
+                            $('#packages-calendar').empty();
+                            $('#packages-calendar').fadeIn().html(html); 
+                        }
                     },
                 });
             }
@@ -234,25 +262,16 @@
     function onSelecCategory() {
         const URL_CONCAT = $('meta[name="index"]').attr('content');
         const id = document.getElementById("category_id").value;
-
+        $('#packages_loader').removeClass('d-none');
+        $('#packages_holder').empty();
+        $('#package_id').remove();
+        $('#bookingDate').val('');
+        $('#schedule').empty();
         if(id !== '') {
-            $.ajax({
-            type: 'GET',
-            url: '/admin-get-select-days',
-                beforeSend: function() {
-                $('#packages_loader').removeClass('d-none');
-                $('#packages_holder').empty();
-                $('#package_id').remove();
-            },
-            success: function(response) {
+            $('.starter-calendar-container').removeClass('starter-report-hidde-calendar');
+            $('.starter-calendar-container').addClass('starter-report-show-calendar');
             const selectHtml = `
                                 <div class="row">
-                                    <div class="col-md-12 form-group">
-                                        <select class="form-control" name="tennis-time" id="tennis-time" onchange="handleSelectDay(${id})">
-                                        ${renderDates(response.dates)}	
-                                    </select>
-                                    </div>
-                                
                                 <div class="col-md-12 form-group">
                                     <div class="row">           
                                         <div class="col-md-2">
@@ -282,19 +301,17 @@
                                 </div>
                             `;
             $('#select-days').fadeIn().html(selectHtml);
-            },
-            complete: function () {
-                $('#packages_loader').addClass('d-none');
-            }
-            });
         } else {
             $('#select-days').empty();
             $('#packages-by-type').empty();
             $('#packages-calendar').empty();
+            $('.starter-calendar-container').removeClass('starter-report-show-calendar');
+            $('.starter-calendar-container').addClass('starter-report-hidde-calendar');
         }
 	
     }
-    
+
+
 </script>
 
 @endsection

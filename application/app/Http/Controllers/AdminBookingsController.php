@@ -109,7 +109,7 @@ class AdminBookingsController extends Controller
             }
 
             if ($searchQuery->dateStart !== NULL && $searchQuery->dateEnd !== NULL) {
-                $q->orWhereBetween('booking_date', [Carbon::parse($searchQuery->dateStart)->format('d-m-Y'), Carbon::parse($searchQuery->dateEnd)->format('d-m-Y')]);
+                $q->whereBetween('booking_date', [Carbon::parse($searchQuery->dateStart)->format('d-m-Y'), Carbon::parse($searchQuery->dateEnd)->format('d-m-Y')]);
             }
 
           })->get();

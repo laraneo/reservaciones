@@ -105,7 +105,7 @@ class UserBookingController extends Controller
             }
 
             if ($searchQuery->dateStart !== NULL && $searchQuery->dateEnd !== NULL) {
-                $q->orWhereBetween('booking_date', [Carbon::parse($searchQuery->dateStart)->format('d-m-Y'), Carbon::parse($searchQuery->dateEnd)->format('d-m-Y')]);
+                $q->whereBetween('booking_date', [Carbon::parse($searchQuery->dateStart)->format('d-m-Y'), Carbon::parse($searchQuery->dateEnd)->format('d-m-Y')]);
             }
 
           })->orderBy('created_at', 'ASC')->get();
@@ -2010,15 +2010,21 @@ class UserBookingController extends Controller
     public function getBookingCategoryCalendar(Request $request) {
         $packages = Package::where('category_id', $request['category'])->get();
 
+        if(count($packages) === 0) {
+            return response()->json([
+                'success' => false,
+                'message' => 'No existen registros'
+            ]);
+        }
+
         $hoursCondition = DB::select("  SELECT  min(tp.opening_time) as minimo,max(tp.closing_time) as maximo
-            FROM booking_times_packages tp, packages p, categories c
-            WHERE c.id=p.category_id  
-            AND tp.package_id=p.id
-            AND c.id= ".$request['category']."
-            AND tp.[number]= ".$request['number']."
+        FROM booking_times_packages tp, packages p, categories c
+        WHERE c.id=p.category_id  
+        AND tp.package_id=p.id
+        AND c.id= ".$request['category']."
+        AND tp.[number]= ".$request['number']."
         ");
         $hoursCondition = $hoursCondition[0];
-
         $minimo = DateTime::createFromFormat('h:ia', $hoursCondition->minimo);
         $minimo = $minimo->format('H:i:s');
 
@@ -2033,9 +2039,11 @@ class UserBookingController extends Controller
         $hours = $this->buildHours($minimo, $maximo, $request['category'], $request['date'], $interval->duration);
 
         return response()->json([
+            'success' => true,
             'packages' => $packages,
             'schedule' => $hours,
         ]);
+      
     }
 
     public function deleteBookingByLocator1(Request $request){
