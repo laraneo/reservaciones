@@ -106,8 +106,10 @@
                                      alt="{{ Auth::user()->first_name }} {{ Auth::user()->last_name }}">
                             </a>
                             <ul class="dropdown-menu dropdown-list" role="menu">
-                                <li role="presentation"><a href="{{ route('customerProfile') }}"><i class="icon-user"></i>{{ __('backend.my_profile') }}</a></li>
-                                <li role="presentation"><a href="{{ route('changePassword') }}"><i class="icon-lock"></i>{{ __('backend.change_password') }}</a></li>
+                                @if(config('settings.AllowClientProfilePasswordEdit'))
+                                    <li role="presentation"><a href="{{ route('customerProfile') }}"><i class="icon-user"></i>{{ __('backend.my_profile') }}</a></li>
+                                    <li role="presentation"><a href="{{ route('changePassword') }}"><i class="icon-lock"></i>{{ __('backend.change_password') }}</a></li>
+                                @endif
                                 <li role="presentation"><a href="{{ route('logout') }}" onclick="
                                 event.preventDefault();
                                 document.getElementById('logout-form').submit();">
@@ -190,19 +192,23 @@
                     </a>
                 </li>
 LA -->
-                <li class="{{ Request::is('customer/profile') ? 'active' : '' }}">
-                    <a href="{{ route('customerProfile') }}" class="waves-effect waves-button">
-                        <span class="menu-icon icon-user"></span>
-                        <p>{{ __('backend.my_profile') }}</p>
-                    </a>
-                </li>
+                @if(config('settings.AllowClientProfilePasswordEdit'))
+                    <li class="{{ Request::is('customer/profile') ? 'active' : '' }}">
+                        <a href="{{ route('customerProfile') }}" class="waves-effect waves-button">
+                            <span class="menu-icon icon-user"></span>
+                            <p>{{ __('backend.my_profile') }}</p>
+                        </a>
+                    </li>
+                @endif
 
-                <li class="{{ Request::is('password/update') ? 'active' : '' }}">
-                    <a href="{{ route('changePassword') }}" class="waves-effect waves-button">
-                        <span class="menu-icon icon-lock"></span>
-                        <p>{{ __('backend.change_password') }}</p>
-                    </a>
-                </li>
+                @if(config('settings.AllowClientProfilePasswordEdit'))
+                    <li class="{{ Request::is('password/update') ? 'active' : '' }}">
+                        <a href="{{ route('changePassword') }}" class="waves-effect waves-button">
+                            <span class="menu-icon icon-lock"></span>
+                            <p>{{ __('backend.change_password') }}</p>
+                        </a>
+                    </li>
+                @endif
 
                 <li>
                     <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="waves-effect waves-button">

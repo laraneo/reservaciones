@@ -504,4 +504,5 @@ return [
     'portal_link' => 'Link de Portal Socios',
     'from' => 'Desde',
     'to' => 'Hasta',
+    'AllowClientProfilePasswordEdit' => 'Permitir Cliente Cambio, Clave y Perfil'
 ];

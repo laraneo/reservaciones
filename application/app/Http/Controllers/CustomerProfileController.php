@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\CustomerProfileUpdate;
 use App\Photo;
 use App\User;
+use App\Settings;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 
@@ -26,6 +27,12 @@ class CustomerProfileController extends Controller
      */
     public function index()
     {
+        $settings = Settings::first();
+
+        if(!$settings->AllowClientProfilePasswordEdit)  {
+            return redirect()->route('home');
+        }
+
         $user = Auth::user();
         return view('customer.profile.index', compact('user'));
     }

@@ -65,24 +65,21 @@ class AdminBookingsController extends Controller
         $packages = [];
 
 
-        if($request['category']  === null && $request['package']  === null && $request['dateStart']  === null && $request['dateEnd']  === null) {
+        if($request['category']  === null && $request['package']  === null && $request['dateStart']  === null) {
             if(Session::get('AdminBookingsControllerQueryStrings')) {
                 $queryStrings = Session::get('AdminBookingsControllerQueryStrings');
                 $selectedCategory = $queryStrings->category !== null ? $queryStrings->category : null;
                 $selectedPackage = $queryStrings->package !== null ? $queryStrings->package : null;
                 $selectedDateStart = $queryStrings->dateStart !== null ? $queryStrings->dateStart : null;
-                $selectedDateEnd = $queryStrings->dateEnd !== null ? $queryStrings->dateEnd : null;
             }
         } else {
             $selectedCategory = $request['category'] !== null ? $request['category'] : null;
             $selectedPackage = $request['package'] !== null ? $request['package'] : null;
             $selectedDateStart = $request['dateStart'] !== null ? $request['dateStart'] : null;
-            $selectedDateEnd = $request['dateEnd'] !== null ? $request['dateEnd'] : null;
             $queryStrings = (object)[
                 'category' => $selectedCategory,
                 'package' => $selectedPackage,
                 'dateStart' => $selectedDateStart,
-                'dateEnd' => $selectedDateEnd,
             ];
             Session::put('AdminBookingsControllerQueryStrings',$queryStrings);
         }
@@ -95,7 +92,6 @@ class AdminBookingsController extends Controller
             'category' => $selectedCategory,
             'package' => $selectedPackage,
             'dateStart' => $selectedDateStart,
-            'dateEnd' => $selectedDateEnd,
         ];
         $bookings = Booking::query()->where(function($q) use($searchQuery) {
             if ($searchQuery->category !== null && $searchQuery->package === null ) {
@@ -107,9 +103,9 @@ class AdminBookingsController extends Controller
             if ($searchQuery->category !== null && $searchQuery->package !== null ) {
                 $q->where('package_id', $searchQuery->package);
             }
-
-            if ($searchQuery->dateStart !== NULL && $searchQuery->dateEnd !== NULL) {
-                $q->whereBetween('booking_date', [Carbon::parse($searchQuery->dateStart)->format('d-m-Y'), Carbon::parse($searchQuery->dateEnd)->format('d-m-Y')]);
+            if ($searchQuery->dateStart !== NULL) {
+                // dd(Carbon::parse($searchQuery->dateStart)->format('d-m-Y'));
+                $q->where('booking_date', Carbon::parse($searchQuery->dateStart)->format('d-m-Y'));
             }
 
           })->get();

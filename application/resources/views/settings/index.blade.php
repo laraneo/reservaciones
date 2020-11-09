@@ -71,9 +71,17 @@
                                         </select>
                                     </div>
 
-                                    <div class="col-md-6 form-group">
+                                    <div class="col-md-3 form-group">
                                         <label><strong>{{ __('backend.portal_link') }}</strong></label>
                                         <input type="text" class="form-control" name="portal_link" value="{{ $settings->portal_link }}">
+                                    </div>
+
+                                    <div class="col-md-3 form-group">
+                                        <label style="font-size: 12px"><strong>{{ __('backend.AllowClientProfilePasswordEdit') }}</strong></label>
+                                        <select class="form-control" name="AllowClientProfilePasswordEdit">
+                                            <option value="1"{{ $settings->AllowClientProfilePasswordEdit == 1 ? ' selected' : '' }}>{{ __('backend.yes') }}</option>
+                                            <option value="0"{{ $settings->AllowClientProfilePasswordEdit == 0 ? ' selected' : '' }}>{{ __('backend.no') }}</option>
+                                        </select>
                                     </div>
 
 

@@ -6,7 +6,7 @@ use App\Http\Requests\UserPasswordRequest;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 
-class UserPasswordController extends Controller
+class UserPasswordControllerCopy extends Controller
 {
 
 

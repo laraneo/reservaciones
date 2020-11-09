@@ -59,24 +59,21 @@ class UserBookingController extends Controller
         $categories = Category::all();
         $packages = [];
 
-        if($request['category']  === null && $request['package']  === null && $request['dateStart']  === null && $request['dateEnd']  === null) {
+        if($request['category']  === null && $request['package']  === null && $request['dateStart']  === null) {
             if(Session::get('UserBookingControllerIndexQueryStrings')) {
                 $queryStrings = Session::get('UserBookingControllerIndexQueryStrings');
                 $selectedCategory = $queryStrings->category !== null ? $queryStrings->category : null;
                 $selectedPackage = $queryStrings->package !== null ? $queryStrings->package : null;
                 $selectedDateStart = $queryStrings->dateStart !== null ? $queryStrings->dateStart : null;
-                $selectedDateEnd = $queryStrings->dateEnd !== null ? $queryStrings->dateEnd : null;
             }
         } else {
             $selectedCategory = $request['category'] !== null ? $request['category'] : null;
             $selectedPackage = $request['package'] !== null ? $request['package'] : null;
             $selectedDateStart = $request['dateStart'] !== null ? $request['dateStart'] : null;
-            $selectedDateEnd = $request['dateEnd'] !== null ? $request['dateEnd'] : null;
             $queryStrings = (object)[
                 'category' => $selectedCategory,
                 'package' => $selectedPackage,
                 'dateStart' => $selectedDateStart,
-                'dateEnd' => $selectedDateEnd,
             ];
             Session::put('UserBookingControllerIndexQueryStrings',$queryStrings);
         }
@@ -90,7 +87,6 @@ class UserBookingController extends Controller
             'category' => $selectedCategory,
             'package' => $selectedPackage,
             'dateStart' => $selectedDateStart,
-            'dateEnd' => $selectedDateEnd,
         ];
 
         $bookings = Auth::user()->bookings()->where(function($q) use($searchQuery) {
@@ -104,8 +100,8 @@ class UserBookingController extends Controller
                 $q->where('package_id', $searchQuery->package);
             }
 
-            if ($searchQuery->dateStart !== NULL && $searchQuery->dateEnd !== NULL) {
-                $q->whereBetween('booking_date', [Carbon::parse($searchQuery->dateStart)->format('d-m-Y'), Carbon::parse($searchQuery->dateEnd)->format('d-m-Y')]);
+            if ($searchQuery->dateStart !== NULL) {
+                $q->where('booking_date', Carbon::parse($searchQuery->dateStart)->format('d-m-Y'));
             }
 
           })->orderBy('created_at', 'ASC')->get();

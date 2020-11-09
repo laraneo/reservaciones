@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Settings;
+
 use App\Http\Requests\UserPasswordRequest;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
@@ -25,6 +27,10 @@ class UserPasswordController extends Controller
      */
     public function index()
     {
+        $settings = Settings::first();
+        if(!$settings->AllowClientProfilePasswordEdit)  {
+            return redirect()->route('home');
+        }
         return view('password_change.index');
     }
 

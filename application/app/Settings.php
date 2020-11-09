@@ -90,7 +90,7 @@ class Settings extends Model
         'SSOLoginOnly',
         'portal_link',
         'allowRedirectPortal',
-
+        'AllowClientProfilePasswordEdit'
     ];
 
 }

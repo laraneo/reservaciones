@@ -46,11 +46,6 @@ xx
                             <input type="date" class="form-control" id="dateStart" name="dateStart" onchange="onSelectDate()" value="{{ $selectedDateStart }}" >
                         </div>
 
-                        <div class="col-md-2 form-group">
-                            <label class="control-label" for="date">{{ __('backend.to') }}</label>
-                            <input type="date" class="form-control" id="dateEnd" name="dateEnd" onchange="onSelectDate()" value="{{ $selectedDateEnd }}">
-                        </div>
-
                     </div>
                     <div class="panel-body">
                         <div class="table-responsive">
@@ -142,19 +137,11 @@ xx
             const package = document.getElementById("package_id").value;
             const category = document.getElementById("category_id").value;
             const dateStart = document.getElementById("dateStart").value;
-            const dateEnd = document.getElementById("dateEnd").value;
             $('.booking-error').removeClass('booking-error-meessage-show');
             $('.booking-error').addClass('booking-error-meessage-hidden');
-            console.log(`start: ${dateStart} end ${dateEnd}`);
-            if(dateStart <= dateEnd) {
-                console.log('paso');
-                window.location.href = `/customer/bookings?category=${category}&package=${package}&dateStart=${dateStart}&dateEnd=${dateEnd}`;
-            } else {
-                console.log('dateEnd ', dateEnd);
-                if(dateStart !== '' && dateEnd !== '') {
-                    $('.booking-error').removeClass('booking-error-meessage-hidden');
-                    $('.booking-error').addClass('booking-error-meessage-show');
-                }
+            console.log(`start: ${dateStart}`);
+            if(dateStart !== '') {
+                window.location.href = `/customer/bookings?category=${category}&package=${package}&dateStart=${dateStart}`;
             }
             
         }

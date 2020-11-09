@@ -36,3 +36,5 @@ ALTER TABLE settings ADD SSOLoginOnly INT NULL;
 
 ALTER TABLE settings ADD portal_link INT NULL;
 ALTER TABLE settings ADD allowRedirectPortal INT NULL;
+
+ALTER TABLE settings ADD AllowClientProfilePasswordEdit INT NULL;
