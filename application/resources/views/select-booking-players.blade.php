@@ -77,8 +77,11 @@ function Reload()
 <!--  
 //Browser Support Code 
 function ajaxFunctionInclude(PlayerSlot){ 
+
+	// Clases para activar efecto loader
 	$('.btnSearch-booking').removeClass('hidde-loader-search-player').addClass('show-loader-search-player');
 	$('.btnSearch-helper').addClass('btnSearch-helper-show');
+
 	//clean members div
 	document.getElementById("GridMembers").innerHTML = "";
 	
@@ -545,6 +548,9 @@ function ajaxFunctionInclude(PlayerSlot){
 				}
 				
 				//refresh
+
+
+				// Clases para desactivar efecto loader
 				$('.btnSearch-booking').removeClass('show-loader-search-player');
 				$('.btnSearch-booking').addClass('hidde-loader-search-player');
 				$('.btnSearch-helper').removeClass('btnSearch-helper-show');
