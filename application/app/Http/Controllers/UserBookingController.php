@@ -1162,26 +1162,36 @@ class UserBookingController extends Controller
      */
     public function loadStep2()
     {
+        $package_id = Session::get('package_id');
         //generating a string for off days
-
-        $off_days = DB::table('booking_times')
+        $settings = Settings::query()->first();
+        if($settings->bookingTime_perpackage) {
+            // paquete
+            $off_days = DB::table('booking_times_packages')
+            ->where('is_off_day', '=', '1')
+            ->where('package_id', $package_id)
+            ->get();
+            
+        } else {
+            $off_days = DB::table('booking_times')
             ->where('is_off_day', '=', '1')
             ->get();
-
+            // global
+        }
         $daynum = array();
 
         foreach ($off_days as $off_day)
         {
-            if($off_day->id != 7)
+            $currentDay = $settings->bookingTime_perpackage == 1 ? $off_day->number : $off_day->id;
+            if($off_day->number != 7)
             {
-                $daynum[] = $off_day->id;
+                $daynum[] = $currentDay;
             }
             else
             {
-                $daynum[] = $off_day->id - 7;
+                $daynum[] = $currentDay - 7;
             }
         }
-
         $disable_days_string = implode(",", $daynum);
 
 		//return view('select-booking-time', compact('disable_days_string'));
@@ -1812,24 +1822,33 @@ class UserBookingController extends Controller
         $cancel_request = $booking->cancel_request()->first();
 
         //generating a string for off days
-
-        $off_days = DB::table('booking_times')
+        $settings = Settings::query()->first();
+        if($settings->bookingTime_perpackage) {
+            // paquete
+            $off_days = DB::table('booking_times_packages')
+            ->where('is_off_day', '=', '1')
+            ->where('package_id', $booking->package_id)
+            ->get();
+            
+        } else {
+            $off_days = DB::table('booking_times')
             ->where('is_off_day', '=', '1')
             ->get();
-
-
+            // global
+        }
 
         $daynum = array();
 
         foreach ($off_days as $off_day)
         {
+            $currentDay = $settings->bookingTime_perpackage == 1 ? $off_day->number : $off_day->id;
             if($off_day->id != 7)
             {
-                $daynum[] = $off_day->id;
+                $daynum[] = $currentDay;
             }
             else
             {
-                $daynum[] = $off_day->id - 7;
+                $daynum[] = $currentDay - 7;
             }
         }
 
