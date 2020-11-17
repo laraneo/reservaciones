@@ -109,13 +109,25 @@ class HomeController extends Controller
         {
             
             $settings =  Settings::query()->first();
-            if($settings->SSOLoginOnly && !$request['externalLogin']) {
-                $isSSO = true;
-                Auth::logout();
-                if($settings->allowRedirectPortal) {
-                    return Redirect::to($settings->portal_link);
+            $isExternalLogin = false;
+            if(Session::get('isExternalLogin')){
+                $isExternalLogin = Session::get('isExternalLogin');
+            } else {
+                if($request['externalLogin']) {
+                    Session::put('isExternalLogin', true);
+                } else {
+                    Session::put('isExternalLogin', false);
                 }
-                return redirect()->route('login'); 
+            }
+            
+            if($settings->SSOLoginOnly && !$request['externalLogin']) {
+                if(!$isExternalLogin) {
+                    Auth::logout();
+                    if($settings->allowRedirectPortal) {
+                        return Redirect::to($settings->portal_link);
+                    }
+                    return redirect()->route('login'); 
+                }
             }
             
             $user = Auth::user();
