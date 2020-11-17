@@ -34,10 +34,15 @@
 .btnSearch-booking {
 	position: absolute !important;
     z-index: 20 !important;
-    left: 80px !important;
-    top: 5px !important;
-	color: black !important;
+    left: 6px !important;
+    top: -4px !important;
+    color: black !important;
     font-weight: bold !important;
+    text-align: center;
+    height: 100%;
+	width: 100%;
+    padding-top: 3%;
+    padding-bottom: 3%;
 }
 
 
@@ -836,7 +841,7 @@ function ajaxFunctionSelect(doc_id){
 						<div class="col-md-2" style="position: relative">
 							<!-- <input name="btnSearch" id="btnSearch" type='button' onclick='ajaxFunctionInclude(1)' value='Buscar' /> 
 							-->	
-							<div class=" btnSearch-booking hidde-loader-search-player" ><img src="{{ asset('images/loader.gif') }}" width="25" height="25"></div>
+							<div class=" btnSearch-booking hidde-loader-search-player" ><img src="{{ asset('images/loader.gif') }}" width="30" height="30"></div>
 							<a name="btnSearch" id="btnSearch" class="btn btn-primary btnSearch-helper" onclick='ajaxFunctionInclude(1)'>  <i class="fa fa-search"></i> Buscar Jugador</a>
 							
 							<!--    <h5>{{ __('app.player') }}</h5>
