@@ -75,7 +75,7 @@
 
 
 			// Standard
-			if($categoryType == 0) {
+			if($categoryType == 0) { 
 
 				$booking_min = $row['bookingUser_minPlayers'];
 				$booking_max = $row['bookingUser_maxPlayers'];
