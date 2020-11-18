@@ -49,7 +49,7 @@ class BookingReceivedPlayer extends Mailable
      */
     public function build()
     {
-        $this->subject(__('emails.new_booking_title').' '.$this->booking->id . ' - ' . config('settings.business_name');
+        $this->subject(__('emails.new_booking_title').' '.$this->booking->id.' - '. config('settings.business_name'));
         return $this->view('vendor.emails.bookingReceivedPlayer')->with([
             'booking_id' => $this->booking->id,
             'business_name' => config('settings.business_name'),

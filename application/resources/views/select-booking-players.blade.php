@@ -3,6 +3,57 @@
  
 @section('content')
 
+<style>
+
+
+.hidde-loader-search-player {
+	display: none
+}
+
+
+
+.btnSearch-helper-show {
+	cursor: not-allowed !important;
+    background-color: #8ec2fb !important;
+    position: relative !important;
+    z-index: 10 !important;
+	color: transparent !important;
+	text-decoration: none !important;
+}
+
+.btnSearch-helper-show:hover {
+	background-color:#cbe0f7 !important;
+	color:#cbe0f7 !important;
+}
+
+.btnSearch-helper-show:link {
+	background-color:#cbe0f7 !important;
+	color:#cbe0f7 !important;
+}
+
+.btnSearch-booking {
+	position: absolute !important;
+    z-index: 20 !important;
+    left: 6px !important;
+    top: -4px !important;
+    color: black !important;
+    font-weight: bold !important;
+    text-align: center;
+    height: 100%;
+	width: 100%;
+    padding-top: 3%;
+    padding-bottom: 3%;
+}
+
+
+.show-loader-search-player {
+	display: block
+}
+	
+
+
+</style>
+
 
 <?php
 	$domain_id = config('settings.business_name', 'Reservaciones');
@@ -31,7 +82,11 @@ function Reload()
 <!--  
 //Browser Support Code 
 function ajaxFunctionInclude(PlayerSlot){ 
-	
+
+	// Clases para activar efecto loader
+	$('.btnSearch-booking').removeClass('hidde-loader-search-player').addClass('show-loader-search-player');
+	$('.btnSearch-helper').addClass('btnSearch-helper-show');
+
 	//clean members div
 	document.getElementById("GridMembers").innerHTML = "";
 	
@@ -498,6 +553,12 @@ function ajaxFunctionInclude(PlayerSlot){
 				}
 				
 				//refresh
+
+
+				// Clases para desactivar efecto loader
+				$('.btnSearch-booking').removeClass('show-loader-search-player');
+				$('.btnSearch-booking').addClass('hidde-loader-search-player');
+				$('.btnSearch-helper').removeClass('btnSearch-helper-show');
 				if (PlayerErrorMessage=='')
 				{
 					//window.location.reload(false);
@@ -777,10 +838,11 @@ function ajaxFunctionSelect(doc_id){
 				<form name='myForm' method="post" action="outputHelper.php"> 
 
 				<div class="row">
-						<div class="col-md-2">
+						<div class="col-md-2" style="position: relative">
 							<!-- <input name="btnSearch" id="btnSearch" type='button' onclick='ajaxFunctionInclude(1)' value='Buscar' /> 
 							-->	
-							<a name="btnSearch" id="btnSearch" class="btn btn-primary" onclick='ajaxFunctionInclude(1)'>  <i class="fa fa-search"></i> Buscar Jugador</a>
+							<div class=" btnSearch-booking hidde-loader-search-player" ><img src="{{ asset('images/loader.gif') }}" width="30" height="30"></div>
+							<a name="btnSearch" id="btnSearch" class="btn btn-primary btnSearch-helper" onclick='ajaxFunctionInclude(1)'>  <i class="fa fa-search"></i> Buscar Jugador</a>
 							
 							<!--    <h5>{{ __('app.player') }}</h5>
 							-->	
