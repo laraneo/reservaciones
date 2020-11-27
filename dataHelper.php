@@ -27,8 +27,26 @@
 	function ValidateBookingPlayer($session_email,$doc_id, &$playername, &$first_name , &$last_name , &$is_active, &$email, &$phone_number, &$player_type,&$status, &$has_errors)
 	{
 		global $connection;
+		global $categoryType;
+		global $packageType;
 		
 		{ //get settings
+		
+			//Validaciones genericas
+			$booking_min = '';
+			$booking_max = '';
+			$player_min = '';
+			$player_max = '';
+			$guest_min = '';
+			$guest_max = '';
+
+			//Validaciones Limites
+			$bookingUser_maxPerDay = '';
+			$bookingUser_maxPerWeek = '';
+			$bookingUser_maxPerMonth = '';
+			$bookingGuest_maxPerDay = '';
+			$bookingGuest_maxPerWeek = '';
+			$bookingGuest_maxPerMonth = '';
 
 			$querySettings = "select * from settings";
 			$resultSettings = sqlsrv_query($connection, $querySettings);
@@ -45,85 +63,72 @@
 				$max_guests = $row['bookingUser_maxGuests'];
 				$bookings_perday =  $row['bookingUserPerDay'];
 				$bookings_playsperday =  $row['bookingUserPlayPerDay'];
+				
+				$bookingUser_maxPerDay = $row['bookingUser_maxTimePerDay'];
+				$bookingUser_maxPerWeek = $row['bookingUser_maxTimePerWeek'];
+				$bookingUser_maxPerMonth = $row['bookingUser_maxTimePerMonth'];
+				$bookingGuest_maxPerDay = $row['bookingGuest_maxTimePerDay'];
+				$bookingGuest_maxPerWeek = $row['bookingGuest_maxTimePerWeek'];
+				$bookingGuest_maxPerMonth =$row['bookingGuest_maxTimePerMonth'];				
+			}
+			sqlsrv_free_stmt( $resultSettings);		
 
 
-				//Validaciones genericas
-				$booking_min = '';
-				$booking_max = '';
-				$player_min = '';
-				$player_max = '';
-				$guest_min = '';
-				$guest_max = '';
+			// Standard
+			if($categoryType == 0) { 
 
-				//Validaciones Limites
-				$bookingUser_maxPerDay = '';
-				$bookingUser_maxPerWeek = '';
-				$bookingUser_maxPerMonth = '';
-				$bookingGuest_maxPerDay = '';
-				$bookingGuest_maxPerWeek = '';
-				$bookingGuest_maxPerMonth = '';
+				$booking_min = $row['bookingUser_minPlayers'];
+				$booking_max = $row['bookingUser_maxPlayers'];
+				$player_min = 1;
+				$player_max = $row['bookingUser_maxPlayers'];
+				$guest_min = 0;
+				$guest_max = $row['bookingUser_maxGuests'];
 
-
-				// Standard
-				if($categoryType == 0) {
-
-					$booking_min = $row['bookingUser_minPlayers'];
-					$booking_max = $row['bookingUser_maxPlayers'];
-					$player_min = 1;
-					$player_max = $row['bookingUser_maxPlayers'];
-					$guest_min = 0;
-					$guest_max = $row['bookingUser_maxGuests'];
-
-					$bookingUser_maxPerDay = $row['bookingUserPlayPerDay'];
-					$bookingUser_maxPerWeek = $row['bookingUserPlayPerWeek'];
-					$bookingUser_maxPerMonth = $row['bookingUserPlayPerMonth'];
-					$bookingGuest_maxPerDay = $row['bookingGuestPlayPerDay'];
-					$bookingGuest_maxPerWeek = $row['bookingGuestPlayPerWeek'];
-					$bookingGuest_maxPerMonth =$row['bookingGuestPlayPerMonth'];
-
-				}
-
-				// Per Time
-				if($categoryType == 1) {
-
-					// Consultar parametros para el Tipo de Paquete
-					$query = "SELECT * from packages_types where id='" . $packageType . "'";
-					$result = sqlsrv_query($connection, $query); 
-
-					if( $result === false) {
-						die( print_r( sqlsrv_errors(), true) );
-					}
-
-					// Setear los parametros por tipo de paquete
-					while( $packageTypeRow = sqlsrv_fetch_array( $result, SQLSRV_FETCH_ASSOC) ) {
-						$cant = $packageTypeRow['cant'];
-						$booking_min = $packageTypeRow['booking_min'];
-						$booking_max = $packageTypeRow['booking_max'];
-						$player_min = $packageTypeRow['player_min'];
-						$player_max = $packageTypeRow['player_max'];
-						$guest_min = $packageTypeRow['guest_min'];
-						$guest_max = $packageTypeRow['guest_max'];
-					}
-
-
-					$bookingUser_maxPerDay = $row['bookingUser_maxTimePerDay'];
-					$bookingUser_maxPerWeek = $row['bookingUser_maxTimePerWeek'];
-					$bookingUser_maxPerMonth = $row['bookingUser_maxTimePerMonth'];
-					$bookingGuest_maxPerDay = $row['bookingGuest_maxTimePerDay'];
-					$bookingGuest_maxPerWeek = $row['bookingGuest_maxTimePerWeek'];
-					$bookingGuest_maxPerMonth =$row['bookingGuest_maxTimePerMonth'];
-
-				}
-
-
-
-
-
+				$bookingUser_maxPerDay = $row['bookingUserPlayPerDay'];
+				$bookingUser_maxPerWeek = $row['bookingUserPlayPerWeek'];
+				$bookingUser_maxPerMonth = $row['bookingUserPlayPerMonth'];
+				$bookingGuest_maxPerDay = $row['bookingGuestPlayPerDay'];
+				$bookingGuest_maxPerWeek = $row['bookingGuestPlayPerWeek'];
+				$bookingGuest_maxPerMonth =$row['bookingGuestPlayPerMonth'];
 
 			}
 
-			sqlsrv_free_stmt( $resultSettings);			
+			// Per Time
+			if($categoryType == 1) {
 
+				// Consultar parametros para el Tipo de Paquete
+				$query = "SELECT * from packages_types where id='" . $packageType . "'";
+				$result = sqlsrv_query($connection, $query); 
+
+				if( $result === false) {
+					die( print_r( sqlsrv_errors(), true) );
+				}
+
+				// Setear los parametros por tipo de paquete
+				while( $packageTypeRow = sqlsrv_fetch_array( $result, SQLSRV_FETCH_ASSOC) ) {
+					$cant = $packageTypeRow['cant'];
+					$booking_min = $packageTypeRow['booking_min'];
+					$booking_max = $packageTypeRow['booking_max'];
+					$player_min = $packageTypeRow['player_min'];
+					$player_max = $packageTypeRow['player_max'];
+					$guest_min = $packageTypeRow['guest_min'];
+					$guest_max = $packageTypeRow['guest_max'];
+				}
+
+			}
+
+			/*
+			echo "categoryType " . $categoryType . "<br>";
+			echo "packageType " . $packageType . "<br>";
+			echo "booking_min " . $booking_min . "<br>";
+			echo "booking_max " . $booking_max . "<br>";
+			echo "player_min " . $player_min . "<br>";
+			echo "player_max " . $player_max . "<br>";
+			echo "guest_min " . $guest_min . "<br>";
+			echo "guest_max " . $guest_max . "<br>";
+
+			die();	
+*/
 		}
 		
 		//get group_id
@@ -1486,6 +1491,7 @@ else if ($command == "delete-booking-player")  ///delete player
 	//$fileLog="logsdataHelper.txt";
 	
 	date_default_timezone_set('America/Caracas');
+	$date = date('d/m/Y h:i:s a', time());
 	$date = date('d/m/Y h:i:s a', time());
 	$myfile = fopen($fileLog, "a") or die("Unable to open file!");
 	//$txt = $date . " - " . $aux;
