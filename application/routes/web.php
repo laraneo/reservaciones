@@ -58,6 +58,7 @@ Route::post('/get_update_slots', 'UserBookingController@getUpdateSlots')->name('
 Route::post('/remove_session_addon', 'UserBookingController@removeFromList');
 Route::get('/admin-get-packages-by-type', 'UserBookingController@getPackagesByType')->name('AdminGetPackagesByType');
 Route::get('/admin-get-select-days', 'AdminGeneralOccupationController@getSelectDays')->name('AdminGetSelectDays');
+Route::get('/check-available-package-day', 'UserBookingController@checkAvailablePackageDay')->name('AdmincheckAvailablePackageDay');
 
 
 
