@@ -35,7 +35,10 @@ function wsCalculateToken()
 	
 	global $domain_id;
 	
-	if ($domain_id=="") $domain_id = WS_DOMAIN_ID;
+	if ($domain_id=="") $domain_id = CONST_DOMAIN_ID;
+	//if ($domain_id=="") $domain_id = "CCC";
+	
+	//echo "domain_id" . $domain_id;
 	
     $date = date('Ymd');
     $calculated_token = md5($domain_id.$date);
@@ -43,12 +46,15 @@ function wsCalculateToken()
 
 	return $calculated_token;
 }
-	
+	 
 
 function wsConsultaSaldo($group_id, &$saldo, &$comments)
 {
 	//$skipSaldo = true; // Parametro para desactivar validacion saldo
-	if($skipSaldo) {
+	$skipSaldo = true;
+
+	if($skipSaldo || $skipWS) {
+		$saldo = 0;
 		return 0;
 	}
 	try {
@@ -126,6 +132,11 @@ function wsConsultaSaldo($group_id, &$saldo, &$comments)
 
 function wsConsultaSocio($doc_id, &$comments)
 {
+	$skipWS = true; // Parametro para desactivar validacion ws
+	if($skipWS) {
+		return 0;
+	}
+	
 	try {
 		
 		$token = wsCalculateToken();
@@ -179,6 +190,11 @@ function wsConsultaSocio($doc_id, &$comments)
 
 function wsConsultaInvitado($doc_id, &$comments)
 {
+	$skipWS = true; // Parametro para desactivar validacion ws
+	if($skipWS) {
+		return 0;
+	}
+	
 	try {
 		
 		$token = wsCalculateToken();
@@ -233,6 +249,12 @@ function wsConsultaInvitado($doc_id, &$comments)
 
 function wsConsultarBlackList($doc_id, &$comments, &$first_name, &$last_name)
 {
+	$skipWS = true; // Parametro para desactivar validacion ws
+	if($skipWS) {
+		return 0;
+	}
+	
+	
 	try {
 		
 		$token = wsCalculateToken();

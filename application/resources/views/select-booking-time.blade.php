@@ -236,11 +236,14 @@
                     <input type ="hidden" id="selected-package-type" value="">
                 </div>
                 <div id="custom_slots_holder" data-booking-type="{{ Session::get('booking_type_id') }}"></div>
+                <div class="alert alert-danger col-md-12 d-none" id="available-day-error" style="margin-bottom: 50px;">El Paquete no esta disponible para la fecha seleccionada</div>
                 <div class="row col-md-12">
                     <div class="alert alert-danger col-md-12 d-none" id="slot_error" style="margin-bottom: 50px;">
                         {{ __('app.time_slot_error') }}
                     </div>
                     <div class="alert alert-danger col-md-12 d-none" id="tennis_slot_error" style="margin-bottom: 50px;">
+
+                        
                         
                     </div>
                     <div class="alert alert-danger col-md-12 d-none" id="user_draw_error" style="margin-bottom: 50px;">
@@ -534,14 +537,40 @@
             });
     }
 
-    function onSelectPackage(mobile = false) {
+
+
+
+    function checkAvailableDayExpiration(date, package) {
+        const URL_CONCAT = $('meta[name="index"]').attr('content');
+        return new Promise(function(resolve, reject) {
+            $.ajax({
+                type: 'GET',
+                url: URL_CONCAT + '/check-available-package-day',
+                data: { 
+                    date:date,
+                    package: package
+                    },
+                success: function(response) {
+                    resolve(response.status);
+                    return false;
+                },
+            })
+        });
+    }
+
+    async function onSelectPackage(mobile = false) {
         const URL_CONCAT = $('meta[name="index"]').attr('content');
         const date = document.getElementById('custom-event_date').value;
         const package = document.getElementById(`${mobile ? 'select-package-list-mobile' : 'select-package-list'}`).value;
         const categoryType = '{{ Session::get('categoryType') }}';
         $('#select-package-list-mobile').val(package);
         $('#select-package-list').val(package);
-        if(package !== '') {
+        $('#available-day-error').addClass('d-none');
+        const isOffDay = await checkAvailableDayExpiration(date, package);
+        console.log('isOffDay ', isOffDay);
+
+        if(!isOffDay) {
+            if(package !== '') {
             $.ajax({
                 type: 'POST',
                 url: URL_CONCAT + '/get_timing_slots',
@@ -577,6 +606,18 @@
                 } 
             });
         }
+        } else {
+            $('#slots_loader').addClass('d-none');
+            $('#package-type').empty();
+            $('#selected-package-type').empty();
+            $('#time-package-type').empty();
+            $('#package-duration').val('');
+            $('#tennis_slot').val('');
+            $('#custom_slots_holder').html('');
+            $('#available-day-error').removeClass('d-none');
+        }
+
+
     }
 
     function onSelectDraw() {
@@ -627,9 +668,15 @@
                         });
                     },
                 }); 
-        }
+        };
 
-    $('input[id="custom-event_date"]').change(function () {
+
+
+
+
+
+
+    $('input[id="custom-event_date"]').change( async function () {
         //populate timing slots
         var selected_date;
         selected_date = $(this).val();
@@ -638,7 +685,10 @@
         const package = '{{ Session::get('package_id') }}';
 
         //prepare to send ajax request
-        $.ajax({
+        const isOffDay = await checkAvailableDayExpiration(selected_date, package);
+        console.log('calendar event isOffDay', isOffDay);
+        if(!isOffDay) {
+            $.ajax({
             type: 'POST',
             url: URL_CONCAT + '/get_timing_slots',
             data: {
@@ -672,6 +722,17 @@
                 $('#tennis_slot').val('');
             } 
         });
+        } else {
+            $('#slots_loader').addClass('d-none');
+            $('#package-type').empty();
+            $('#selected-package-type').empty();
+            $('#time-package-type').empty();
+            $('#package-duration').val('');
+            $('#tennis_slot').val('');
+            $('#custom_slots_holder').html('');
+            $('#available-day-error').removeClass('d-none');
+        }
+
     });
 
     function getDraws() {

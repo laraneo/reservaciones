@@ -135,7 +135,7 @@
 		$is_user= 1;
 		$group_id = -1;
 		$queryGroup = "select * from users where doc_id='" . $doc_id . "'";
-
+		
 		$resultGroup = sqlsrv_query($connection, $queryGroup); 
 
 		if( $resultGroup === false) {
@@ -216,9 +216,9 @@
 				$qry_result = sqlsrv_query($connection,$query ) or  die( print_r( sqlsrv_errors(), true));
 
 				$query = "INSERT INTO groups (id, balance,is_suspended, is_active, balance_date,created_at, updated_at) VALUES ('" . $group_id . "'," . $balance . ",0,1,GETDATE(),GETDATE(), GETDATE())";	
-				// echo $query;
+				 //echo $query;
 				$qry_result = sqlsrv_query($connection,$query ) or die( print_r( sqlsrv_errors(), true));
-				
+
 			}
 			elseif ($status == 1 ) // 1: se obtuvo registro de Backoffice con valor en el saldo mayor que cero
 			{
@@ -1233,20 +1233,16 @@ else if ($command == "group") // query group
 }	
 else if ($command == "include") // include player
 {
-
-		
 	$err_message = ValidateBookingPlayer($session_email,$doc_id,$playername, $first_name , $last_name , $is_active, $email, $phone_number, $player_type,$status, $has_errors);
 	
 	if (($err_message == "") && ($has_errors == 0))
 	{
-		
 		$status=0;	
 		//ejecuto el insert o el SP
 		//insert row into session players
 		$query = "INSERT INTO session_players (doc_id, player_type, session_email, created_at, updated_at, first_name, last_name, email, phone_number, package_id) VALUES ('" . $doc_id . "'," . $player_type . ",'" . $session_email . "',GETDATE(), GETDATE(),'" . $first_name . "','" . $last_name . "','" . $email . "','" . $phone_number . "','" . $package_id . "')"; 
 		$qry_result = sqlsrv_query($connection,$query ) or die( print_r( sqlsrv_errors(), true));
 		//echo $query;
-		
 	}
 	//$player_type = 1;
 	

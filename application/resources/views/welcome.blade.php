@@ -162,6 +162,8 @@ function getClientIP()
 <?php
 	
 	// require 'wsLibrary.php';
+	//require_once 'config.inc';
+	//$domain_id = "CCC";
 	require 'wsLibrary.php';
 
 	//$whiteList = "192.168.0.123,192.168.0.200,190.217.13.222";
@@ -283,15 +285,19 @@ function getClientIP()
 	//echo "$group_id" . $group_id;
 	if ($group_id !='')
 	{
+		//$result = 0;
 		$result = wsConsultaSaldo($group_id, $balance, $comments);
 		$balance_date = date('Y-m-d H:i:s');
 		
 		//echo $result;
+		//die();
+		
 		//exit();
 		
 		// echo $webservice;
-		// echo CONST_URI_WEB_SERVICE;
-		// echo "***" . $result;
+		 //echo CONST_URI_WEB_SERVICE;
+		 //echo CONST_DOMAIN_ID;
+		 //echo "***" . $result;
 		// echo $comments;
 		
 		if (($result==-1) || ($result==-3))
@@ -364,8 +370,10 @@ function getClientIP()
 		// 0: ok , 1: en lista negra, -1: error
 		//echo $doc_id ;
 		
+		//$retval = 0;
 		$retval = wsConsultarBlackList($doc_id, $comments, $first_name, $last_name);
 		  //echo $retval;
+		  ///die();
 		 // exit();
 
 		$first_name = str_Normalize($first_name);

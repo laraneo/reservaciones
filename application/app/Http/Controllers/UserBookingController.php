@@ -9,6 +9,7 @@ use App\Draw;
 use App\User;
 use App\BookingPlayers;
 use App\BookingTime;
+use App\BookingTimesPackage;
 use App\Settings;
 use App\DrawRequest;
 use App\Booking;
@@ -2091,6 +2092,24 @@ class UserBookingController extends Controller
             'status' => true,
         ]);
         
+    }
+
+    public function checkAvailablePackageDay(Request $request) {
+        $package = $request['package'];
+        $date = $request['date'];
+        $date = new DateTime($date);
+        $dayNumber = $date->format('N');
+        $status = false;
+        $bookinTimePackage = BookingTimesPackage::query()->where('package_id', $package)->where('number', $dayNumber)->first();
+        if($bookinTimePackage && $bookinTimePackage->is_off_day) {
+            $status = true;
+        } else {
+            $status = false;
+        }
+        
+        return response()->json([
+            'status' => $status,
+        ]);
     }
 
 }
