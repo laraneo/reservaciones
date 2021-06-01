@@ -56,11 +56,11 @@
 
 
 <?php
-	$domain_id = config('settings.business_name', 'Reservaciones');
-	$date = date('Y-m-d');
-	$calculated_token = md5($domain_id.$date);	
-	//$calculated_token = $domain_id.$date.date_default_timezone_get();	
-	//$calculated_token = "123";
+    $domain_id = config('settings.business_name', 'Reservaciones');
+    $date = date('Y-m-d');
+    $calculated_token = md5($domain_id.$date);
+    //$calculated_token = $domain_id.$date.date_default_timezone_get();
+    //$calculated_token = "123";
 ?>
 
 <script language="javascript" type="text/javascript"> 
@@ -693,8 +693,8 @@ function ajaxFunctionSelect(doc_id){
     </div>
 
 	<?php
-		include 'BookingCountDown.php';	
-	?>	
+        include 'BookingCountDown.php';
+    ?>	
 
 
     <form method="post" id="booking_step_player" action="{{ route('postStepPlayer') }}">
@@ -730,8 +730,8 @@ function ajaxFunctionSelect(doc_id){
                 </div>
 
 				<?php
-				$i=0;
-				?>
+                $i=0;
+                ?>
 				
 				<script>
 				var ItemValue;
@@ -958,8 +958,9 @@ function ajaxFunctionSelect(doc_id){
     </script>
 
 	<script>
-	ProgressCountdown(<?php echo $countdown;?>, 'pageBeginCountdown', 'pageBeginCountdownText').then(value => window.location.href = `logoutBooking`);
-
+	const url = "{{ url('') }}";
+	
+	ProgressCountdown(<?php echo $countdown;?>, 'pageBeginCountdown', 'pageBeginCountdownText').then(value => window.location.href = `${url}/logoutBooking`);
 
 	function ProgressCountdown(timeleft, bar, text) {
 		return new Promise((resolve, reject) => {
