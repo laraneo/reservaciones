@@ -178,14 +178,14 @@
 	
 
 <script>
-
+const url = "{{ url('') }}";
 //ProgressCountdown(10, 'pageBeginCountdown', 'pageBeginCountdownText').then(value => alert(`Tiempo expirado: ${value}.`));
 
 
 //ProgressCountdown(10, 'pageBeginCountdown', 'pageBeginCountdownText').then(value => window.location.href = `http://stackoverflow.com`);
 
 //ProgressCountdown(10, 'pageBeginCountdown', 'pageBeginCountdownText').then(value => window.location.href = `{{ url('logout') }}`);
-ProgressCountdown(180, 'pageBeginCountdown', 'pageBeginCountdownText').then(value => window.location.href = `logoutBooking`);
+ProgressCountdown(180, 'pageBeginCountdown', 'pageBeginCountdownText').then(value => window.location.href = `${url}/logoutBooking`);
 
 
 function ProgressCountdown(timeleft, bar, text) {

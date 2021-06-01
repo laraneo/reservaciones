@@ -92,13 +92,14 @@
         </div>
     </div>
 
-        <script>    
-    
+     <script>    
+        const url = "{{ url('') }}";
+
         function onSelecCategory() {
             const URL_CONCAT = $('meta[name="index"]').attr('content');
             const id = document.getElementById("category_id").value;
             if(id > 0) {
-                window.location.href = `/customer/draws?category=${id}`;
+                window.location.href = `${url}/customer/draws?category=${id}`;
             }
             
         }
