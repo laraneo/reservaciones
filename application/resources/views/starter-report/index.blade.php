@@ -236,7 +236,7 @@
             if (number == 0) number = number + 1;
             $.ajax({
                 type: 'GET',
-                url: '/booking-category-calendar',
+                url: `${url}/booking-category-calendar`,
                 data: {
                     date: moment(date).format('DD-MM-YYYY'),
                     number: number,
@@ -354,7 +354,7 @@
         const category = document.getElementById("category_id").value;
         $.ajax({
             type: 'GET',
-            url: '/starter-report-packages',
+            url: `${url}/starter-report-packages`,
             data: {
                 category: category,
                 bookingDate: moment(bookingDate).format('DD-MM-YYYY'),

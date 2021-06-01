@@ -28,6 +28,8 @@ $calculated_token = md5($domain_id . $date);
 ?>
 
 <script language="javascript" type="text/javascript">
+	const url = "{{ url('') }}";
+
 	function wait(ms) {
 		var start = new Date().getTime();
 		var end = start;
@@ -496,7 +498,7 @@ $calculated_token = md5($domain_id . $date);
 
 						$.ajax({
 							type: 'GET',
-							url: '/send-booking-notification-remove-player',
+							url: `${url}/send-booking-notification-remove-player`,
 							headers: {
 								'Content-Type': 'application/json'
 							},
@@ -911,7 +913,7 @@ $calculated_token = md5($domain_id . $date);
 	function handleDeleteBooking(locator) {
 		$.ajax({
 			type: 'POST',
-			url: `/delete-booking-by-locator`,
+			url: `${url}/delete-booking-by-locator`,
 			data: {
 				locator: locator
 			},
