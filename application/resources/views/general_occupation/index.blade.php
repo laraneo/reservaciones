@@ -156,7 +156,8 @@
     </div>
 
 <script>    
-
+        const url = "{{ url('') }}";
+        
         function renderStatus(data) {
             if(data.expired) return 'expired';
             if(data.blocked) return 'blocked';
@@ -190,7 +191,7 @@
                 if(number == 0) number = number + 1;
                 $.ajax({
                 type: 'GET',
-                url: '/booking-category-calendar',
+                url: `${url}/booking-category-calendar`,
                 data: { 
                     date : moment(date).format('DD-MM-YYYY'),
                     number : number,

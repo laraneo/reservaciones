@@ -203,7 +203,7 @@
         const package = "{{ $selectedPackage }}";
         $.ajax({
             type: 'GET',
-            url: `/addons-parameters-generate`,
+            url: `${url}/addons-parameters-generate`,
             data: {
                 package: package,
                 category: category,

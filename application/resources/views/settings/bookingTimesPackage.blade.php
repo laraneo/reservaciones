@@ -265,7 +265,7 @@
         console.log('handleGenerateDays');
         $.ajax({
             type: 'GET',
-            url: `/booking-times-package-generate`,
+            url: `${url}/booking-times-package-generate`,
             data: {
                 package: package
             },
