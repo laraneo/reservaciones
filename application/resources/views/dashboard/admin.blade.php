@@ -233,11 +233,11 @@ LA -->
                     data: <?php echo $stats_booking; ?>,
                     xkey: 'date',
                     ykeys: ['value'],
-                    labels: ['{{ __('backend.bookings') }}'],
+                    labels: ["{{ __('backend.bookings') }}"],
                     barRatio: 0.4,
                     xLabelAngle: 35,
                     hideHover: 'auto',
-                    barColors: ['{{ config('settings.primary_color') ? config('settings.primary_color') : '#007bff' }}'],
+                    barColors: ["{{ config('settings.primary_color') ? config('settings.primary_color') : '#007bff' }}"],
                     resize: true
                 });
 
@@ -246,11 +246,11 @@ LA -->
                     data: <?php echo $stats_invoices; ?>,
                     xkey: 'date',
                     ykeys: ['value'],
-                    labels: ['{{ __('backend.amount') }} {{ __('backend.in') }} {!! config('settings.currency_symbol') !!}'],
+                    labels: ["{ __('backend.amount') }} {{ __('backend.in') }} {!! config('settings.currency_symbol') !!}"],
                     barRatio: 0.4,
                     xLabelAngle: 35,
                     hideHover: 'auto',
-                    barColors: ['{{ config('settings.secondary_color') ? config('settings.secondary_color') : '#4E5E6A' }}'],
+                    barColors: ["{{ config('settings.secondary_color') ? config('settings.secondary_color') : '#4E5E6A' }}"],
                     resize: true
                 });
 

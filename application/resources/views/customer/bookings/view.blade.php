@@ -74,8 +74,7 @@ $calculated_token = md5($domain_id . $date);
 		//document.getElementById("btnRefresh").disabled = true;
 
 		var errorPlayer = 0;
-		const package = '{{ Session::get('
-		package_id ') }}';
+		const package = "{{ Session::get('package_id ') }}";
 		if (PlayerSlot == 1) {
 			var player1 = document.getElementById('player1').value;
 
@@ -107,12 +106,9 @@ $calculated_token = md5($domain_id . $date);
 						"&idBookingPlayer=" + idBookingPlayer +
 						"&booking_date=" + "{{ Session::get('event_date') }}" +
 						"&token=" + "<?php echo $calculated_token; ?>" +
-						"&package_id=" + '{{ Session::get('
-					package_id ') }}' +
-						"&categoryType=" + '{{ Session::get('
-					categoryType ') }}' +
-						"&packageType=" + '{{ Session::get('
-					packageType ') }}';
+						"&package_id=" + "{{ Session::get('package_id ') }}" +
+						"&categoryType=" + "{{ Session::get('categoryType ') }}" +
+						"&packageType=" + "{{ Session::get('packageType ') }}";
 
 					//                 var queryString = `?command=include-booking-player&doc_id=${player1}&email={{Auth::user()->email}}&bookingId={{ $booking->id }}`
 					//PlayerSlot=1;

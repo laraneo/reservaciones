@@ -218,7 +218,7 @@
                         <div id="draw-list"></div>
                         @endif
                     </div>
-                    <input type="hidden" name="booking_type_id" id="booking_type_id" value={{Session::get('booking_type_id')}}>
+                    <input type="hidden" name="booking_type_id" id="booking_type_id" value="{{Session::get('booking_type_id')}}">
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
@@ -267,7 +267,7 @@
             </div>
         </div>
     </div>
-    <input type="hidden" id="data-booking-type" value='{{ Session::get('booking_type_id') }}'>
+    <input type="hidden" id="data-booking-type" value="{{ Session::get('booking_type_id') }}">
     <input type="hidden" name="draw_booking_slot" id="draw_booking_slot" value=''>
     <input type="hidden" name="tennis_slot" id="tennis_slot" value=''>
     <input type="hidden" name="package-duration" id="package-duration" value=''>
@@ -347,10 +347,8 @@
     $('body').on('click', '.select-booking-type', function() {
         const BASE_URL = $('meta[name="index"]').attr('content');
         let booking_type_id = $(this).attr('booking-type-id');
-        const selectedCategory = '{{ Session::get('
-        selectedCategory ') }}';
-        const selectedCategoryDraw = '{{ Session::get('
-        selectedCategoryDraw ') }}';
+        const selectedCategory = "{{ Session::get('selectedCategory') }}";
+        const selectedCategoryDraw = "{{ Session::get('selectedCategoryDraw') }}";
         $('#booking_type_error').addClass('d-none');
         $('#booking_type_id').remove();
         $('#booking_step_1-1').append('<input type="hidden" attr-1 name="booking_type_id" id="booking_type_id" value="' + booking_type_id + '">');
@@ -366,13 +364,9 @@
         $(this).find('.type_title').addClass('active');
         $(this).find('.package_title').addClass('active');
 
-        {
-            {
-                --$('.btn_package_select').text('{{ __("app.booking_package_btn_select") }}').removeClass('btn-danger').addClass('btn-primary');
-                $(this).text('{{ __("app.booking_package_btn_selected") }}').removeClass('btn-primary').addClass('btn-danger');
-                --
-            }
-        }
+        $('.btn_package_select').text('{{ __("app.booking_package_btn_select") }}').removeClass('btn-danger').addClass('btn-primary');
+        $(this).text('{{ __("app.booking_package_btn_selected") }}').removeClass('btn-primary').addClass('btn-danger');
+                
         $.ajax({
             type: 'POST',
             url: BASE_URL + '/setStep2',
@@ -518,8 +512,7 @@
 
     function getPackages() {
         const URL_CONCAT = $('meta[name="index"]').attr('content');
-        const packageId = '{{ Session::get('
-        package_id ') }}';
+        const packageId = "{{ Session::get('package_id') }}";
 
         $.ajax({
             type: 'GET',
@@ -592,8 +585,7 @@
         const URL_CONCAT = $('meta[name="index"]').attr('content');
         const date = document.getElementById('custom-event_date').value;
         const package = document.getElementById(`${mobile ? 'select-package-list-mobile' : 'select-package-list'}`).value;
-        const categoryType = '{{ Session::get('
-        categoryType ') }}';
+        const categoryType = "{{ Session::get('categoryType') }}";
         $('#select-package-list-mobile').val(package);
         $('#select-package-list').val(package);
         $('#available-day-error').addClass('d-none');
@@ -653,8 +645,7 @@
 
     function onSelectDraw() {
         const URL_CONCAT = $('meta[name="index"]').attr('content');
-        const categoryType = '{{ Session::get('
-        categoryType ') }}';
+        const categoryType = "{{ Session::get('categoryType') }}";
         const id = document.getElementById("select-draw").value;
         $('#hour-list').empty();
         $('#draw_booking_slot').val('');
@@ -713,10 +704,8 @@
         var selected_date;
         selected_date = $(this).val();
         var URL_CONCAT = $('meta[name="index"]').attr('content');
-        const categoryType = '{{ Session::get('
-        categoryType ') }}';
-        const package = '{{ Session::get('
-        package_id ') }}';
+        const categoryType = "{{ Session::get('categoryType') }}";
+        const package = "{{ Session::get('package_id') }}";
 
         //prepare to send ajax request
         const isOffDay = await checkAvailableDayExpiration(selected_date, package);
@@ -855,16 +844,14 @@
         var slot_time = $(this).attr('data-slot-time');
         var bookingType = document.getElementById("data-booking-type").value;
         let selectedPackageType = $("#selected-package-type").val();
-        const categoryType = '{{ Session::get('
-        categoryType ') }}';
+        const categoryType = "{{ Session::get('categoryType') }}";
         const packageDuration = $('#package-duration').val();
 
         $('#tennis_slot_error').addClass('d-none').html('');
         $('.btn-slot').removeClass('slot-draw-picked');
         $('#tennis_slot').val('');
         if (categoryType == 1 && selectedPackageType === '' || selectedPackageType === 'null') {
-            $('#tennis_slot_error').removeClass('d-none').html('{{ __('
-                app.package_type_error ') }}');
+            $('#tennis_slot_error').removeClass('d-none').html("{{ __('app.package_type_error ') }}");
             $("html, body").animate({
                 scrollTop: $(document).height() - $(window).height()
             });
@@ -888,14 +875,13 @@
             const availableSlotsCondition = tennisCondition === 1 ? 0 : tennisCondition - 1; // Calcular siempre la cantidad de slots disponibles una vez presionado el slot inicial
 
             if (ButtonCondition < availableSlotsCondition) {
-                $('#tennis_slot_error').removeClass('d-none').html('{{ __('
-                    app.tennis_slot_error ') }}');
+                $('#tennis_slot_error').removeClass('d-none').html("{{ __('app.tennis_slot_error ') }}");
                 $("html, body").animate({
                     scrollTop: $(document).height() - $(window).height()
                 });
                 $('#tennis_slot').val('');
             } else {
-                const slotsToBuild = tennisCondition === 1 ? 0 : tennisCondition - 1;
+                const slotsToBuild = tennixsCondition === 1 ? 0 : tennisCondition - 1;
                 const newSlotSelectedHours = buildSelectedHours(slot_time, slotsToBuild, packageDuration);
                 //console.log('newSlotSelectedHours ', newSlotSelectedHours);
                 if (newSlotSelectedHours.length === 1) {
@@ -913,8 +899,7 @@
                     });
                     $('#tennis_slot').val(JSON.stringify(newSlotSelectedHours));
                 } else {
-                    $('#tennis_slot_error').removeClass('d-none').html('{{ __('
-                        app.tennis_slot_error ') }}');
+                    $('#tennis_slot_error').removeClass('d-none').html("{{ __('app.tennis_slot_error ') }}");
                     $("html, body").animate({
                         scrollTop: $(document).height() - $(window).height()
                     });
@@ -1023,12 +1008,10 @@
         const hourBookingSlots = $('input[name=draw_booking_slot]').val();
         const bookinType = $('input[name=booking_type_id]').val();
         const tennisSlot = $('#tennis_slot').val();
-        const categoryType = '{{ Session::get('
-        categoryType ') }}';
+        const categoryType = "{{ Session::get('categoryType') }}";
 
         if (categoryType == 1 && !tennisSlot) {
-            $('#tennis_slot_error').removeClass('d-none').html('{{ __('
-                app.tennis_slot_error ') }}');
+            $('#tennis_slot_error').removeClass('d-none').html("{{ __('app.tennis_slot_error ') }}");
             $("html, body").animate({
                 scrollTop: $(document).height() - $(window).height()
             });

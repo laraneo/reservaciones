@@ -144,7 +144,7 @@
                         <div id="draw-list"></div>
                         @endif
                     </div>
-                    <input type="hidden" name="booking_type_id" id="booking_type_id" value={{Session::get('booking_type_id')}}>
+                    <input type="hidden" name="booking_type_id" id="booking_type_id" value="{{Session::get('booking_type_id')}}">
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
