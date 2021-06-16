@@ -79,7 +79,6 @@ function Reload()
 	//window.location.reload(true); 
 }
 
-<!--  
 //Browser Support Code 
 function ajaxFunctionInclude(PlayerSlot){ 
 
@@ -116,7 +115,7 @@ function ajaxFunctionInclude(PlayerSlot){
 	//document.getElementById("btnRefresh").disabled = true;
 
 	var errorPlayer = 0;
-	const package = '{{ Session::get('package_id') }}';
+	const package = "{{ Session::get('package_id') }}";
     if (PlayerSlot==1)
 	{
 		var player1 = document.getElementById('player1').value; 
@@ -137,7 +136,7 @@ function ajaxFunctionInclude(PlayerSlot){
 		else
 		{
 			//validate that user is not included as participant again
-			if (player1=={{Auth::user()->doc_id}})
+			if (player1=="{{ Auth::user()->doc_id }}")
 			{
 				alert("Como solicitante ya estás registrado como participante");
 				errorPlayer = 1;
@@ -152,9 +151,9 @@ function ajaxFunctionInclude(PlayerSlot){
 				var queryString = "?command=include&doc_id=" + player1+ "&email=" +  "{{Auth::user()->email}}" 
 				+  "&booking_date=" + "{{ Session::get('event_date') }}" 
 				+  "&token=" + "<?php echo $calculated_token; ?>"
-				 + "&package_id="+'{{ Session::get('package_id') }}' 
-				 + "&categoryType="+'{{ Session::get('categoryType') }}' 
-				 + "&packageType="+'{{ Session::get('packageType') }}';
+				 + "&package_id="+"{{ Session::get('package_id') }}" 
+				 + "&categoryType="+"{{ Session::get('categoryType') }}"
+				 + "&packageType="+"{{ Session::get('packageType') }}";
 				//PlayerSlot=1;
 			}
 		}
