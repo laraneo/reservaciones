@@ -41,8 +41,8 @@ include 'BookingCountDown.php';
 
         <div class="row begin-countdown">
             <div class="col-md-12 text-center">
-                <progress value="<?php echo $countdown ?>" max="<?php echo config('settings.bookingTimeout') * 60  ?>" id="pageBeginCountdown"></progress>
-                <p> Tiempo restante <span id="pageBeginCountdownText"><?php echo $countdown ?> </span> segundos</p>
+                <progress value="<?php echo $countdown ?>" max="{{ config('settings.bookingTimeout') * 60  }}" id="pageBeginCountdown"></progress>
+                <p> Tiempo restante <span id="pageBeginCountdownText">{{ $countdown }} </span> segundos</p>
             </div>
         </div>
 
@@ -362,12 +362,7 @@ include 'BookingCountDown.php';
 @if(config('settings.stripe_enabled'))
 <script src="https://js.stripe.com/v2/"></script>
 <script type="text/javascript">
-    Stripe.setPublishableKey('{{ config('
-        settings.stripe_sandbox_enabled ') ?
-        config('settings.stripe_test_key_pk'): config('settings.stripe_live_key_pk')
-    }
-    }
-    ');
+    Stripe.setPublishableKey("{{ config('settings.stripe_sandbox_enabled') ? config('settings.stripe_test_key_pk') : config('settings.stripe_live_key_pk') }}");
     $('#stripe_cc_form').submit(function(e) {
         $form = $(this);
         $form.find('button').prop('disabled', true);
@@ -465,7 +460,7 @@ include 'BookingCountDown.php';
 
     function getParticipants() {
         const URL_CONCAT = $('meta[name="index"]').attr('content');
-        const selectedPlayer = '{{ $selectedPlayer }}';
+        const selectedPlayer = "{{ $selectedPlayer }}";
         $.ajax({
             type: 'GET',
             url: `${URL_CONCAT}/extra-service-participants`,
