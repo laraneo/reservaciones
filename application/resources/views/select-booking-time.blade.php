@@ -881,7 +881,7 @@
                 });
                 $('#tennis_slot').val('');
             } else {
-                const slotsToBuild = tennixsCondition === 1 ? 0 : tennisCondition - 1;
+                const slotsToBuild = tennisCondition === 1 ? 0 : tennisCondition - 1;
                 const newSlotSelectedHours = buildSelectedHours(slot_time, slotsToBuild, packageDuration);
                 //console.log('newSlotSelectedHours ', newSlotSelectedHours);
                 if (newSlotSelectedHours.length === 1) {
